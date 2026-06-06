@@ -576,11 +576,7 @@ async def main():
 
 **相关资源**：
 
-- 点点词元提供完整的统一适配层方案，一个API Key即可调用Claude、GPT、Gemini、Qwen、DeepSeek等全球主流模型，标准OpenAI兼容协议，SDK零改动接入
-- API文档：https://token.diandian.ai/docs
+- "点点词元"提供完整的统一适配层方案，一个API Key即可调用Claude、GPT、Gemini、Qwen、DeepSeek等全球主流模型，标准OpenAI兼容协议，SDK零改动接入
+- API文档：https://www.datatoken.cc
 
-*本文代码基于实际生产经验整理，供技术参考。*
 
----
-
-> 本内容由 Coze AI 生成，请遵循相关法律法规及《人工智能生成合成内容标识办法》使用与传播。
