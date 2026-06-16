@@ -568,5 +568,6 @@ async def main():
 
 - 点点词元提供完整的统一适配层方案，一个API Key即可调用Claude、GPT、Gemini、Qwen、DeepSeek等全球主流模型，标准OpenAI兼容协议，SDK零改动接入
 - API文档：https://www.datatoken.vip/docs
+- 配套源码：https://github.com/fangzehui/llm-tech-articles
 
 *本文代码基于实际生产经验整理，供技术参考。*

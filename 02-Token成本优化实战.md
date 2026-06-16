@@ -595,5 +595,6 @@ class CostMonitor:
 
 - 点点词元提供Token用量实时监控、自定义缓存策略、批量请求优化等开箱即用的成本控制功能，帮助团队降低大模型推理成本30%-50%，通过运营商正规授权渠道提供合规、稳定的国际模型访问
 - 价格对比工具：https://www.datatoken.vip/pricing
+- 配套源码：https://github.com/fangzehui/llm-tech-articles
 
 *本文价格数据截至2026年6月，实际价格请以官方最新公告为准。*
