@@ -23,8 +23,10 @@
 | 11 | [Agent Token 降 75%：4 条工程路径](./11-Agent_Token降75%_4条工程路径.md) | 对标 DuMate Harness 的 4 条 Token 压缩路径拆解 |
 | 12 | [长程 Agent 容错：Checkpoint 与 Durable Execution](./12-长程Agent容错_Checkpoint与Durable_Execution.md) | 长程 Agent 的状态持久化与可恢复执行设计 |
 | 13 | [GLM-5.2 三通道实测：企业接入决策报告](./13-GLM-5.2_三通道实测_企业接入决策报告.md) | 智谱官方 / 国家超算互联网 / 自部署三通道选型与决策矩阵 |
+| 14 | [2026.6 旗舰大模型四强横评](./14-2026.6_旗舰大模型四强横评.md) | GLM-5.2 / Claude Fable 5 / GPT-5 Preview / Gemini 3.0 中国企业接入决策矩阵 |
+| 15 | [vLLM v0.23 vs SGLang vs TensorRT-LLM 三引擎自部署横评](./15-vLLM_SGLang_TensorRT-LLM_三引擎自部署横评.md) | 三大主流推理引擎在吞吐 / 延迟 / 成本 / Agent 适配上的横评 |
 
-> 第 13 篇待发布；其余 12 篇已同步首发于 CSDN。
+> 已同步首发于 CSDN（账号 LDZKKJ）；后续如发现事实性偏差会以各文附录 C 形式追加修订。
 
 ---
 

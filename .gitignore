@@ -19,3 +19,7 @@ env/
 # OS
 .DS_Store
 Thumbs.db
+
+# CSDN 发布中间产物（仅 agent 内部使用，不进仓库）
+*-body.md
+csdn-publish-toolkit.md
