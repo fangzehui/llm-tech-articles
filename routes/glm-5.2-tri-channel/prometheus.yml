@@ -1,0 +1,10 @@
+# Prometheus 抓取配置：抓取本机路由器的 /metrics
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: glm52-router
+    metrics_path: /metrics
+    static_configs:
+      - targets: ["router:8000"]

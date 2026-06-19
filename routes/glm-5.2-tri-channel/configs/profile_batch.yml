@@ -1,0 +1,50 @@
+# profile_batch.yml
+# 批量推理 profile：离线日志清洗、内容审核、规模化 embedding/标注作业
+# 决策依据：成本最优——SCNet 国家算力批价最便宜，作为主通道；
+#         自部署做次主备；智谱官方做小流量兜底（避免批量任务把账单打高）。
+
+profile: batch
+
+providers:
+  - name: scnet
+    base_url: https://api.scnet.cn/api/llm/v1   # 以控制台为准
+    api_key_env: SCNET_API_KEY
+    model_alias: glm-5.2
+    priority: 10
+    weight: 1.0
+    timeout_s: 60.0
+    cost_per_million_tokens: 18.0
+    enabled: true
+
+  - name: self
+    base_url: ${SELFHOST_BASE_URL}
+    api_key_env: SELFHOST_API_KEY
+    model_alias: glm-5.2
+    priority: 20
+    weight: 1.0
+    timeout_s: 120.0
+    cost_per_million_tokens: 8.0
+    enabled: true
+
+  - name: zhipu
+    base_url: https://open.bigmodel.cn/api/paas/v4
+    api_key_env: ZHIPU_API_KEY
+    model_alias: glm-5.2
+    priority: 30
+    weight: 0.3                  # 兜底权重压低，避免批量打满
+    timeout_s: 30.0
+    cost_per_million_tokens: 22.0
+    enabled: true
+
+router:
+  fallback_strategy: cost        # 批量任务用成本最优排序
+  circuit_breaker:
+    failure_threshold: 0.4       # 批量场景对偶发失败更宽容
+    cooldown_s: 120
+    half_open_success_rate: 0.7
+    smoothing_alpha: 0.1
+
+observability:
+  health_check_interval_s: 60
+  health_check_timeout_s: 8.0
+  prometheus_port: 8000

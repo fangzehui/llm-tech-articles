@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# 环境凭据
+.env
+.env.local
+
+# 压测/评测产物
+bench/results_*.json
+bench/results_*.md
+eval/results_*.json
+eval/datasets/*.jsonl
+
+# IDE
+.idea/
+.vscode/

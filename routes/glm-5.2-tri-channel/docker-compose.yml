@@ -1,0 +1,51 @@
+version: "3.9"
+
+# GLM-5.2 三通道路由器最小可用栈
+# 启动方式：
+#   1. 先把 .env.example 复制成 .env 并填入三通道凭据；
+#   2. docker compose up -d
+#   3. router  : http://localhost:8000
+#      prom    : http://localhost:9090
+#      grafana : http://localhost:3000 （默认 admin / admin）
+
+services:
+  router:
+    build: .
+    image: glm52-tri-channel-router:latest
+    container_name: glm52-router
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      ROUTER_CONFIG: /app/configs/${ROUTER_PROFILE:-profile_realtime}.yml
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/healthz',timeout=3).status==200 else 1)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  prometheus:
+    image: prom/prometheus:v2.51.0
+    container_name: glm52-prometheus
+    restart: unless-stopped
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    ports:
+      - "9090:9090"
+    depends_on:
+      - router
+
+  grafana:
+    image: grafana/grafana:10.4.2
+    container_name: glm52-grafana
+    restart: unless-stopped
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus

@@ -1,0 +1,50 @@
+# profile_longctx.yml
+# 超长上下文 profile：100K-1M token 级别的长文档分析、代码库审计、合同审查
+# 决策依据：自部署 vLLM/SGLang 可显式打开 prefix caching 与本地 KV cache，
+#         长上下文场景命中率 + 成本优势最大；SCNet 做容量补给；智谱兜底。
+
+profile: longctx
+
+providers:
+  - name: self
+    base_url: ${SELFHOST_BASE_URL}
+    api_key_env: SELFHOST_API_KEY
+    model_alias: glm-5.2
+    priority: 10
+    weight: 1.0
+    timeout_s: 300.0             # 1M 上下文允许更长 timeout
+    cost_per_million_tokens: 8.0
+    enabled: true
+
+  - name: scnet
+    base_url: https://api.scnet.cn/api/llm/v1   # 以控制台为准
+    api_key_env: SCNET_API_KEY
+    model_alias: glm-5.2
+    priority: 20
+    weight: 1.0
+    timeout_s: 300.0
+    cost_per_million_tokens: 18.0
+    enabled: true
+
+  - name: zhipu
+    base_url: https://open.bigmodel.cn/api/paas/v4
+    api_key_env: ZHIPU_API_KEY
+    model_alias: glm-5.2
+    priority: 30
+    weight: 0.5
+    timeout_s: 180.0
+    cost_per_million_tokens: 22.0
+    enabled: true
+
+router:
+  fallback_strategy: priority
+  circuit_breaker:
+    failure_threshold: 0.5
+    cooldown_s: 90
+    half_open_success_rate: 0.8
+    smoothing_alpha: 0.1
+
+observability:
+  health_check_interval_s: 30
+  health_check_timeout_s: 10.0   # 长上下文 health check 也给宽点
+  prometheus_port: 8000
