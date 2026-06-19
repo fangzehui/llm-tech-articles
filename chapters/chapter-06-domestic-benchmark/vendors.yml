@@ -1,0 +1,32 @@
+vendors:
+  - vendor: qwen
+    display_name: 阿里云 通义千问 / DashScope
+    base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
+    default_model: qwen-plus
+    notes: OpenAI 兼容模式；支持 1M 上下文档位
+  - vendor: deepseek
+    display_name: DeepSeek
+    base_url: https://api.deepseek.com/v1
+    default_model: deepseek-chat
+    notes: 原生 OpenAI 兼容；提供 chat 与 reasoner
+  - vendor: doubao
+    display_name: 字节火山方舟 豆包
+    base_url: https://ark.cn-beijing.volces.com/api/v3
+    default_model: doubao-seed-pro
+    notes: 模型 ID 形如 'ep-...' 或 model alias
+  - vendor: zhipu
+    display_name: 智谱 GLM 开放平台
+    base_url: https://open.bigmodel.cn/api/paas/v4
+    default_model: glm-5
+    notes: OpenAI 风格；JWT 鉴权可选
+  - vendor: moonshot
+    display_name: 月之暗面 Kimi
+    base_url: https://api.moonshot.cn/v1
+    default_model: moonshot-v1-128k
+    notes: OpenAI 兼容；按上下文档位计费
+  - vendor: minimax
+    display_name: MiniMax
+    base_url: https://api.minimaxi.com/v1
+    default_model: MiniMax-Text-01
+    notes: 提供 OpenAI 兼容路径
+# 实际接入参数请以厂商最新官方文档为准

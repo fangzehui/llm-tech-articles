@@ -1,0 +1,27 @@
+tiers:
+  small:
+    models:
+      - small-fast
+    max_input_tokens: 2000
+    keywords: []
+  mid:
+    models:
+      - mid-balance
+      - small-fast       # 降级备选
+    max_input_tokens: 20000
+    keywords:
+      - 请总结
+      - summarize
+      - 长文档
+  flagship:
+    models:
+      - flagship
+      - mid-balance      # 降级备选
+    max_input_tokens: 200000
+    keywords:
+      - 请编写代码
+      - 写一段代码
+      - code
+      - 证明
+      - 复杂推理
+# 真实生产配置请按业务实测的 token 分布与质量曲线再调

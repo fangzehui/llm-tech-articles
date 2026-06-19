@@ -1,0 +1,2 @@
+# tiktoken 可选；缺失时 cost_tracker 会自动 fallback 到字符估算
+tiktoken>=0.5.0

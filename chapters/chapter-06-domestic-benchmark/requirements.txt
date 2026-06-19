@@ -1,0 +1,2 @@
+# 用于解析 vendors.yml；不装也不影响 demo 主程序运行
+PyYAML>=6.0

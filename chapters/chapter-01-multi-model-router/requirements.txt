@@ -1,0 +1,2 @@
+# 本 demo 仅依赖 Python 标准库
+# 公共 mock_llm 模块在 chapters/_common/，由相对 import 引入

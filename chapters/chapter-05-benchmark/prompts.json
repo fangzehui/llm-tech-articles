@@ -1,0 +1,32 @@
+[
+  {
+    "case_id": "qa_001",
+    "prompt": "用一句话解释什么是大模型 Token",
+    "category": "general"
+  },
+  {
+    "case_id": "qa_002",
+    "prompt": "请列出三种常见的大模型推理优化方法",
+    "category": "general"
+  },
+  {
+    "case_id": "code_001",
+    "prompt": "写一个 Python 函数，判断字符串是否为回文",
+    "category": "code"
+  },
+  {
+    "case_id": "code_002",
+    "prompt": "用 SQL 查询出每个部门工资 Top 3 的员工",
+    "category": "code"
+  },
+  {
+    "case_id": "math_001",
+    "prompt": "一辆汽车以 60km/h 行驶 2.5 小时，行驶了多少公里？",
+    "category": "math"
+  },
+  {
+    "case_id": "long_001",
+    "prompt": "假设你是一名资深架构师，请就微服务的边界划分给出 5 条建议",
+    "category": "long-context"
+  }
+]

@@ -1,0 +1,105 @@
+{
+  "_meta": {
+    "currency_unit": "USD per 1,000,000 tokens",
+    "as_of": "示意数据，实际请以厂商官方公告为准",
+    "exchange_rate_cny_per_usd_hint": "本表统一用 USD；如厂商以 CNY 公示请按当时汇率换算"
+  },
+  "models": [
+    {
+      "name": "gpt-pro",
+      "vendor": "openai",
+      "input_per_m": 3.50,
+      "output_per_m": 14.00,
+      "context_window": 128000,
+      "tier": "flagship"
+    },
+    {
+      "name": "gpt-mini",
+      "vendor": "openai",
+      "input_per_m": 0.15,
+      "output_per_m": 0.60,
+      "context_window": 128000,
+      "tier": "small"
+    },
+    {
+      "name": "claude-sonnet",
+      "vendor": "anthropic",
+      "input_per_m": 4.00,
+      "output_per_m": 18.00,
+      "context_window": 200000,
+      "tier": "flagship"
+    },
+    {
+      "name": "claude-haiku",
+      "vendor": "anthropic",
+      "input_per_m": 0.25,
+      "output_per_m": 1.25,
+      "context_window": 200000,
+      "tier": "small"
+    },
+    {
+      "name": "gemini-flash",
+      "vendor": "google",
+      "input_per_m": 0.10,
+      "output_per_m": 0.40,
+      "context_window": 1000000,
+      "tier": "small"
+    },
+    {
+      "name": "gemini-pro",
+      "vendor": "google",
+      "input_per_m": 1.25,
+      "output_per_m": 5.00,
+      "context_window": 2000000,
+      "tier": "flagship"
+    },
+    {
+      "name": "qwen-plus",
+      "vendor": "qwen",
+      "input_per_m": 0.12,
+      "output_per_m": 1.20,
+      "context_window": 1000000,
+      "tier": "mid"
+    },
+    {
+      "name": "deepseek-chat",
+      "vendor": "deepseek",
+      "input_per_m": 0.27,
+      "output_per_m": 1.10,
+      "context_window": 128000,
+      "tier": "mid"
+    },
+    {
+      "name": "glm-5",
+      "vendor": "zhipu",
+      "input_per_m": 0.05,
+      "output_per_m": 0.05,
+      "context_window": 128000,
+      "tier": "small"
+    },
+    {
+      "name": "doubao-seed-pro",
+      "vendor": "doubao",
+      "input_per_m": 0.50,
+      "output_per_m": 2.50,
+      "context_window": 256000,
+      "tier": "mid"
+    },
+    {
+      "name": "moonshot-v1-128k",
+      "vendor": "moonshot",
+      "input_per_m": 1.00,
+      "output_per_m": 4.00,
+      "context_window": 128000,
+      "tier": "mid"
+    },
+    {
+      "name": "minimax-text-01",
+      "vendor": "minimax",
+      "input_per_m": 0.30,
+      "output_per_m": 1.50,
+      "context_window": 1000000,
+      "tier": "mid"
+    }
+  ]
+}
