@@ -28,9 +28,35 @@
 
 ---
 
-## 配套源码（routes/）
+## 配套源码
 
-文章里出现过的"完整可跑代码 / 配置模板"统一放在 `routes/` 目录，每个子目录对位一篇文章的附录。
+文章中出现的"可跑代码 / 配置模板"按定位分两层放置：
+
+### 历史文章配套（`chapters/`）
+
+每个 `chapter-XX-<keyword>/` 子目录对位一篇文章，提供从文章里提炼的**最小可跑 demo**，让读者把关键工程思想跑起来、改起来。
+完整章节索引、依赖说明、一键 smoke 测试见 [`chapters/README.md`](./chapters/README.md)。
+
+| 章节 | 关键词 |
+|------|--------|
+| [01](./chapters/chapter-01-multi-model-router/) | 多模型路由 + 故障切换 |
+| [02](./chapters/chapter-02-token-cost/) | tiktoken 计数 + 成本汇总 |
+| [03](./chapters/chapter-03-unified-adapter/) | 多协议双向适配 |
+| [04](./chapters/chapter-04-ha-pattern/) | retry + circuit breaker + timeout |
+| [05](./chapters/chapter-05-benchmark/) | 多模型并跑 + P50/P95 聚合 |
+| [06](./chapters/chapter-06-domestic-benchmark/) | 国产模型 OpenAI 兼容 client 注册表 |
+| [07](./chapters/chapter-07-pricing-calculator/) | 月度账单估算 + 性价比排序 |
+| [08](./chapters/chapter-08-quota-manager/) | InMemoryRedis + 两段式 token 配额 |
+| [09](./chapters/chapter-09-tier-router/) | small/mid/flagship 三档 YAML 路由 |
+| [10](./chapters/chapter-10-semantic-cache/) | embedding + 余弦相似度 + LRU/TTL |
+| [11](./chapters/chapter-11-agent-token-saving/) | Agent 4 条 Token 降本路径 |
+| [12](./chapters/chapter-12-checkpoint-recovery/) | Checkpoint + 断点续跑 + smoke test |
+
+依赖：所有 demo 通过 `chapters/_common/mock_llm.py` 共用一个本地 mock LLM 客户端，**完全脱网可跑**，不需要任何 API key。
+
+### 生产级实现（`routes/`）
+
+可直接部署的工程参考实现，对位特定文章的"完整附录"。
 
 | 目录 | 配套文章 | 内容 |
 |------|----------|------|
