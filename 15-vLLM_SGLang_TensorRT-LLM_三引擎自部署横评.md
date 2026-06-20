@@ -449,7 +449,6 @@ docker run --gpus all -p 8000:8000 -p 8001:8001 \
 
 - [模型广场](https://activity.ldzktoken.com/activity/index.html)：[https://activity.ldzktoken.com/activity/index.html](https://activity.ldzktoken.com/activity/index.html)
   小程序"点点词元" — 多模型统一调度平台，OpenAI 兼容协议，Anthropic兼容协议。
-- [API 文档](https://www.datatoken.vip/docs)：[https://www.datatoken.vip/docs](https://www.datatoken.vip/docs)
 - [GitHub 配套源码](https://github.com/fangzehui/llm-tech-articles)：[https://github.com/fangzehui/llm-tech-articles](https://github.com/fangzehui/llm-tech-articles) （含本文部署 YAML 与启动命令）
 
 *本文性能数据综合自 vLLM / SGLang / TensorRT-LLM 官方发布、社区 benchmark 与企业生产实测，截至 2026-06-19；硬件价格、引擎版本、量化精度等可能在数周内更新，自部署落地前请以官方文档与最新 release notes 为准。CPM 测算公式可直接套用，但实际数字依赖企业自身利用率、运维成本与 SLA 设计。如发现事实性错误，欢迎评论区指正，会在附录 C 以 errata 形式同步修订。*
