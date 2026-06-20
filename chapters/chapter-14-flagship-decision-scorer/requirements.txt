@@ -1,0 +1,2 @@
+# 主程序仅依赖标准库；smoke test 用 pytest
+pytest>=7.0.0

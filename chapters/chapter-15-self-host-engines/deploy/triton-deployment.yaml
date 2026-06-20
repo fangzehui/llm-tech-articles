@@ -1,0 +1,66 @@
+# TensorRT-LLM 通过 NVIDIA Triton Server 暴露推理；
+# 注意：模型仓库 /models/llama3-70b-trt 必须先用 trtllm-build 编译好（见 bench/run_bench.sh）.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trtllm-llama3-70b
+  labels:
+    app: trtllm-llama3-70b
+    engine: tensorrt-llm
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: trtllm-llama3-70b
+  template:
+    metadata:
+      labels:
+        app: trtllm-llama3-70b
+        engine: tensorrt-llm
+    spec:
+      containers:
+        - name: triton
+          image: nvcr.io/nvidia/tritonserver:24.05-trtllm-python-py3
+          command: ["tritonserver"]
+          args:
+            - "--model-repository=/models/llama3-70b-trt"
+            - "--http-port=8000"
+            - "--allow-grpc=true"
+            - "--grpc-port=8001"
+          ports:
+            - containerPort: 8000
+              name: http
+            - containerPort: 8001
+              name: grpc
+          resources:
+            limits:
+              nvidia.com/gpu: "4"
+          readinessProbe:
+            httpGet:
+              path: /v2/health/ready
+              port: 8000
+            initialDelaySeconds: 180
+            periodSeconds: 15
+          volumeMounts:
+            - name: models
+              mountPath: /models
+      volumes:
+        - name: models
+          hostPath:
+            path: /models
+            type: Directory
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: trtllm-llama3-70b
+spec:
+  selector:
+    app: trtllm-llama3-70b
+  ports:
+    - name: http
+      port: 8000
+      targetPort: 8000
+    - name: grpc
+      port: 8001
+      targetPort: 8001

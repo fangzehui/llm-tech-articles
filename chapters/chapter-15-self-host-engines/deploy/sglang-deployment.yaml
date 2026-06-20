@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sglang-llama3-70b
+  labels:
+    app: sglang-llama3-70b
+    engine: sglang
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sglang-llama3-70b
+  template:
+    metadata:
+      labels:
+        app: sglang-llama3-70b
+        engine: sglang
+    spec:
+      containers:
+        - name: sglang
+          image: lmsysorg/sglang:v0.5.13-cu124
+          args:
+            - "python"
+            - "-m"
+            - "sglang.launch_server"
+            - "--model-path=/models/Llama-3.3-70B-Instruct-FP8"
+            - "--tp=4"
+            - "--enable-radix-cache"
+            - "--mem-fraction-static=0.85"
+            - "--max-running-requests=128"
+            - "--port=8000"
+            - "--quantization=fp8"
+          ports:
+            - containerPort: 8000
+              name: http
+          resources:
+            limits:
+              nvidia.com/gpu: "4"
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 120
+            periodSeconds: 10
+          volumeMounts:
+            - name: models
+              mountPath: /models
+      volumes:
+        - name: models
+          hostPath:
+            path: /models
+            type: Directory
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sglang-llama3-70b
+spec:
+  selector:
+    app: sglang-llama3-70b
+  ports:
+    - name: http
+      port: 8000
+      targetPort: 8000

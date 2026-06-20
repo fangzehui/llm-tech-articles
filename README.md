@@ -53,6 +53,8 @@
 | [10](./chapters/chapter-10-semantic-cache/) | embedding + 余弦相似度 + LRU/TTL |
 | [11](./chapters/chapter-11-agent-token-saving/) | Agent 4 条 Token 降本路径 |
 | [12](./chapters/chapter-12-checkpoint-recovery/) | Checkpoint + 断点续跑 + smoke test |
+| [14](./chapters/chapter-14-flagship-decision-scorer/) | 旗舰大模型 4 维加权决策评分器 + smoke test |
+| [15](./chapters/chapter-15-self-host-engines/) | vLLM / SGLang / TensorRT-LLM K8s Deployment YAML + 压测脚本 |
 
 依赖：所有 demo 通过 `chapters/_common/mock_llm.py` 共用一个本地 mock LLM 客户端，**完全脱网可跑**，不需要任何 API key。
 

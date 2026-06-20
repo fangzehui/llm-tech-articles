@@ -1,6 +1,6 @@
-# chapters/ — 12 篇技术文章配套源码索引
+# chapters/ — 技术文章配套源码索引
 
-本目录收录仓库前 12 篇技术文章的可运行 demo 代码，每个 chapter 子目录都包含：
+本目录收录仓库技术文章的可运行 demo 代码，每个 chapter 子目录都包含：
 
 - `README.md`：一句话简介 + 文件清单 + 快速开始
 - 至少 1 个核心 `.py` 文件：从文章中提炼的最小可跑工程示例
@@ -25,6 +25,10 @@
 | 10 | [chapter-10-semantic-cache](chapter-10-semantic-cache/) | [10-语义缓存命中率工程实战.md](../10-语义缓存命中率工程实战.md) | embedding + 余弦相似度 + LRU + TTL |
 | 11 | [chapter-11-agent-token-saving](chapter-11-agent-token-saving/) | [11-Agent_Token降75%_4条工程路径.md](../11-Agent_Token降75%_4条工程路径.md) | Agent 4 条降本路径示意（裁剪/压缩/分级/缓存） |
 | 12 | [chapter-12-checkpoint-recovery](chapter-12-checkpoint-recovery/) | [12-长程Agent容错_Checkpoint与Durable_Execution.md](../12-长程Agent容错_Checkpoint与Durable_Execution.md) | Checkpoint 保存 + 断点续跑 + 4 个 smoke test |
+| 14 | [chapter-14-flagship-decision-scorer](chapter-14-flagship-decision-scorer/) | [14-2026.6_旗舰大模型四强横评.md](../14-2026.6_旗舰大模型四强横评.md) | 4 款旗舰画像 + 6 维加权打分 + 三场景推荐 + 7 个 smoke test |
+| 15 | [chapter-15-self-host-engines](chapter-15-self-host-engines/) | [15-vLLM_SGLang_TensorRT-LLM_三引擎自部署横评.md](../15-vLLM_SGLang_TensorRT-LLM_三引擎自部署横评.md) | vLLM / SGLang / TRT-LLM 三套 K8s Deployment YAML + 压测脚本 + bash smoke test |
+
+> 第 13 篇配套放在仓库根目录的 [`routes/glm-5.2-tri-channel/`](../routes/glm-5.2-tri-channel/) 下（生产级 FastAPI 路由器，不在本目录）.
 
 ## 公共模块
 

@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vllm-llama3-70b
+  labels:
+    app: vllm-llama3-70b
+    engine: vllm
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: vllm-llama3-70b
+  template:
+    metadata:
+      labels:
+        app: vllm-llama3-70b
+        engine: vllm
+    spec:
+      containers:
+        - name: vllm
+          image: vllm/vllm-openai:v0.23.0
+          args:
+            - "--model=/models/Llama-3.3-70B-Instruct-FP8"
+            - "--tensor-parallel-size=4"
+            - "--max-model-len=16384"
+            - "--gpu-memory-utilization=0.92"
+            - "--enable-prefix-caching"
+            - "--max-num-seqs=64"
+            - "--quantization=fp8"
+          ports:
+            - containerPort: 8000
+              name: http
+          resources:
+            limits:
+              nvidia.com/gpu: "4"
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 120
+            periodSeconds: 10
+          volumeMounts:
+            - name: models
+              mountPath: /models
+      volumes:
+        - name: models
+          hostPath:
+            path: /models
+            type: Directory
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vllm-llama3-70b
+spec:
+  selector:
+    app: vllm-llama3-70b
+  ports:
+    - name: http
+      port: 8000
+      targetPort: 8000
