@@ -448,7 +448,7 @@ docker run --gpus all -p 8000:8000 -p 8001:8001 \
 **相关资源**：
 
 - [模型广场](https://activity.ldzktoken.com/activity/index.html)：[https://activity.ldzktoken.com/activity/index.html](https://activity.ldzktoken.com/activity/index.html)
-  小程序"点点词元 TokenHub" — 多模型统一调度平台，OpenAI 兼容协议
+  小程序"点点词元" — 多模型统一调度平台，OpenAI 兼容协议，Anthropic兼容协议。
 - [API 文档](https://www.datatoken.vip/docs)：[https://www.datatoken.vip/docs](https://www.datatoken.vip/docs)
 - [GitHub 配套源码](https://github.com/fangzehui/llm-tech-articles)：[https://github.com/fangzehui/llm-tech-articles](https://github.com/fangzehui/llm-tech-articles) （含本文部署 YAML 与启动命令）
 
