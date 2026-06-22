@@ -1,0 +1,23 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.12, pytest-9.0.2, pluggy-1.6.0 -- /usr/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default'
+rootdir: /app/data/所有对话/主对话/llm-work/chapters/chapter-18-openrouter-weekly-tracker
+plugins: cov-7.0.0, xdist-3.8.0, hypothesis-6.151.9, anyio-4.12.1, asyncio-1.3.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 12 items
+
+tests/test_tracker.py::test_load_local_snapshot_structure PASSED         [  8%]
+tests/test_tracker.py::test_parse_snapshot_rank_monotonic PASSED         [ 16%]
+tests/test_tracker.py::test_derived_fields PASSED                        [ 25%]
+tests/test_tracker.py::test_signal_dimensions_in_range PASSED            [ 33%]
+tests/test_tracker.py::test_signal_top_picks_match_reality PASSED        [ 41%]
+tests/test_tracker.py::test_signal_call_volume_trend_monotonic PASSED    [ 50%]
+tests/test_tracker.py::test_signal_capability_long_context PASSED        [ 58%]
+tests/test_tracker.py::test_report_full_contains_critical_facts PASSED   [ 66%]
+tests/test_tracker.py::test_report_brief_compact PASSED                  [ 75%]
+tests/test_tracker.py::test_visualize_top_models_dry_run PASSED          [ 83%]
+tests/test_tracker.py::test_visualize_trend_dry_run PASSED               [ 91%]
+tests/test_tracker.py::test_visualize_top_models_real_save PASSED        [100%]
+
+============================== 12 passed in 2.79s ==============================

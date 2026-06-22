@@ -1,0 +1,137 @@
+{
+  "session_id": "sess-2026-06-22-acme-alice-001",
+  "protocol_version": "2025-11-25",
+  "transport": "streamable_http",
+  "tenant": "acme",
+  "user": "alice",
+  "host": "chatgpt-enterprise",
+  "client": "openai-chatgpt-mcp-client/2026.06",
+  "gateway": "enterprise-mcp-gateway/0.19.0",
+  "spans": [
+    {
+      "name": "mcp.initialize",
+      "trace_id": "4f1b2c3d8e9a7b6c5d4e3f2a1b0c9d8e",
+      "span_id": "a1b2c3d4e5f60718",
+      "parent_span_id": null,
+      "start_ns": 1718968800000000000,
+      "end_ns":   1718968800003200000,
+      "status": "ok",
+      "attributes": {
+        "mcp.method": "initialize",
+        "mcp.protocol_version": "2025-11-25",
+        "mcp.transport": "streamable_http",
+        "mcp.status": "ok",
+        "http.status_code": 200
+      },
+      "events": []
+    },
+    {
+      "name": "mcp.tools/list",
+      "trace_id": "4f1b2c3d8e9a7b6c5d4e3f2a1b0c9d8e",
+      "span_id": "b2c3d4e5f6071829",
+      "parent_span_id": "a1b2c3d4e5f60718",
+      "start_ns": 1718968800003500000,
+      "end_ns":   1718968800006800000,
+      "status": "ok",
+      "attributes": {
+        "mcp.method": "tools/list",
+        "mcp.session_id": "sess-2026-06-22-acme-alice-001",
+        "mcp.tenant": "acme",
+        "mcp.user": "alice",
+        "mcp.status": "ok",
+        "tools.count": 12
+      },
+      "events": []
+    },
+    {
+      "name": "mcp.tools/call:github.create_issue",
+      "trace_id": "4f1b2c3d8e9a7b6c5d4e3f2a1b0c9d8e",
+      "span_id": "c3d4e5f60718293a",
+      "parent_span_id": "a1b2c3d4e5f60718",
+      "start_ns": 1718968800007000000,
+      "end_ns":   1718968800312000000,
+      "status": "ok",
+      "attributes": {
+        "mcp.method": "tools/call",
+        "mcp.namespace": "github",
+        "mcp.tool_name": "create_issue",
+        "mcp.session_id": "sess-2026-06-22-acme-alice-001",
+        "mcp.tenant": "acme",
+        "mcp.user": "alice",
+        "mcp.status": "ok",
+        "mcp.upstream_endpoint": "https://api.githubcopilot.com/mcp",
+        "http.status_code": 200,
+        "rate_limit.bucket_remaining": 17
+      },
+      "events": [
+        {"name": "upstream_request_sent",      "time_ns": 1718968800008000000},
+        {"name": "upstream_response_received", "time_ns": 1718968800310000000, "duration_ms": 302}
+      ]
+    },
+    {
+      "name": "mcp.tools/call:stripe.search_customer",
+      "trace_id": "4f1b2c3d8e9a7b6c5d4e3f2a1b0c9d8e",
+      "span_id": "d4e5f60718293a4b",
+      "parent_span_id": "a1b2c3d4e5f60718",
+      "start_ns": 1718968800313000000,
+      "end_ns":   1718968800813000000,
+      "status": "error",
+      "attributes": {
+        "mcp.method": "tools/call",
+        "mcp.namespace": "stripe",
+        "mcp.tool_name": "search_customer",
+        "mcp.session_id": "sess-2026-06-22-acme-alice-001",
+        "mcp.tenant": "acme",
+        "mcp.user": "alice",
+        "mcp.status": "error",
+        "mcp.error_code": "upstream_timeout",
+        "mcp.upstream_endpoint": "https://mcp.stripe.com",
+        "http.status_code": 504
+      },
+      "events": [
+        {"name": "upstream_request_sent",      "time_ns": 1718968800314000000},
+        {"name": "upstream_timeout_reached",   "time_ns": 1718968800813000000, "timeout_ms": 500}
+      ]
+    },
+    {
+      "name": "mcp.resources/read",
+      "trace_id": "4f1b2c3d8e9a7b6c5d4e3f2a1b0c9d8e",
+      "span_id": "e5f60718293a4b5c",
+      "parent_span_id": "a1b2c3d4e5f60718",
+      "start_ns": 1718968800814000000,
+      "end_ns":   1718968800820000000,
+      "status": "ok",
+      "attributes": {
+        "mcp.method": "resources/read",
+        "mcp.namespace": "github",
+        "mcp.session_id": "sess-2026-06-22-acme-alice-001",
+        "mcp.tenant": "acme",
+        "mcp.user": "alice",
+        "mcp.status": "ok",
+        "resource.uri": "upstream://github/issues/42",
+        "http.status_code": 200
+      },
+      "events": []
+    }
+  ],
+  "audit_log": [
+    {
+      "ts": "2026-06-22T10:00:00.310Z",
+      "actor": "alice@acme.example",
+      "action": "tools/call",
+      "tool": "github.create_issue",
+      "arguments_redacted": {"title": "[REDACTED]", "body": "[REDACTED]"},
+      "result": "ok",
+      "trace_id": "4f1b2c3d8e9a7b6c5d4e3f2a1b0c9d8e"
+    },
+    {
+      "ts": "2026-06-22T10:00:00.813Z",
+      "actor": "alice@acme.example",
+      "action": "tools/call",
+      "tool": "stripe.search_customer",
+      "arguments_redacted": {"email": "[REDACTED]"},
+      "result": "error:upstream_timeout",
+      "trace_id": "4f1b2c3d8e9a7b6c5d4e3f2a1b0c9d8e"
+    }
+  ]
+}

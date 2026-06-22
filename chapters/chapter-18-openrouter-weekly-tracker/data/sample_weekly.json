@@ -1,0 +1,62 @@
+{
+  "week": "2026-W25",
+  "start_date": "2026-06-15",
+  "end_date": "2026-06-21",
+  "source": "OpenRouter Rankings, aggregated via Daily Economic News & Weibo @\u77e5\u672a\u79d1\u6280",
+  "snapshot_at": "2026-06-22T11:24:30+08:00",
+  "global": {
+    "total_tokens_trillion": 46.7,
+    "wow_pct": 4.7,
+    "consecutive_up_weeks": 9
+  },
+  "region": {
+    "CN": {
+      "tokens_trillion": 18.81,
+      "wow_pct": 2.12,
+      "consecutive_up_weeks": 4,
+      "consecutive_overtake_us_weeks": 8
+    },
+    "US": {
+      "tokens_trillion": 5.76,
+      "wow_pct": 0.70
+    }
+  },
+  "top_models": [
+    {"rank": 1, "model": "DeepSeek-V4-Flash", "vendor": "DeepSeek", "country": "CN", "tokens_trillion": 4.94, "wow_pct": 12.0, "streak_first_weeks": 5, "note": "\u8fde\u7eed5\u5468\u5355\u6a21\u578b\u699c\u9996"},
+    {"rank": 2, "model": "Xiaomi MiMo-V2.5", "vendor": "Xiaomi", "country": "CN", "tokens_trillion": 3.94, "wow_pct": 10.0, "prev_rank": 4, "note": "\u4ece\u4e0a\u5468\u7b2c4\u5347\u81f3\u7b2c2"},
+    {"rank": 3, "model": "MiniMax M3", "vendor": "MiniMax", "country": "CN", "tokens_trillion": 3.77, "wow_pct": -13.0, "prev_rank": 2},
+    {"rank": 4, "model": "Tencent Hy3 preview", "vendor": "Tencent", "country": "CN", "tokens_trillion": 3.63, "wow_pct": -12.0, "prev_rank": 3, "note": "\u8fd1\u4e24\u4e2a\u6708\u9996\u6b21\u8dcc\u51fa\u524d\u4e09"},
+    {"rank": 5, "model": "DeepSeek-V4-Pro", "vendor": "DeepSeek", "country": "CN", "tokens_trillion": 2.53, "wow_pct": 18.0, "note": "5/31\u6c38\u4e45\u964d\u4ef7\u540e\u8c03\u7528\u91cf\u6301\u7eed\u4e0a\u6da8\uff08\u4f30\u7b97\uff09"},
+    {"rank": 6, "model": "Qwen3.6 Plus", "vendor": "Alibaba", "country": "CN", "tokens_trillion": 2.05, "wow_pct": 6.0, "note": "\u4f30\u503c"},
+    {"rank": 7, "model": "Claude Sonnet 4.6", "vendor": "Anthropic", "country": "US", "tokens_trillion": 1.95, "wow_pct": -4.0, "note": "\u4f30\u503c"},
+    {"rank": 8, "model": "Claude Opus 4.8", "vendor": "Anthropic", "country": "US", "tokens_trillion": 1.69, "wow_pct": 36.0, "released_at": "2026-05-29", "note": "\u65b0\u6a21\u578b\uff0c\u4e0a\u5468\u7b2c9"},
+    {"rank": 9, "model": "GLM-5.2", "vendor": "Zhipu", "country": "CN", "tokens_trillion": 1.55, "wow_pct": 5.0, "note": "\u4f30\u503c"},
+    {"rank": 10, "model": "Gemini 3 Pro", "vendor": "Google", "country": "US", "tokens_trillion": 1.40, "wow_pct": 2.0, "note": "\u4f30\u503c"}
+  ],
+  "top_vendors": [
+    {"rank": 1, "vendor": "DeepSeek", "country": "CN", "tokens_trillion": 8.65, "share_pct": 18.5, "streak_first_weeks": 6, "main_models": ["DeepSeek-V4-Flash", "DeepSeek-V4-Pro"], "v4_share_pct": 86.4},
+    {"rank": 2, "vendor": "Anthropic", "country": "US", "tokens_trillion": 4.20, "share_pct": 9.0, "main_models": ["Claude Sonnet 4.6", "Claude Opus 4.8"]},
+    {"rank": 3, "vendor": "Xiaomi", "country": "CN", "tokens_trillion": 4.05, "share_pct": 8.7, "main_models": ["Xiaomi MiMo-V2.5"]},
+    {"rank": 4, "vendor": "MiniMax", "country": "CN", "tokens_trillion": 3.85, "share_pct": 8.2, "main_models": ["MiniMax M3"]},
+    {"rank": 5, "vendor": "Tencent", "country": "CN", "tokens_trillion": 3.75, "share_pct": 8.0, "main_models": ["Tencent Hy3 preview"]},
+    {"rank": 6, "vendor": "Google", "country": "US", "tokens_trillion": 2.80, "share_pct": 6.0, "main_models": ["Gemini 3 Pro"]},
+    {"rank": 7, "vendor": "Alibaba", "country": "CN", "tokens_trillion": 2.45, "share_pct": 5.2, "main_models": ["Qwen3.6 Plus"]},
+    {"rank": 8, "vendor": "OpenAI", "country": "US", "tokens_trillion": 2.10, "share_pct": 4.5, "main_models": ["GPT-5"]},
+    {"rank": 9, "vendor": "Zhipu", "country": "CN", "tokens_trillion": 2.00, "share_pct": 4.3, "main_models": ["GLM-5.2"]},
+    {"rank": 10, "vendor": "Moonshot AI", "country": "CN", "tokens_trillion": 1.30, "share_pct": 2.8, "main_models": ["Kimi K2.6"]}
+  ],
+  "deepseek_v4_flash_history": [
+    {"week": "2026-W20", "start_date": "2026-05-11", "tokens_trillion": 3.02, "rank": 1, "wow_pct": 109.0, "note": "\u9996\u6b21\u767b\u9876"},
+    {"week": "2026-W21", "start_date": "2026-05-18", "tokens_trillion": 3.11, "rank": 1, "wow_pct": 3.0},
+    {"week": "2026-W22", "start_date": "2026-05-25", "tokens_trillion": 3.69, "rank": 1, "wow_pct": 18.6},
+    {"week": "2026-W23", "start_date": "2026-06-01", "tokens_trillion": 3.69, "rank": 1, "wow_pct": 0.0},
+    {"week": "2026-W24", "start_date": "2026-06-08", "tokens_trillion": 4.41, "rank": 1, "wow_pct": 20.0},
+    {"week": "2026-W25", "start_date": "2026-06-15", "tokens_trillion": 4.94, "rank": 1, "wow_pct": 12.0}
+  ],
+  "notes": [
+    "\u6570\u636e\u53ea\u53cd\u6620 OpenRouter \u8def\u7531\u5e73\u53f0\u8d70\u91cf\uff0c\u4e0d\u7b49\u4e8e\u5168\u7403\u6a21\u578b\u4f7f\u7528\u4efd\u989d",
+    "Top 1-4 \u4e0e Top 8 (Opus 4.8) \u6765\u81ea OpenRouter \u516c\u5f00\u6570\u636e\u3001\u300a\u6bcf\u65e5\u7ecf\u6d4e\u65b0\u95fb\u300b2026-06-22 \u62a5\u9053",
+    "Top 5-7\u30019-10 \u540d\u540d\u6b21\u4e3a\u672c\u4ed3\u5e93\u57fa\u4e8e\u54c1\u724c\u699c\u4e0e\u4e2d\u7f8e\u603b\u91cf\u51c0\u989d\u63a8\u7b97\u7684\u533a\u95f4\u4f30\u503c\uff0c\u4ec5\u4f9b demo \u4f7f\u7528",
+    "DeepSeek-V4-Flash \u53d1\u5e03\u4e8e 2026-04-24\uff0cMiMo-V2.5 \u4e8e 2026-05-27 \u6c38\u4e45\u964d\u4ef7"
+  ]
+}

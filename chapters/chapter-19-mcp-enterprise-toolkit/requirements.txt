@@ -1,0 +1,10 @@
+# Chapter 19 - MCP 企业接入工具集依赖
+# 全部依赖均为可选：核心逻辑仅用标准库，import 失败时退化为内置实现
+fastapi>=0.110
+uvicorn>=0.27
+httpx>=0.27
+authlib>=1.3
+opentelemetry-api>=1.24
+opentelemetry-sdk>=1.24
+pytest>=7.4
+PyJWT>=2.8
