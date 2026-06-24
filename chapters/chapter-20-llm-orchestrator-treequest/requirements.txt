@@ -1,0 +1,16 @@
+# Chapter 20 - LLM 编排器选型工具集
+# 核心逻辑全部用 Python 标准库写完，所有外部依赖均为可选；
+# 仅 pytest 是真正的"必装"，其它在源码里通过 try/except 守卫做了 fallback。
+
+# 必装：跑 tests/
+pytest>=7.4
+
+# 可选：如果你想把 FakeWorker 替换为真实 LLM 调用
+openai>=1.40
+anthropic>=0.34
+
+# 可选：如果你想把 cost 曲线画成图（README 截图用 matplotlib 离线生成即可）
+matplotlib>=3.8
+
+# 可选：官方 TreeQuest 库（生产环境建议直接用官方版而不是 treequest_minimal.py）
+# treequest>=0.3.2

@@ -1,0 +1,20 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.12, pytest-9.0.2, pluggy-1.6.0 -- /usr/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default'
+rootdir: /app/data/所有对话/主对话/llm-work/chapters/chapter-20-llm-orchestrator-treequest
+plugins: cov-7.0.0, xdist-3.8.0, hypothesis-6.151.9, anyio-4.12.1, asyncio-1.3.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 9 items
+
+tests/test_treequest.py::test_node_basic_ops PASSED                      [ 11%]
+tests/test_treequest.py::test_thompson_pick_converges PASSED             [ 22%]
+tests/test_treequest.py::test_ab_mcts_single_llm PASSED                  [ 33%]
+tests/test_treequest.py::test_ab_mcts_multi_llm PASSED                   [ 44%]
+tests/test_treequest.py::test_cost_curve_monotone PASSED                 [ 55%]
+tests/test_treequest.py::test_break_even_cheap_vs_flagship PASSED        [ 66%]
+tests/test_treequest.py::test_orchestrator_compare_dimensions PASSED     [ 77%]
+tests/test_treequest.py::test_sample_tasks_loadable PASSED               [ 88%]
+tests/test_treequest.py::test_render_text_tree_smoke PASSED              [100%]
+
+============================== 9 passed in 1.92s ===============================
