@@ -1,0 +1,2 @@
+# Chapter 22 - Agent AI 场景评估器依赖
+pytest>=7.4
