@@ -1,0 +1,10 @@
+# chapter-25 requirements
+# 本章所有 demo 脚本仅依赖 Python stdlib，可以裸跑。
+# 要跑测试则只需要 pytest。
+pytest>=7.0
+
+# 可选：接真实向量库和 LLM 时可按需装
+# mem0ai>=0.1.0
+# langmem>=0.0.1
+# letta>=0.5.0
+# graphiti-core>=0.4.0

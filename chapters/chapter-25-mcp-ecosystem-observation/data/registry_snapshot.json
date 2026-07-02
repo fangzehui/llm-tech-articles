@@ -1,0 +1,114 @@
+[
+  {
+    "id": "io.github.modelcontextprotocol/servers-github",
+    "version": "2026.06.20",
+    "description": "GitHub API MCP server: repositories, PRs, issues, code search.",
+    "updated_at": "2026-06-20T00:00:00Z",
+    "tags": ["official", "devtool"]
+  },
+  {
+    "id": "io.github.modelcontextprotocol/servers-gitlab",
+    "version": "2026.05.14",
+    "description": "GitLab MCP server for issues, MRs, pipelines.",
+    "updated_at": "2026-05-14T00:00:00Z",
+    "tags": ["official", "devtool"]
+  },
+  {
+    "id": "com.linear/linear-mcp",
+    "version": "1.4.0",
+    "description": "Linear issue tracking MCP integration.",
+    "updated_at": "2026-06-10T00:00:00Z",
+    "tags": ["devtool", "saas"]
+  },
+  {
+    "id": "com.postgres/postgres-mcp",
+    "version": "0.9.1",
+    "description": "Read-only Postgres queries as MCP resources.",
+    "updated_at": "2026-05-30T00:00:00Z",
+    "tags": ["database"]
+  },
+  {
+    "id": "com.snowflake/snowflake-mcp",
+    "version": "1.2.0",
+    "description": "Snowflake warehouse queries via MCP.",
+    "updated_at": "2026-04-22T00:00:00Z",
+    "tags": ["database", "cloud"]
+  },
+  {
+    "id": "cn.aliyun/maxcompute-mcp",
+    "version": "1.0.0",
+    "description": "Aliyun MaxCompute MCP server (MCMCP).",
+    "updated_at": "2026-06-25T00:00:00Z",
+    "tags": ["database", "cloud"]
+  },
+  {
+    "id": "com.slack/slack-mcp",
+    "version": "2026.05.01",
+    "description": "Slack messaging & search MCP server.",
+    "updated_at": "2026-05-01T00:00:00Z",
+    "tags": ["saas"]
+  },
+  {
+    "id": "com.notion/notion-mcp",
+    "version": "1.6.2",
+    "description": "Notion pages / databases MCP integration.",
+    "updated_at": "2026-06-01T00:00:00Z",
+    "tags": ["saas"]
+  },
+  {
+    "id": "com.stripe/stripe-mcp",
+    "version": "1.3.0",
+    "description": "Stripe payments MCP server.",
+    "updated_at": "2026-05-21T00:00:00Z",
+    "tags": ["saas"]
+  },
+  {
+    "id": "com.shopify/shopify-mcp",
+    "version": "0.8.0",
+    "description": "Shopify storefront MCP server (hosted).",
+    "updated_at": "2026-05-15T00:00:00Z",
+    "tags": ["saas"]
+  },
+  {
+    "id": "com.cloudflare/cloudflare-observability-mcp",
+    "version": "2026.06.01",
+    "description": "Cloudflare observability MCP remote server.",
+    "updated_at": "2026-06-01T00:00:00Z",
+    "tags": ["cloud", "devtool"]
+  },
+  {
+    "id": "com.google/gemini-api-docs-mcp",
+    "version": "2026.03.20",
+    "description": "Gemini API docs live MCP server.",
+    "updated_at": "2026-03-20T00:00:00Z",
+    "tags": ["cloud"]
+  },
+  {
+    "id": "cn.tencent/qichacha-mcp",
+    "version": "2026.05.28",
+    "description": "Qichacha enterprise info MCP hosted on Tencent Cloud.",
+    "updated_at": "2026-05-28T00:00:00Z",
+    "tags": ["saas", "cloud"]
+  },
+  {
+    "id": "cn.baidu/qianfan-search-mcp",
+    "version": "1.0.0",
+    "description": "Baidu AI Search MCP server on Qianfan platform.",
+    "updated_at": "2026-06-20T00:00:00Z",
+    "tags": ["cloud", "saas"]
+  },
+  {
+    "id": "io.github.sourcegraph/sourcegraph-mcp",
+    "version": "0.4.0",
+    "description": "Sourcegraph code intelligence MCP server.",
+    "updated_at": "2026-04-18T00:00:00Z",
+    "tags": ["devtool"]
+  },
+  {
+    "id": "io.github.company-x/misc-utils",
+    "version": "0.0.3",
+    "description": "Random utility MCP tools.",
+    "updated_at": "2026-06-01T00:00:00Z",
+    "tags": []
+  }
+]

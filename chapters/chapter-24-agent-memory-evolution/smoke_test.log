@@ -1,0 +1,29 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.12, pytest-9.0.2, pluggy-1.6.0 -- /usr/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default'
+rootdir: /app/data/所有对话/主对话/llm-work/chapters/chapter-24-agent-memory-evolution
+plugins: cov-7.0.0, xdist-3.8.0, hypothesis-6.151.9, anyio-4.12.1, asyncio-1.3.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 18 items
+
+tests/test_memory.py::test_gen1_embed_normalized PASSED                  [  5%]
+tests/test_memory.py::test_gen1_add_and_search PASSED                    [ 11%]
+tests/test_memory.py::test_gen1_build_prompt_contains_query PASSED       [ 16%]
+tests/test_memory.py::test_gen1_demo_runs PASSED                         [ 22%]
+tests/test_memory.py::test_gen2_extract_language_fact PASSED             [ 27%]
+tests/test_memory.py::test_gen2_conflict_resolution PASSED               [ 33%]
+tests/test_memory.py::test_gen2_search_only_valid PASSED                 [ 38%]
+tests/test_memory.py::test_gen2_demo_runs PASSED                         [ 44%]
+tests/test_memory.py::test_gen3_upsert_and_edge PASSED                   [ 50%]
+tests/test_memory.py::test_gen3_bi_temporal_edge PASSED                  [ 55%]
+tests/test_memory.py::test_gen3_graph_walk_bfs PASSED                    [ 61%]
+tests/test_memory.py::test_gen3_hybrid_search PASSED                     [ 66%]
+tests/test_memory.py::test_gen3_tiered_context_char_limit PASSED         [ 72%]
+tests/test_memory.py::test_gen3_demo_runs PASSED                         [ 77%]
+tests/test_memory.py::test_selector_catalog_has_four PASSED              [ 83%]
+tests/test_memory.py::test_selector_langchain_scenario_picks_langmem PASSED [ 88%]
+tests/test_memory.py::test_selector_graph_heavy_prefers_zep PASSED       [ 94%]
+tests/test_memory.py::test_selector_demo_runs PASSED                     [100%]
+
+============================== 18 passed in 2.72s ==============================
