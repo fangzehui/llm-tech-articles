@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "as_of": "2026-Q2",
+    "currency": "CNY",
+    "unit": "per_million_tokens",
+    "note": "本快照为 2026-Q2 公开定价页整理，不代表实时刊例价；具体价格档位与折扣规则请以各家官方定价页实时显示为准。"
+  },
+  "models": [
+    {
+      "name": "DeepSeek-V3",
+      "vendor": "DeepSeek",
+      "input_price": 0.5,
+      "output_price": 8.0,
+      "cache_discount": 0.1,
+      "notes": "缓存命中 1 折"
+    },
+    {
+      "name": "DeepSeek-R1",
+      "vendor": "DeepSeek",
+      "input_price": 1.0,
+      "output_price": 16.0,
+      "cache_discount": 0.1,
+      "notes": "推理档位"
+    },
+    {
+      "name": "Doubao 1.5-pro",
+      "vendor": "ByteDance",
+      "input_price": 0.8,
+      "output_price": 2.0,
+      "cache_discount": 0.2,
+      "notes": "字节内部使用量最大"
+    },
+    {
+      "name": "Qwen-Max",
+      "vendor": "Alibaba",
+      "input_price": 4.0,
+      "output_price": 12.0,
+      "cache_discount": 0.5,
+      "notes": "旗舰对标 GPT-4"
+    },
+    {
+      "name": "Kimi K1.5",
+      "vendor": "Moonshot",
+      "input_price": 2.0,
+      "output_price": 10.0,
+      "cache_discount": 0.25,
+      "notes": "长文本 + Context Caching"
+    },
+    {
+      "name": "GLM-4.5",
+      "vendor": "Zhipu",
+      "input_price": 1.5,
+      "output_price": 6.0,
+      "cache_discount": 0.5,
+      "notes": "智谱高端档位"
+    }
+  ]
+}
