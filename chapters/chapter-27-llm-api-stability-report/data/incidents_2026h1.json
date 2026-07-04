@@ -1,0 +1,58 @@
+{
+  "window": {
+    "start": "2026-04-01T00:00:00Z",
+    "end": "2026-06-30T23:59:59Z",
+    "days": 90
+  },
+  "incidents": [
+    {
+      "api_name": "deepseek-v3.2",
+      "start": "2026-05-14T10:00:00Z",
+      "end": "2026-05-14T10:47:00Z",
+      "impact_ratio": 0.6,
+      "severity": "SEV3",
+      "source_url": "https://api-status.deepseek.com/"
+    },
+    {
+      "api_name": "doubao-1.5-pro",
+      "start": "2026-06-11T14:00:00Z",
+      "end": "2026-06-11T14:31:00Z",
+      "impact_ratio": 0.4,
+      "severity": "SEV3",
+      "source_url": "https://status.volcengine.com/"
+    },
+    {
+      "api_name": "qwen-max",
+      "start": "2026-04-18T09:00:00Z",
+      "end": "2026-04-18T09:47:00Z",
+      "impact_ratio": 0.9,
+      "severity": "SEV2",
+      "source_url": "https://status.aliyun.com/"
+    },
+    {
+      "api_name": "qwen-max",
+      "start": "2026-06-02T03:00:00Z",
+      "end": "2026-06-02T03:23:00Z",
+      "impact_ratio": 0.5,
+      "severity": "SEV3",
+      "source_url": "https://status.aliyun.com/"
+    },
+    {
+      "api_name": "hunyuan-turbo",
+      "start": "2026-05-27T16:00:00Z",
+      "end": "2026-05-27T16:55:00Z",
+      "impact_ratio": 0.7,
+      "severity": "SEV2",
+      "source_url": "https://status.cloud.tencent.com/"
+    },
+    {
+      "api_name": "ernie-4.5-turbo",
+      "start": "2026-06-19T11:00:00Z",
+      "end": "2026-06-19T12:05:00Z",
+      "impact_ratio": 0.8,
+      "severity": "SEV2",
+      "source_url": "https://cloud.baidu.com/support/notice"
+    }
+  ],
+  "disclaimer": "All incident records aggregate publicly available vendor StatusPage entries and community feedback. Numbers here are for reproducibility of the article's methodology and MUST NOT be interpreted as authoritative SLA data."
+}
