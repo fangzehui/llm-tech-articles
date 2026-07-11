@@ -2,7 +2,7 @@
 
 《SK 海力士纳斯达克 IPO 全解：AI 存储史上第三大 IPO、七月估值震荡与 HBM4 供需锁死》配套源码。承接第 29 篇《大模型时代存储市场复盘 2024-2026》与第 30 篇《AI 存储技术方向硬核解析》，本篇聚焦市场事件侧——2026 年 7 月 10 日 SK 海力士登陆纳斯达克这场"AI 存储史上第三大 IPO"的完整解读。
 
-> 📄 **CSDN 正文链接**：待发布后回填（预计位于 `https://blog.csdn.net/LDZKKJ/article/details/<articleId>`）
+> 📄 **CSDN 正文链接**：<https://blog.csdn.net/LDZKKJ/article/details/162796704>
 
 ## 目录结构
 
