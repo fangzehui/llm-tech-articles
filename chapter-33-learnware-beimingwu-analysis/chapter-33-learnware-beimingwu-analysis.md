@@ -8,6 +8,9 @@ tags:
 coverImage: /csdn-covers/33-cover.jpg
 date: 2026-07-12
 category: AI / 大模型
+csdnArticleId: 162798819
+csdnUrl: https://blog.csdn.net/LDZKKJ/article/details/162798819
+publishedAt: 2026-07-12T02:07:34+08:00
 ---
 
 ## 一、传统模型广场的复用之困
