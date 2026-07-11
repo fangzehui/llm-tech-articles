@@ -2,7 +2,7 @@
 
 **篇名：** 英伟达 Vera Rubin HBM4 三家齐过：2048-bit 总线 × 288GB/stack × 50 PFLOPS 世代切换拆解
 
-**CSDN 链接：** 待发布后回填…
+**CSDN 链接：** https://blog.csdn.net/LDZKKJ/article/details/162797140
 
 **发布时间：** 2026-07-12
 
