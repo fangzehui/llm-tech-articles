@@ -1,3 +1,7 @@
+---
+coverImage: /csdn-covers/28-cover.jpg
+---
+
 # DeepSeek-V3.2 二五折半年记：低价 API 到底把哪些场景做了起来
 
 > 从 2025-09-29 [DeepSeek-V3.2-Exp 发布并同步下调 API 价格 50%+](https://api-docs.deepseek.com/quick_start/pricing) 那天算起，到 2026-07-04 写这篇稿子，DeepSeek-V3.2 已经在 2 元/百万 tokens 输入、3 元/百万 tokens 输出的"二五折档"上跑了近半年。半年时间足够让一门"便宜到反常识"的 API 露出它真正的落地边界——**不是所有场景都因为低价而受益，也不是所有场景都因为便宜而值得切换**。这篇稿子不做软文也不做技术复盘，只做一件事：**以场景为纲，把 DeepSeek-V3.2 二五折档半年来的成本-质量对齐情况整理清楚**，并附上场景打分器、cost-per-quality 曲线绘制、多档 DeepSeek 路由伪代码三段可跑的工程代码。全文配套源码在 [chapter-28-deepseek-v32-half-year](https://github.com/fangzehui/llm-tech-articles/tree/main/chapters/chapter-28-deepseek-v32-half-year)，含 ScenarioScorer 打分器 + cost-quality 曲线绘制 + 多档路由伪代码 + pytest 全绿用例。
