@@ -8,6 +8,9 @@ tags:
 coverImage: /csdn-covers/34-cover.jpg
 date: 2026-07-14
 category: AI / 大模型
+csdnArticleId: 162866136
+csdnUrl: https://blog.csdn.net/LDZKKJ/article/details/162866136
+publishedAt: 2026-07-14T11:04:38+08:00
 ---
 
 ## 一、从"是什么"到"跑到哪"：34 号的定位
