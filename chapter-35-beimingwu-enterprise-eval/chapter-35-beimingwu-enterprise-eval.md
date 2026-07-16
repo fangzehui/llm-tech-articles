@@ -8,6 +8,10 @@ tags:
   - Beimingwu
 category: AI / 大模型
 date: 2026-07-18
+csdn_article_id: 162945454
+csdn_url: https://blog.csdn.net/LDZKKJ/article/details/162945454
+csdn_publish_time: 2026-07-16
+csdn_cover_url: https://i-blog.csdnimg.cn/direct/19b96554a83d4cac986122754ed9690a.png
 ---
 
 ## 一、导言：企业接入北冥坞的选型困局
