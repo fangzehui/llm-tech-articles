@@ -1,3 +1,14 @@
+---
+title: 国产开源 MoE 三强横评：Qwen3 235B / Kimi K2 / DeepSeek V3.1 深度技术解读
+tags: [Qwen3, Kimi K2, DeepSeek V3.1, MoE, 开源大模型]
+category: AI / 大模型
+date: 2026-07-18
+csdn_article_id: 162945677
+csdn_url: https://blog.csdn.net/LDZKKJ/article/details/162945677
+csdn_publish_time: 2026-07-16
+csdn_cover_url: https://i-blog.csdnimg.cn/direct/f9a68c8eda40483eaf536ca2776077d1.png
+---
+
 # 国产开源 MoE 三强横评：Qwen3 235B / Kimi K2 / DeepSeek V3.1 深度技术解读
 
 > 点点词元技术专栏 · 第 36 篇
