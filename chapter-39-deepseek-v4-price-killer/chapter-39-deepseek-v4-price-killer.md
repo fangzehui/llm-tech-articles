@@ -379,6 +379,15 @@ DeepSeek V4满血版的意义，不只是"又便宜了"。
 
 ---
 
-- 小程序：**点点词元**
-- 模型广场：https://activity.ldzktoken.com
-- API 文档：https://docs.ldzktoken.com
+相关资源：
+模型广场：[activity.ldzktoken.com](https://activity.ldzktoken.com/activity/index.html)
+小程序"点点词元" — 多模型统一调度平台，OpenAI 兼容协议，Anthropic 兼容协议。
+GitHub 配套源码：https://github.com/fangzehui/llm-tech-articles/tree/main/chapters/chapter-39-deepseek-v4-price-killer
+（含本文用到的完整代码示例、价格对比表与迁移指南）
+
+上下文延伸阅读：
+- [chapter-38-token-peak-pricing](https://blog.csdn.net/LDZKKJ/article/details/163071701)：Token峰谷电价，与本篇V4峰谷计费形成对照；
+- [chapter-37-kimi-k3-launch](https://blog.csdn.net/LDZKKJ/article/details/163070295)：Kimi K3登顶全球代码榜，同期前沿模型动态；
+- [chapter-36-china-open-source-moe](https://blog.csdn.net/LDZKKJ/article/details/162945677)：国产开源MoE三强横评，MoE架构降本逻辑深度拆解
+
+本文价格数据、模型性能指标等内容来源于DeepSeek官方公告、OpenRouter基准平台及第三方API聚合测试，截至2026-07-21；大模型API领域变化较快，实际调用价格与性能表现请以各平台实时显示为准。文中性能指标仅基于本文公开信息整理与公式，不代表任何厂商的SLA承诺或商业推荐，具体业务选型请以自家压测与容错架构为准。如发现事实性错误，欢迎评论区指正，会在附录以errata形式同步修订。
