@@ -1,0 +1,2080 @@
+    <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <link rel="canonical" href="https://blog.csdn.net/LDZKKJ/article/details/163071701"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <meta name="report" content='{"pid": "blog", "spm":"1001.2101"}'>
+    <meta name="referrer" content="always">
+    <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+    <meta name="shenma-site-verification" content="5a59773ab8077d4a62bf469ab966a63b_1497598848">
+    <meta name="applicable-device" content="pc">
+    <link  href="https://g.csdnimg.cn/static/logo/favicon32.ico"  rel="shortcut icon" type="image/x-icon" />
+    <title>Token峰谷电价来了——大模型定价进入“分时计费”时代-CSDN博客</title>
+        <script type="application/ld+json">
+          {"datePublished":"2026-07-21T11:34:46+08:00","@type":"Article","author":[{"@type":"Person","name":"LDZKKJ","url":"https://blog.csdn.net/LDZKKJ"}],"dateModified":"2026-07-21T11:34:49+08:00","@context":"https://schema.org","headline":"Token峰谷电价来了——大模型定价进入“分时计费”时代"}
+        </script>
+    <script>
+      (function(){ 
+        var el = document.createElement("script"); 
+        el.src = "https://s3a.pstatp.com/toutiao/push.js?1abfa13dfe74d72d41d83c86d240de427e7cac50c51ead53b2e79d40c7952a23ed7716d05b4a0f683a653eab3e214672511de2457e74e99286eb2c33f4428830"; 
+        el.id = "ttzz"; 
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(el, s);
+      })(window)
+    </script>
+        <meta name="keywords" content="语言模型,transformer,chatgpt">
+    <meta name="description" content="2026年7月24日15:59 UTC之后，和两个旧模型名永久停用。→ 迁移到（关闭thinking模式）→ 迁移到（开启thinking模式）不是指向V4-Pro，而是指向V4-Flash的思考模式。如果企业简单地把模型名替换成V4-Pro，可能导致成本大幅上升而质量提升有限。V4正式版全系标配百万Token上下文窗口，同时兼容OpenAI ChatCompletions和Anthropic API两套协议。这意味着Claude Code用户只需修改。">
+              <link rel="stylesheet" type="text/css" href="https://csdnimg.cn/release/blogv2/dist/pc/css/detail_enter-c1e64121b8.min.css">
+    <style>
+        #content_views pre{
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none; 
+            user-select: none; 
+        }
+        #content_views pre code{
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none; 
+            user-select: none; 
+        }
+    </style>
+    <script type="application/ld+json">{"@context":"https://ziyuan.baidu.com/contexts/cambrian.jsonld","@id":"https://blog.csdn.net/LDZKKJ/article/details/163071701","appid":"1638831770136827","pubDate":"2026-07-21T11:12:26","title":"Token峰谷电价来了&mdash;&mdash;大模型定价进入&ldquo;分时计费&rdquo;时代-CSDN博客","upDate":"2026-07-21T11:34:46"}</script>
+        <link rel="stylesheet" type="text/css" href="https://csdnimg.cn/release/blogv2/dist/pc/themesSkin/skin-whitemove/skin-whitemove-2af9149bdc.min.css">
+    <script src="https://g.csdnimg.cn/lib/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+    <script src="https://g.csdnimg.cn/lib/jquery-migrate/1.4.1/jquery-migrate.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var isCorporate = false;
+        var username =  "LDZKKJ";
+        var skinImg = "white";
+
+        var blog_address = "https://blog.csdn.net/LDZKKJ";
+        var currentUserName = "";
+        var isOwner = false;
+        var loginUrl = "http://passport.csdn.net/account/login?from=https://blog.csdn.net/LDZKKJ/article/details/163071701";
+        var blogUrl = "https://blog.csdn.net/";
+        var starMapUrl = "https://ai.csdn.net";
+        var inscodeHost = "https://inscode.csdn.net";
+        var paymentBalanceUrl = "https://csdnimg.cn/release/vip-business-components/vipPaymentBalance.js?v=2025122501";
+        var appBlogDomain = "https://app-blog.csdn.net";
+        var avatar = "https://profile-avatar.csdnimg.cn/default.jpg!1";
+        var isCJBlog = false;
+        var isStarMap = false;
+        var articleTitle = "Token峰谷电价来了——大模型定价进入“分时计费”时代";
+        var articleDesc = "2026年7月24日15:59 UTC之后，和两个旧模型名永久停用。→ 迁移到（关闭thinking模式）→ 迁移到（开启thinking模式）不是指向V4-Pro，而是指向V4-Flash的思考模式。如果企业简单地把模型名替换成V4-Pro，可能导致成本大幅上升而质量提升有限。V4正式版全系标配百万Token上下文窗口，同时兼容OpenAI ChatCompletions和Anthropic API两套协议。这意味着Claude Code用户只需修改。";
+        var articleTitles = "Token峰谷电价来了——大模型定价进入“分时计费”时代-CSDN博客";
+        var nickName = "LDZKKJ";
+        var articleDetailUrl = "https://blog.csdn.net/LDZKKJ/article/details/163071701";
+        var vipUrlV = "https://mall.csdn.net/vip?vipSource=learningVip";
+        if(window.location.host.split('.').length == 3) {
+            blog_address = blogUrl + username;
+        }
+        var skinStatus = "White";
+        var blogStaticHost = "https://csdnimg.cn/release/blogv2/"
+          var payColumn = false
+    </script>
+        <meta name="toolbar" content='{"type":"0","fixModel":"1"}'>
+      <script ript src="https://g.csdnimg.cn/??fixed-sidebar/1.1.7/fixed-sidebar.js" type="text/javascript"></script>
+    <script src='//g.csdnimg.cn/common/csdn-report/report.js' type='text/javascript'></script>
+    <link rel="stylesheet" type="text/css" href="https://csdnimg.cn/public/sandalstrap/1.4/css/sandalstrap.min.css">
+    <style>
+        .MathJax_Message, .MathJax_Preview{
+            display: none !important;
+        }
+    </style>
+    <script src="https://dup.baidustatic.com/js/ds.js"></script>
+      <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "lgtpix6r85");
+      </script>
+    <script src="/cdn_cgi_bs_bot/static/crypto.min.js"></script>
+    <script src="/cdn_cgi_bs_bot/static/bot-score-v1.js"></script>
+    <script src="/cdn_cgi_bs_captcha/static/js/waf_captcha_embedded_bs.js"></script>
+</head>
+  <body class="nodata  " style="">
+    <div id="toolbarBox" style="min-height: 48px;"></div>
+        <script>
+            var toolbarSearchExt = '{\"id\":163071701,\"landingWord\":[],\"queryWord\":\"\",\"tag\":[\"语言模型\",\"transformer\",\"chatgpt\"],\"title\":\"Token峰谷电价来了&mdash;&mdash;大模型定价进入&ldquo;分时计费&rdquo;时代\"}';
+        </script>
+    <script src="https://g.csdnimg.cn/common/csdn-toolbar/csdn-toolbar.js" type="text/javascript"></script>
+    <script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+
+    <link rel="stylesheet" href="https://csdnimg.cn/release/blogv2/dist/pc/css/blog_code-01256533b5.min.css">
+    <link rel="stylesheet" href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/chart-3456820cac.css" />
+    <link rel="stylesheet" href="https://g.csdnimg.cn/lib/swiper/6.0.4/css/swiper.css" />
+    <script src="https://g.csdnimg.cn/lib/swiper/6.0.4/js/swiper.js" async></script>
+    <script>
+      var articleId = 163071701;
+      var annotationModuleBootstrapData = {
+        hasAnnotation: false,
+        totalCount: 0,
+        list: [],
+        categories: []
+      };
+      var annotationFeatureEnabled = false;
+
+
+        var privateEduData = [];
+        var privateData = [];
+      var crytojs = "https://csdnimg.cn/release/blogv2/dist/components/js/crytojs-ca5b8bf6ae.min.js";
+      var commentscount = 0;
+      var commentAuth = 2;
+      var curentUrl = "https://blog.csdn.net/LDZKKJ/article/details/163071701";
+      var myUrl = "https://my.csdn.net/";
+      var isGitCodeBlog = false;
+      var vipActivityIcon = "";
+      var isOpenSourceBlog = false;
+      var isVipArticle = false;
+        var highlight = ["transformer","chatgpt","token","语言模型","大模型","时代","定价","计费","分时","进入","电价","峰谷","\""];//高亮数组
+        var isRecommendModule = true;
+          var isBaiduPre = true;
+          var baiduCount = 2;
+          var setBaiduJsCount = 10;
+        var viewCountFormat = 0;
+      var share_card_url = "https://app-blog.csdn.net/share?article_id=163071701&username=LDZKKJ"
+      var mallVipUrl = "https://mall.csdn.net/vip?vipSource=article"
+      var vipArticleAbStyle = "t_1"
+      var vipArticleCpStyle = "t_1"
+      var detailheaderAbCommunity = "exp1"
+      var codeAiAbStyle = "control"
+      var runProjectDeepBlogAB = "isRunProject is false"
+      var gitcodeHighlightWordAB = "exp1"
+
+      var asideCknowsEntryAB = "exp1"
+      var deepblogUrl = ""
+        deepblogUrl = "https://deepblog.net?utm_source=blog_onekey_run";
+      var codeAiAbObjStyle = ""
+        codeAiAbObjStyle = "{\"control\":{\"title\":\"AI写代码\",\"destUrl\":\"https://trae.com.cn?utm_source=community&utm_medium=csdn&utm_campaign=daima\",\"imgUrl\":\"https://i-operation.csdnimg.cn/images/a5fff6f6c9f0464c9a46b130c972952b.png\"},\"exp1\":{\"title\":\"一键获取完整项目代码\",\"runClose\":true,\"destUrl\":\"https://inscode.net?utm_source=blog_code_block\",\"imgUrl\":\"https://i-operation.csdnimg.cn/images/4648c13ca82a446ea1bfb99876a27770.png\",\"blogUrl\":true},\"control_run_project\": {\"title\": \"运行项目并下载源码\",\"destUrl\": \"\",\"imgUrl\":\"https://i-operation.csdnimg.cn/images/46c457a2cf8b4b9b8f17a2ab71461d4a.png\"},\"control_deepblog\": {\"title\": \"AI生成项目\",\"destUrl\": \"https://inscode.net?utm_source=blog_code_block_fixed\",\"imgUrl\":\"https://i-operation.csdnimg.cn/images/9899ea0f099e4e4e8b1fcdb918a27fcd.png\",\"blogUrl\": false},\"exp2\":{\"title\":\"AI编程工具\",\"destUrl\":\"https://www.codebuddy.cn/work/?fromSource=gwzcw.13129862.13129862.13129862&utm_medium=cpc&utm_id=gwzcw.13129862.13129862.13129862\",\"imgUrl\":\"https://i-operation.csdnimg.cn/images/034b15f494eb444abc72cc544790ca5f.svg\"},\"exp3\":{\"title\":\"AI构建项目\",\"destUrl\":\"https://t.csdnimg.cn/9I17\",\"imgUrl\":\"https://i-operation.csdnimg.cn/images/bf18ebff2c3748d59ea0f95954bb4b4a.png\"}}";
+      var aiSideSegment = -1;
+        aiSideSegment = "16";
+      var articleType = 1;
+      var baiduKey = "";
+      var copyPopSwitch = true;
+      var needInsertBaidu = true;
+      var recommendRegularDomainArr = ["blog.csdn.net/.+/article/details/","download.csdn.net/download/","edu.csdn.net/course/detail/","ask.csdn.net/questions/","bbs.csdn.net/topics/","www.csdn.net/gather_.+/"]
+      var codeStyle = "";
+      var baiduSearchType = "";
+      var sharData = "{\"hot\":[{\"id\":1,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/a5f4260710904e538002a6ab337939b3.png\"},{\"id\":2,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/188b37199a2c4b74b1d9ffc39e0d52de.png\"},{\"id\":3,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/14ded358b631444581edd98a256bc5af.png\"},{\"id\":4,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/1470f23a770444d986ad551b9c33c5be.png\"},{\"id\":5,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/c329f5181dc74f6c9bd28c982bb9f91d.png\"},{\"id\":6,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/ccd8a3305e81460f9c505c95b432a65f.png\"},{\"id\":7,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/bc89d8283389440d97fc4d30e30f45e1.png\"},{\"id\":8,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/452d485b4a654f5592390550d2445edf.png\"},{\"id\":9,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/f8b9939db2ed474a8f43a643015fc8b7.png\"},{\"id\":10,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/6de8864187ab4ed3b1db0856369c36ff.png\"},{\"id\":11,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/673cc3470ff74072acba958dc0c46e2d.png\"},{\"id\":12,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/930c119760ac4491804db80f9c6d4e3f.png\"},{\"id\":13,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/15e6befb05a24233bc2b65e96aa8d972.png\"},{\"id\":14,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/2075fd6822184b95a41e214de4daec13.png\"},{\"id\":15,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/859b1552db244eb6891a809263a5c657.png\"},{\"id\":16,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/0be2f920f1f74290a98921974a9613fd.png\"},{\"id\":17,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/2e97e00b43f14afab494ea55ef3f4a6e.png\"},{\"id\":18,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/ff4ab252f46e444686f5135d6ebbfec0.png\"},{\"id\":19,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/ae029bbe99564e79911657912d36524f.png\"},{\"id\":20,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/b3ece39963de440388728e9e7b9bf427.png\"},{\"id\":21,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/6f14651a99ba486e926d63b6fa692997.png\"},{\"id\":22,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/83ceddf050084875a341e32dcceca721.png\"},{\"id\":23,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/b90368b8fd5d4c6c8c79a707d877cf7c.png\"},{\"id\":24,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/aeffae14ecf14e079b2616528c9a393b.png\"},{\"id\":25,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/c5a06b5a13d44d16bed868fc3384897a.png\"},{\"id\":26,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/08b697658b844b318cea3b119e9541ef.png\"},{\"id\":27,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/68ccb0b8d09346ac961d2b5c1a8c77bf.png\"},{\"id\":28,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/a2227a247e37418cbe0ea972ba6a859b.png\"},{\"id\":29,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/3a42825fede748f9993e5bb844ad350d.png\"},{\"id\":30,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/8882abc1dd484224b636966ea38555c3.png\"},{\"id\":31,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/4f6a5f636a3e444d83cf8cc06d87a159.png\"},{\"id\":32,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/1953ef79c56b4407b78d7181bdff11c3.png\"},{\"id\":33,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/c04a2a4f772948ed85b5b0380ed36287.png\"},{\"id\":34,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/5b4fecd05091405ea04d8c0f53e9f2c7.png\"},{\"id\":35,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/b89f576d700344e280d6ceb2a66c2420.png\"},{\"id\":36,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/1c65780e11804bbd9971ebadb3d78bcf.png\"},{\"id\":37,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/d590db2055f345db9706eb68a7ec151a.png\"},{\"id\":38,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/fe602f80700b4f6fb3c4a9e4c135510e.png\"},{\"id\":39,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/39ff2fcd31e04feba301a071976a0ba7.png\"},{\"id\":40,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/f9b61b3d113f436b828631837f89fb39.png\"},{\"id\":41,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/df1aca5f610c4ad48cd16da88c9c8499.png\"},{\"id\":42,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/d7acf73a1e6b41399a77a85040e10961.png\"},{\"id\":43,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/b7f1b63542524b97962ff649ab4e7e23.png\"}],\"vip\":[{\"id\":1,\"vipUrl\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220920101150.png\",\"url\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220920101154.png\"},{\"id\":2,\"vipUrl\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220920101204.png\",\"url\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220920101208.png\"},{\"id\":3,\"vipUrl\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220920101211.png\",\"url\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220920101215.png\"},{\"id\":4,\"vipUrl\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220920101218.png\",\"url\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220920101220.png\"},{\"id\":5,\"vipUrl\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220920101223.png\",\"url\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220920101226.png\"},{\"id\":6,\"vipUrl\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220922100635.png\",\"url\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220922100639.png\"},{\"id\":7,\"vipUrl\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220922100642.png\",\"url\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220922100644.png\"},{\"id\":8,\"vipUrl\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220922100647.png\",\"url\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220922100649.png\"},{\"id\":9,\"vipUrl\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220922100652.png\",\"url\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220922100655.png\"},{\"id\":10,\"vipUrl\":\"https:\\/\\/img-blog.csdnimg.cn\\/55de67481fde4b04b97ad78f11fe369a.png\",\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/bb2418fb537e4d78b10d8765ccd810c5.png\"},{\"id\":11,\"vipUrl\":\"https:\\/\\/img-blog.csdnimg.cn\\/579c713394584d128104ef1044023954.png\",\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/f420d9fbcf5548079d31b5e809b6d6cd.png\"},{\"id\":12,\"vipUrl\":\"https:\\/\\/img-blog.csdnimg.cn\\/75b7f3155ba642f5a4cc16b7baf44122.png\",\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/a9030f5877be401f8b340b80b0d91e64.png\"},{\"id\":13,\"vipUrl\":\"https:\\/\\/img-blog.csdnimg.cn\\/0903d33cafa54934be3780aa54ae958d.png\",\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/2cd8c8929f5a42fca5da2a0aeb456203.png\"},{\"id\":14,\"vipUrl\":\"https:\\/\\/img-blog.csdnimg.cn\\/949fd7c22884439fbfc3c0e9c3b8dee7.png\",\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/dafbea9bd9eb4f3b962b48dc41657f89.png\"},{\"id\":15,\"vipUrl\":\"https:\\/\\/img-blog.csdnimg.cn\\/4119cfddd71d4e6a8a27a18dbb74d90e.png\",\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/c56310c8b6384d9e85388e4e342ce508.png\"},{\"id\":16,\"vipUrl\":\"https:\\/\\/img-blog.csdnimg.cn\\/121575274da142bcbbbbc2e8243dd411.png\",\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/5013993de06542f881018bb9abe2edf7.png\"},{\"id\":17,\"vipUrl\":\"https:\\/\\/img-blog.csdnimg.cn\\/4d97aa6dd4fe4f09a6bef5bdf8a6abcd.png\",\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/76f23877b6ad4066ad45ce8e31b4b977.png\"},{\"id\":18,\"vipUrl\":\"https:\\/\\/img-blog.csdnimg.cn\\/fdb619daf21b4c829de63b9ebc78859d.png\",\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/a1abe5d27a5441f599adfe662f510243.png\"},{\"id\":19,\"vipUrl\":\"https:\\/\\/img-blog.csdnimg.cn\\/676b7707bb11410f8f56bc0ed2b2345c.png\",\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/7ac5b467fbf24e1d8c2de3f3332c4f54.png\"},{\"id\":20,\"vipUrl\":\"https:\\/\\/img-blog.csdnimg.cn\\/0becb8cc227e4723b765bdd69a20fd4a.png\",\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/fdec85b26091486b9a89d0b8d45c3749.png\"},{\"id\":21,\"vipUrl\":\"https:\\/\\/img-blog.csdnimg.cn\\/1a6c06235ad44941b38c54cbc25a370c.png\",\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/410a06cda2d44b0c84578f88275caf70.png\"}],\"map\":{\"hot\":\"热门\",\"vip\":\"VIP\"}}";
+        var commentListModule = ''
+      var canRead = true;
+      var blogMoveHomeArticle = false;
+      var showSearchText = "";
+      var articleSource = 1;
+      var articleReport = '{"pid": "blog", "spm":"1001.2101"}';
+        var baiduSearchChannel = 'pc_relevant'
+        var baiduSearchIdentification = '.235^v43^pc_blog_bottom_relevance_base4'
+        var distRequestId = '1784604916355_01564'
+        var initRewardObject = {
+          giver: currentUserName,
+          anchor: username,
+          articleId: articleId,
+          sign: ''
+        }
+        var isLikeStatus = false;
+        var isUnLikeStatus = false;
+        var studyLearnWord = "";
+        var unUseCount = 0;
+        var codeMaxSize = 0;
+        var overCost = true;
+        var isCurrentUserVip = false;
+        var contentViewsHeight = 0;
+        var contentViewsCount = 0;
+        var contentViewsCountLimit = 5;
+        var isShowConcision = false;
+        var lastTime = 0
+        var postTime = "2026-07-21 11:34:46"
+      var isCookieConcision = false
+      var isHasDirectoryModel = false
+      var isShowSideModel = false
+      var isShowDirectoryModel = true
+      function getCookieConcision(sName){
+        var allCookie = document.cookie.split("; ");
+        for (var i=0; i < allCookie.length; i++){
+          var aCrumb = allCookie[i].split("=");
+          if (sName == aCrumb[0])
+            return aCrumb[1];
+        }
+        return null;
+      }
+      if (getCookieConcision('blog_details_concision') && getCookieConcision('blog_details_concision') == 0){
+        isCookieConcision = true
+        isShowSideModel = true
+        isShowDirectoryModel = false
+      }
+    </script>
+        <div class="main_father clearfix d-flex justify-content-center " style="height:100%;">
+          <div class="container clearfix " id="mainBox">
+          <script>
+          if (!isCookieConcision) {
+            $('.main_father').removeClass('mainfather-concision')
+            $('.main_father .container').removeClass('container-concision')
+          } else {
+            $('#mainBox').css('margin-right', '0')
+          }
+          </script>
+          <main>
+<script type="text/javascript">
+    var resourceId =  "";
+    function getQueryString(name) {   
+      var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象  
+      var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+      if( r != null ) return decodeURIComponent( r[2] ); return '';   
+    }
+    function stripscript(s){ 
+      var pattern = new RegExp("[`~!@#$^&*()=|{}':;',\\[\\].<>/?~！@#￥……&*（）——|{}【】‘；：”“'。，、？%]") 
+      var rs = ""; 
+      for (var i = 0; i < s.length; i++) { 
+        rs = rs+s.substr(i, 1).replace(pattern, ''); 
+      } 
+      return rs;
+    }
+    var blogHotWords = stripscript(getQueryString('utm_term')).length > 1 ? stripscript(getQueryString('utm_term')) : ''
+</script>
+<div class="blog-content-box">
+  <div class="article-header-box" id="article-header-box">
+    <div class="article-header">
+      <div class="article-title-box">
+        <h1 class="title-article" id="articleContentId">Token峰谷电价来了——大模型定价进入“分时计费”时代</h1>
+      </div>
+      <div class="article-info-box">
+          <div class="article-bar-top">
+              <div class="bar-content active">
+              <span class="article-type-text original">原创</span>
+
+              
+                  <span class="time">于&nbsp;2026-07-21 11:34:46&nbsp;发布</span>
+                <div class="read-count-box is-like like-ab-new" data-type="top">
+                  <span class="border-dian">·</span>
+                  <img class="article-read-img article-heard-img active" style="display:none" id="is-like-imgactive-new" src="https://csdnimg.cn/release/blogv2/dist/pc/img/newHeart2023Active.png" alt="">
+                  <img class="article-read-img article-heard-img" style="display:block" id="is-like-img-new" src="https://csdnimg.cn/release/blogv2/dist/pc/img/newHeart2023Black.png" alt="">
+                  <span class="read-count" id="blog-digg-num" style="color:;">
+                      0
+                  </span>
+                </div>
+                <span class="border-dian">·</span>
+                <a id="blog_detail_zk_collection" class="un-collection" data-report-click='{"mod":"popu_823","spm":"1001.2101.3001.4232","ab":"new"}'>
+                  <img class="article-collect-img article-heard-img un-collect-status isdefault" style="display:inline-block" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollect2.png" alt="">
+                  <img class="article-collect-img article-heard-img collect-status isactive" style="display:none" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollectionActive2.png" alt="">
+                  <span class="get-collection">
+                     0
+                  </span>
+                </a>
+
+                    <span class="border-dian">·</span>
+                    <div class="href-article-edit-new">
+                      <span class="href-article-edit-click">本内容遵循CC 4.0 BY-SA版权协议</span>
+                      <div class="slide-content-box-new">
+                                  版权声明：本文为博主原创文章，遵循<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener"> CC 4.0 BY-SA </a>版权协议，转载请附上原文出处链接和本声明。
+                      </div>
+                    </div>
+                    <a class="geo-detection-btn" href="https://mp.csdn.net/geo?title=Token%E5%B3%B0%E8%B0%B7%E7%94%B5%E4%BB%B7%E6%9D%A5%E4%BA%86%E2%80%94%E2%80%94%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9A%E4%BB%B7%E8%BF%9B%E5%85%A5%E2%80%9C%E5%88%86%E6%97%B6%E8%AE%A1%E8%B4%B9%E2%80%9D%E6%97%B6%E4%BB%A3&amp;url=https%3A%2F%2Fblog.csdn.net%2FLDZKKJ%2Farticle%2Fdetails%2F163071701&amp;utm_source=blog_geo" target="_blank" rel="noopener" data-report-view='{"spm":"3001.11779"}' data-report-click='{"spm":"3001.11779","dest":"https://mp.csdn.net/geo?title=Token%E5%B3%B0%E8%B0%B7%E7%94%B5%E4%BB%B7%E6%9D%A5%E4%BA%86%E2%80%94%E2%80%94%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9A%E4%BB%B7%E8%BF%9B%E5%85%A5%E2%80%9C%E5%88%86%E6%97%B6%E8%AE%A1%E8%B4%B9%E2%80%9D%E6%97%B6%E4%BB%A3&amp;url=https%3A%2F%2Fblog.csdn.net%2FLDZKKJ%2Farticle%2Fdetails%2F163071701&amp;utm_source=blog_geo"}'>
+                      <span class="geo-detection-text">GEO检测</span>
+                      <svg class="geo-detection-arrow" width="4" height="8" viewBox="0 0 4 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M0.5 0.5L3.5 4L0.5 7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </a>
+              </div>
+          </div>
+          <div class="blog-tags-box article-header-tags-v2">
+
+<div class="article-header-categories-wrap">
+  <div class="article-header-collect-row">
+    <div class="article-header-category-segment article-header-collect-segment" id="article-header-collect-group" data-column-count="1">
+      <span class="article-header-row-dot" style="display:none">·</span>
+      <div class="article-header-category-group article-header-collect-group">
+        <span class="article-header-label">收录于</span>
+        <div class="article-header-pill-list article-header-collect-list" id="article-header-collect-list">
+    <div class="article-header-badge column-badge column-badge-free">
+      <div class="article-header-badge-trigger">
+        <img class="badge-icon" src="https://i-blog.csdnimg.cn/columns/default/20201014180756757.png?x-oss-process=image/resize,m_fixed,h_224,w_224" alt="" onerror="this.src='https://i-blog.csdnimg.cn/columns/default/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+        <span class="badge-name">AI / 大模型</span>
+      </div>
+      <div class="article-header-badge-dropdown column-dropdown">
+        <p class="dropdown-title">当前文章被收录于：</p>
+        <div class="dropdown-divider"></div>
+        <div class="dropdown-column-body">
+          <div class="dropdown-column-main">
+            <a class="column-detail-link column-detail-cover-link"
+              href="https://blog.csdn.net/ldzkkj/category_13175292.html"
+              target="_blank"
+              rel="noopener"
+              data-report-view='{"spm":"1001.2101.3001.6332"}'
+              data-report-click='{"spm":"1001.2101.3001.6332"}'>
+              <img class="dropdown-cover" src="https://i-blog.csdnimg.cn/columns/default/20201014180756757.png?x-oss-process=image/resize,m_fixed,h_224,w_224" alt="" onerror="this.src='https://i-blog.csdnimg.cn/columns/default/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+            </a>
+            <div class="dropdown-info">
+              <a class="column-detail-link column-detail-name-link"
+                href="https://blog.csdn.net/ldzkkj/category_13175292.html"
+                target="_blank"
+                rel="noopener"
+                title="AI / 大模型"
+                data-report-view='{"spm":"1001.2101.3001.6332"}'
+                data-report-click='{"spm":"1001.2101.3001.6332"}'>
+                <p class="dropdown-name">AI / 大模型</p>
+              </a>
+              <div class="dropdown-stats">
+                <span class="stats-group">
+                  <em class="stats-num">32</em>
+                  <span class="stats-label">篇文章</span>
+                </span>
+                <span class="stats-divider"></span>
+                <span class="stats-group">
+                  <em class="stats-num">0</em>
+                  <span class="stats-label">人学习</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown-actions">
+            <a class="dropdown-btn dropdown-btn-column articleColumnFreeBt" data-id="13175292">订阅专栏</a>
+          <a class="dropdown-link" href="https://blog.csdn.net/ldzkkj/category_13175292.html" target="_blank" rel="noopener" data-report-view='{"spm":"1001.2101.3001.6332"}' data-report-click='{"spm":"1001.2101.3001.6332"}'>查看详情</a>
+        </div>
+      </div>
+    </div>
+          <span class="article-header-community-slot community-name" id="community-name"></span>
+<div class="tag-more-btn collect-more-btn column-collect-more-btn" style="display:none" id="article-header-collect-more-btn" data-report-click='{"spm":"1001.2101.3001.4224"}'>
+  <svg class="more-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+    <circle cx="6" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="18" cy="12" r="2"/>
+  </svg>
+  <div class="column-more-dropdown">
+    <p class="dropdown-title">当前文章被以下社区和专栏收录：</p>
+    <div class="column-more-list" id="article-header-collect-more-list">
+      <div class="dropdown-divider column-more-item-divider"></div>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+          </div>
+      </div>
+    </div>
+  </div>
+    <div id="blogHuaweiyunAdvert"></div>
+
+
+    <article class="baidu_pl">
+        <div id="article_content" class="article_content clearfix">
+        <link rel="stylesheet" href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/kdoc_html_views-1a98987dfd.css">
+        <link rel="stylesheet" href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/ck_htmledit_views-a50b13a894.css">
+                <div id="content_views" class="markdown_views prism-atom-one-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                        <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+                    </svg>
+                    <h2><a id="Token_0"></a>Token峰谷电价来了——大模型定价进入&#34;分时计费&#34;时代</h2> 
+<blockquote> 
+ <p><strong>导读</strong>&#xff1a;DeepSeek V4正式引入峰谷定价&#xff0c;高峰时段价格翻倍&#xff1b;腾讯云同步跟进&#xff1b;阿里云Token Plan推出分时计费&#xff1b;三大运营商集体转向Token经营。当Token开始像电力一样按时段计价&#xff0c;大模型API的&#34;一口价时代&#34;宣告终结。本文拆解峰谷定价的底层逻辑、产业传导路径&#xff0c;以及企业在这场&#34;Token电价革命&#34;中的生存策略。</p> 
+</blockquote> 
+<hr /> 
+<h3><a id="Token_6"></a>一、开篇&#xff1a;你家电表换成了Token表</h3> 
+<p>2026年7月&#xff0c;一件看起来&#34;很小&#34;的事&#xff0c;可能改变整个AI产业的成本结构。</p> 
+<p>DeepSeek给API用户发了一封邮件&#xff1a;V4正式版7月中旬上线&#xff0c;同时引入<strong>峰谷计费</strong>——每天上午9:00-12:00、下午14:00-18:00&#xff0c;API价格翻倍。</p> 
+<p>没看错&#xff0c;<strong>翻倍</strong>。</p> 
+<p>过去两年&#xff0c;用大模型API的人心里有一条铁律&#xff1a;价格只会往下走。厂商轮番降价&#xff0c;百万Token的报价从几十块一路砍到几块钱&#xff0c;一度有人调侃说API迟早免费。DeepSeek自己就是这条铁律最卖力的执行者——今年4月24日V4预览版上线&#xff0c;紧接着就给V4-Pro开出2.5折的价格特惠。</p> 
+<p>结果6月29日&#xff0c;API用户收到那封邮件后&#xff0c;才发现&#34;便宜&#34;两个字不是白给的。</p> 
+<p>刚给完折扣&#xff0c;转头就在高峰时段加价。这两个动作放在一起看着别扭&#xff0c;拆开看&#xff0c;其实是同一门生意的两步棋。而更深层的信号是&#xff1a;<strong>Token正在从&#34;商品&#34;变成&#34;公用事业&#34;&#xff0c;它的定价逻辑正在向电力行业靠拢。</strong></p> 
+<p>峰谷电价咱都熟&#xff1a;白天工厂开工、家家开空调&#xff0c;电贵&#xff1b;后半夜用电低谷&#xff0c;电便宜。电网这么定价&#xff0c;原因有三条&#xff1a;发电能力是有上限的&#xff0c;用电需求是有波峰波谷的&#xff0c;而电存不住&#xff0c;发出来那一秒用不掉就浪费了。</p> 
+<p><strong>把&#34;电&#34;换成&#34;推理算力&#34;&#xff0c;三条全部成立。</strong> GPU集群的规模短期内是死的&#xff1b;国内用户调用API的高峰&#xff0c;就是上班那几个小时&#xff1b;而一张卡在凌晨三点的空闲算力&#xff0c;没法攒到第二天上午十点再卖。</p> 
+<p>所以峰谷计费不是拍脑袋的营销动作&#xff0c;是算力这种资源的<strong>物理属性</strong>决定的定价走向。当一种资源开始按时段定价&#xff0c;它就不再是普通商品&#xff0c;而是公用事业了。</p> 
+<p>这不是DeepSeek一家的选择。从更大的产业背景看&#xff0c;算力正在经历从&#34;过剩&#34;到&#34;紧平衡&#34;的转变。字节跳动豆包大模型的日均调用量在两年内增长了超过1500倍&#xff0c;达到180万亿Token&#xff1b;OpenClaw&#xff08;开源智能体框架&#xff09;的爆发让单次任务Token消耗从万级跃升至百万级&#xff1b;北美四大云厂商&#xff08;亚马逊、微软、谷歌、Meta&#xff09;2026年第一季度资本开支合计1306亿美元&#xff0c;同比增长约70%——这些数字都在说明同一件事&#xff1a;<strong>算力需求的增长速度&#xff0c;远远超过了算力供给的扩张速度。</strong></p> 
+<hr /> 
+<h3><a id="_30"></a>二、峰谷定价全拆解&#xff1a;规则、价格与真实成本</h3> 
+<h4><a id="21_DeepSeek_V4_32"></a>2.1 DeepSeek V4峰谷定价规则</h4> 
+<p>DeepSeek V4的峰谷定价规则非常清晰&#xff0c;简单到&#34;像家里的电表&#34;&#xff1a;</p> 
+<p><strong>高峰时段</strong>&#xff08;北京时间&#xff09;&#xff1a;</p> 
+<ul><li>上午 09:00 - 12:00</li><li>下午 14:00 - 18:00</li><li>合计每天7小时&#xff0c;覆盖国内开发者与企业用户主要工作时间</li></ul> 
+<p><strong>平时时段</strong>&#xff1a;</p> 
+<ul><li>12:00-14:00&#xff08;午休窗口&#xff09;</li><li>18:00-次日09:00&#xff08;夜间&#xff09;</li><li>整个周末及法定节假日</li></ul> 
+<p>高峰时段&#xff0c;全系列模型API调用价格统一调整为平时价格的<strong>2倍</strong>。非高峰时段价格保持不变&#xff0c;基准定价未作上调。</p> 
+<h4><a id="22__48"></a>2.2 完整价格表</h4> 
+<p><strong>deepseek-v4-pro 定价&#xff08;元/百万tokens&#xff09;</strong></p> 
+<table><thead><tr><th>计费项</th><th>平时价格</th><th>高峰价格</th><th>涨幅</th></tr></thead><tbody><tr><td>输入&#xff08;缓存命中&#xff09;</td><td>0.025</td><td>0.05</td><td>&#43;100%</td></tr><tr><td>输入&#xff08;缓存未命中&#xff09;</td><td>3</td><td>6</td><td>&#43;100%</td></tr><tr><td>输出</td><td>6</td><td>12</td><td>&#43;100%</td></tr></tbody></table> 
+<p><strong>deepseek-v4-flash 定价&#xff08;元/百万tokens&#xff09;</strong></p> 
+<table><thead><tr><th>计费项</th><th>平时价格</th><th>高峰价格</th><th>涨幅</th></tr></thead><tbody><tr><td>输入&#xff08;缓存命中&#xff09;</td><td>0.02</td><td>0.04</td><td>&#43;100%</td></tr><tr><td>输入&#xff08;缓存未命中&#xff09;</td><td>1</td><td>2</td><td>&#43;100%</td></tr><tr><td>输出</td><td>2</td><td>4</td><td>&#43;100%</td></tr></tbody></table> 
+<p>规律非常清晰&#xff1a;无论哪种模型、哪个计费项&#xff0c;高峰时段统一翻倍。</p> 
+<h4><a id="23__68"></a>2.3 算一笔真实场景的账</h4> 
+<p>假设一个典型AI应用&#xff0c;每天调用deepseek-v4-pro&#xff0c;平均每次调用消耗&#xff1a;</p> 
+<ul><li>输入 2000 tokens&#xff08;无缓存命中&#xff09;</li><li>输出 500 tokens</li><li>日调用量&#xff1a;10,000次</li></ul> 
+<p><strong>场景A&#xff1a;全部在平时段调用</strong></p> 
+<ul><li>输入成本&#xff1a;2000 x 10000 / 1,000,000 x 3 &#61; 60元/天</li><li>输出成本&#xff1a;500 x 10000 / 1,000,000 x 6 &#61; 30元/天</li><li><strong>合计&#xff1a;90元/天&#xff0c;月均约2,700元</strong></li></ul> 
+<p><strong>场景B&#xff1a;全部在高峰段调用</strong></p> 
+<ul><li>同样计算方式下&#xff1a;<strong>180元/天&#xff0c;月均约5,400元</strong></li></ul> 
+<p>同样的使用量&#xff0c;仅仅因为调用时段不同&#xff0c;<strong>月费相差2,700元</strong>。</p> 
+<p>而对于一个更真实的企业场景——60%调用在上午9-11点&#xff08;高峰&#xff09;&#xff0c;30%在下午2-5点&#xff08;高峰&#xff09;&#xff0c;10%在晚上10点后&#xff08;低谷&#xff09;——从V3时代的统一月费约3,000元&#xff0c;涨到V4峰谷时代的约6,840元&#xff0c;涨幅128%。</p> 
+<p>对于中大型应用来说&#xff0c;这个差距足够让人重新审视架构设计。</p> 
+<h4><a id="24_120_89"></a>2.4 缓存命中&#xff1a;被忽视的120倍价差</h4> 
+<p>峰谷定价表里&#xff0c;有一个数字特别扎眼&#xff1a;<strong>缓存命中价格仅0.025元/百万tokens</strong>&#xff08;V4-Pro平时段&#xff09;。</p> 
+<p>这是什么概念&#xff1f;</p> 
+<ul><li>缓存命中 vs 缓存未命中&#xff1a;<strong>120倍价差</strong>&#xff08;0.025 vs 3&#xff09;</li><li>高峰时段缓存命中 vs 平时段缓存未命中&#xff1a;60倍价差&#xff08;0.05 vs 3&#xff09;</li></ul> 
+<p>这意味着&#xff0c;如果你的系统Prompt固定、知识库前缀稳定、高频问答模式可复用&#xff0c;输入成本可以从3元直接降到0.025元——<strong>这个杠杆比错峰还狠。</strong></p> 
+<p>一个优化良好的知识库RAG系统&#xff0c;缓存命中率做到99%以上并不困难。此时&#xff0c;即使全程在高峰时段调用&#xff0c;输入成本也被压到了接近&#34;零成本&#34;的水平。</p> 
+<h4><a id="25__101"></a>2.5 与海外模型的横向对比</h4> 
+<p>尽管高峰时段价格翻倍&#xff0c;但对比海外头部模型&#xff0c;DeepSeek V4的定价依然极具竞争力&#xff1a;</p> 
+<table><thead><tr><th>模型</th><th>输入&#xff08;$/百万tokens&#xff09;</th><th>输出&#xff08;$/百万tokens&#xff09;</th><th>上下文</th></tr></thead><tbody><tr><td>V4-Pro&#xff08;平时&#xff09;</td><td>$0.435</td><td>$0.87</td><td>1M</td></tr><tr><td>V4-Pro&#xff08;高峰&#xff09;</td><td>$0.87</td><td>$1.74</td><td>1M</td></tr><tr><td>V4-Flash&#xff08;平时&#xff09;</td><td>$0.14</td><td>$0.28</td><td>1M</td></tr><tr><td>V4-Flash&#xff08;高峰&#xff09;</td><td>$0.28</td><td>$0.56</td><td>1M</td></tr><tr><td>GPT-5.6 Sol</td><td>$5.00</td><td>$30.00</td><td>2M</td></tr><tr><td>Claude Opus 4.8</td><td>$5.00</td><td>$25.00</td><td>200K</td></tr><tr><td>Claude Sonnet 5</td><td>$2-3</td><td>$10-15</td><td>200K</td></tr><tr><td>Gemini 2.5 Pro</td><td>$1.25</td><td>$10.00</td><td>1M</td></tr></tbody></table> 
+<p>V4-Pro高峰输出12元&#xff08;约$1.74&#xff09;&#xff0c;仅为GPT-5.6 Sol的约5.8%&#xff0c;为Claude Opus 4.8的约7%。性能方面&#xff0c;V4-Pro在SWE-bench上得分80.6%&#xff0c;接近Opus 4.6的80.8%&#xff1b;Codeforces评分3206。<strong>即使高峰最贵时&#xff0c;价格也只有海外竞品的零头。</strong></p> 
+<hr /> 
+<h3><a id="DeepSeek_120"></a>三、多米诺骨牌&#xff1a;从DeepSeek到全行业的定价传导</h3> 
+<p>DeepSeek不是孤例&#xff0c;只是把话挑明了。</p> 
+<h4><a id="31__124"></a>3.1 国内算力价格全线上涨</h4> 
+<p>2026年以来&#xff0c;国内算力相关的价格几乎全线在动&#xff1a;</p> 
+<ul><li><strong>百度智能云</strong>&#xff1a;3月公告&#xff0c;4月18日起AI算力相关产品价格上调约5%-30%</li><li><strong>腾讯云</strong>&#xff1a;年内两次上调AI算力及容器服务刊例价&#xff1b;7月3日宣布DeepSeek V4&#34;原厂直供&#34;模型跟随原厂同步引入峰谷定价机制</li><li><strong>智谱</strong>&#xff1a;年内三次上调API价格&#xff0c;GLM Coding Plan套餐涨幅自30%起&#xff0c;调价函里写得直白&#xff1a;“市场需求持续强劲增长”</li></ul> 
+<p>需求涨、算力紧&#xff0c;各家的应对路数不同&#xff1a;</p> 
+<ul><li><strong>海外路线</strong>&#xff1a;OpenAI和Anthropic走的是Batch API——任务异步提交、半价计费、承诺24小时内返回&#xff0c;本质是拿&#34;你等一等&#34;换&#34;我便宜点&#34;</li><li><strong>国内路线</strong>&#xff1a;DeepSeek选了更直接的一条——不用改代码、不用等结果&#xff0c;价格牌直接挂出来&#xff0c;高峰贵、平峰便宜&#xff0c;你自己挑时间</li></ul> 
+<p>两条路没有高下之分&#xff0c;只是把成本压力摆上台面的方式不同。共同点是那个藏了两年的事实终于露了出来&#xff1a;</p> 
+<blockquote> 
+ <p><strong>&#34;任何时刻同一个价格&#34;这个承诺&#xff0c;模型厂商已经供不起了。</strong></p> 
+</blockquote> 
+<h4><a id="32_Token_Plan_141"></a>3.2 阿里云Token Plan&#xff1a;分时计费的另一种打开方式</h4> 
+<p>7月中旬&#xff0c;阿里云在WAIC期间正式推出<strong>Token Plan个人版</strong>&#xff0c;同步上线Qwen3.8-Max-Preview模型。这套定价体系的<strong>核心亮点</strong>不是分层订阅本身&#xff0c;而是<strong>分时计费</strong>&#xff1a;</p> 
+<ul><li><strong>日间调用</strong>&#xff1a;Credits消耗低至1折</li><li><strong>夜间叠加</strong>&#xff08;22:00-次日08:00&#xff09;&#xff1a;在1折基础上再享2折&#xff08;即原标准的0.2折&#xff09;</li></ul> 
+<p>这比DeepSeek的&#34;高峰翻倍&#34;更激进——它不是对高峰加价&#xff0c;而是对<strong>非高峰大幅降价</strong>。方向不同&#xff0c;逻辑一致&#xff1a;<strong>用价格信号引导用户行为&#xff0c;平衡算力负载。</strong></p> 
+<p>阿里云百炼平台已服务全球500万用户、120万付费用户。除自研千问系列外&#xff0c;DeepSeek、月之暗面、MiniMax、智谱、阶跃星辰等主流模型均已在百炼上架。当Token像电力一样通过统一平台分发&#xff0c;&#34;峰谷Token&#34;就成了必然的定价形态。</p> 
+<h4><a id="33_TokenHubToken_Plan_152"></a>3.3 腾讯云TokenHub&#xff1a;Token Plan的套餐化探索</h4> 
+<p>腾讯云TokenHub走的是另一条路——<strong>套餐化Token销售</strong>&#xff1a;</p> 
+<ul><li>体验套餐 Lite&#xff1a;39元/月&#xff0c;3500万Tokens</li><li>基础套餐 Standard&#xff1a;99元/月&#xff0c;1亿Tokens</li><li>进阶套餐 Pro&#xff1a;299元/月&#xff0c;3.2亿Tokens&#xff08;折算约0.93元/百万Tokens&#xff09;</li><li>专业套餐 Max&#xff1a;599元/月&#xff0c;6.5亿Tokens</li></ul> 
+<p>套餐价格相比API按量计费便宜50%-80%&#xff0c;覆盖GLM、Kimi、MiniMax等主流模型的统一抵扣。这种模式的底层逻辑是&#xff1a;<strong>用确定性的月费&#xff0c;对冲峰谷定价带来的不确定性。</strong></p> 
+<h4><a id="34__163"></a>3.4 定价演变的三次转向</h4> 
+<p>如果拉长时间线来看&#xff0c;Token计价走到今天&#xff0c;跟二十年前CDN按流量计费走过的路高度重合&#xff1a;</p> 
+<table><thead><tr><th>阶段</th><th>模式</th><th>特征</th><th>对应行业先例</th></tr></thead><tbody><tr><td><strong>第一阶段</strong></td><td>按量计费</td><td>简单透明但预算失控</td><td>CDN早期$0.10-0.20/GB</td></tr><tr><td><strong>第二阶段</strong></td><td>阶梯&#43;包月</td><td>可预算但可能白花钱</td><td>Cloudflare $20/月不限流量</td></tr><tr><td><strong>第三阶段&#xff08;当前&#xff09;</strong></td><td>承诺量&#43;分时&#43;协议价</td><td>折扣大但锁死&#43;时段变量</td><td>AWS预留实例&#43;峰谷电价</td></tr></tbody></table> 
+<p>从&#34;按量&#34;到&#34;包月&#34;到&#34;分时&#43;承诺量&#34;&#xff0c;Token计价正在经历第三次转向。企业用户需要重新思考的不只是&#34;用多少Token&#34;&#xff0c;还有&#34;什么时候用&#34;和&#34;跟谁签协议&#34;。</p> 
+<hr /> 
+<h3><a id="Token_177"></a>四、三大运营商集体转向&#xff1a;从&#34;卖流量&#34;到&#34;卖Token&#34;</h3> 
+<p>如果说DeepSeek的峰谷定价是一个技术事件&#xff0c;那么三大运营商集体拥抱Token经营&#xff0c;则是一个<strong>产业范式事件</strong>。</p> 
+<h4><a id="41_WAIC_2026Token_181"></a>4.1 WAIC 2026&#xff1a;Token经营成为核心议题</h4> 
+<p>2026年7月17-20日&#xff0c;WAIC在上海举办。本届大会最显著的信号转变是&#xff1a;<strong>大模型参数、算力规模的&#34;炫技式&#34;发布明显减少&#xff0c;算电协同、Token效率、成本管控成为分论坛高频话题。</strong></p> 
+<p>中国信通院副院长魏亮在大会期间披露&#xff1a;<strong>我国日均Token调用量已达180万亿</strong>&#xff0c;较年初再创新高&#xff0c;两年增长超千倍。2025年全年公有云企业级Token调用量约2000万亿&#xff0c;而2026年仅第一季度便达到这一规模。</p> 
+<p>在这个背景下&#xff0c;三大运营商展区里&#xff0c;“词元经营&#34;取代了往年的&#34;流量经营”&#xff0c;成为核心关键词。</p> 
+<h4><a id="42_Token_189"></a>4.2 中国电信&#xff1a;Token经营的&#34;先行者&#34;</h4> 
+<p><strong>中国电信董事长柯瑞文</strong>在WAIC 2026中国电信人工智能生态论坛上发表题为《星辰共生 智惠伙伴》的演讲&#xff0c;系统阐述了Token经营战略&#xff1a;</p> 
+<blockquote> 
+ <p>“今年3月&#xff0c;中国电信率先提出Token经营&#xff0c;经过一段时间实践&#xff0c;中国电信进一步加深认识&#xff0c;<strong>五位一体智能云体系就是Token经营体系&#xff0c;Token经营的本质就是为客户提供AI服务</strong>。”</p> 
+</blockquote> 
+<p>柯瑞文透露的关键数据&#xff1a;</p> 
+<ul><li><strong>&#34;息壤&#34;智算平台</strong>纳管算力已超过<strong>100 EFLOPS</strong></li><li>星辰超级智能体<strong>TeleAgent</strong>注册数超<strong>30万</strong>&#xff0c;日均Token消耗超<strong>2000亿</strong></li><li>已建数据中心超<strong>900个</strong>&#xff0c;总电力容量近<strong>8G瓦</strong>&#xff0c;是全国最大的AIDC服务商</li><li>提出继&#34;光改&#34;&#34;云改&#34;之后的**“智改”**战略</li></ul> 
+<p>中国电信的Token经营落地动作包括&#xff1a;</p> 
+<ul><li><strong>星辰TokenHub运营服务平台</strong>&#xff1a;统一接入、智能调度、安全审计与成本管控</li><li><strong>智传网&#xff08;AI Flow&#xff09;</strong>&#xff1a;将传统&#34;比特流&#34;变为&#34;Token流&#34;&#xff0c;带宽压缩至原来的3%&#xff0c;存储降至1/14</li><li><strong>词元安全路由器</strong>&#xff1a;本地网关&#43;云端托管&#xff0c;敏感数据识别与脱敏、模型调用统一审计</li><li><strong>Token套餐</strong>&#xff1a;9.9元/月含1000万Token&#xff0c;叠加流量权益</li></ul> 
+<p>中国信通院院长余晓晖在同一论坛上提出了**“Token智能密度”**概念——在芯片供给受限的背景下&#xff0c;提升&#34;Token智能密度&#34;才是实现高性价比的关键。</p> 
+<h4><a id="43_Token_210"></a>4.3 中国移动&#xff1a;Token运营生态体系</h4> 
+<p>2026移动云大会上&#xff0c;中国移动正式发布<strong>Token运营生态体系</strong>与<strong>模型服务平台MoMA</strong>&#xff1a;</p> 
+<ul><li>接入超<strong>300款模型</strong>&#xff08;自研&#34;九天&#34;&#43;DeepSeek&#43;通义千问&#43;豆包&#43;Kimi&#43;GLM等&#xff09;</li><li>通过Token集约化运营实现单位Token成本压降约<strong>30%</strong></li><li>智能路由支持&#34;成本优先、效果优先、均衡优先&#34;动态切换</li><li>模型超时、限流或故障时<strong>秒级切换</strong></li><li>联合生态伙伴启动<strong>Token运营生态联盟</strong></li></ul> 
+<p>同时&#xff0c;中国移动牵头建设的国资央企人工智能开源**&#34;焕新社区&#34;2.0**发布&#xff1a;</p> 
+<ul><li>开放超2000卡国产算力</li><li>汇聚开源模型超2万个</li><li>高质量行业数据集超3000个</li><li>新推&#34;央企模数共振空间&#34;&#xff1a;数据、模型、算力以Token为计量单位完成价值交换</li></ul> 
+<p>在Token套餐方面&#xff0c;中国移动多省公司已推出地方套餐&#xff1a;</p> 
+<ul><li>河北移动&#xff1a;15元/月含600万Token&#xff0c;梯度包月30元/1200万、45元/1800万</li><li>上海移动&#xff1a;&#34;一号通用、跨平台使用、话费支付&#34;的Token通用服务</li></ul> 
+<h4><a id="44_Token___230"></a>4.4 中国联通&#xff1a;Token &#61; 第四大通信计量单位</h4> 
+<p>中国联通明确将Token列为继<strong>语音、流量、宽带</strong>之后的<strong>第四大通信计量单位</strong>&#xff0c;并推出面向开发者社群的<strong>Coding Plan</strong>专项套餐&#xff0c;将Token服务与传统通信服务深度绑定。</p> 
+<p>在WAIC展台上&#xff0c;联通的核心逻辑是&#xff1a;“让词元为企业创造真实价值”。以上海电气风电集团叶片缺陷检测为例&#xff1a;无人机采集图像后通过机器视觉识别26种叶片缺陷&#xff0c;识别准确率可达90%以上。这背后是联通将&#34;老师傅&#34;的实操经验转化为大模型可调用的标准化范式——通用大模型的Token是泛化知识&#xff0c;工业场景需要的是承载核心工艺的&#34;价值载体&#34;。</p> 
+<h4><a id="45_Token_236"></a>4.5 运营商Token经营的底层逻辑</h4> 
+<p>三大运营商集体转向Token经营&#xff0c;是通信行业继语音到流量之后的<strong>第三次商业模式跃迁</strong>&#xff1a;</p> 
+<table><thead><tr><th>阶段</th><th>核心商品</th><th>计费方式</th><th>商业模式</th></tr></thead><tbody><tr><td>1.0时代</td><td>语音&#43;短信</td><td>按分钟/条</td><td>通信服务</td></tr><tr><td>2.0时代</td><td>流量</td><td>按GB</td><td>数据管道</td></tr><tr><td>3.0时代</td><td>Token</td><td>按时段&#43;按量&#43;按套餐</td><td>AI服务</td></tr></tbody></table> 
+<p>2025年的财务数据说明了转型的紧迫性&#xff1a;</p> 
+<ul><li>传统业务收入&#xff08;语音&#43;短信&#43;流量&#xff09;规模同比下降<strong>0.5%</strong></li><li>中国电信智能业务增长<strong>38.2%</strong></li><li>中国移动智算服务收入增速达<strong>279%</strong></li><li>中国联通人工智能收入增长超<strong>140%</strong></li></ul> 
+<p>&#34;一降一升&#34;之间&#xff0c;Token成为了运营商抓住的新增长极。运营商的三张王牌&#xff1a;</p> 
+<ol><li><strong>算力是自己建的</strong>&#xff08;智算中心&#43;边缘节点&#xff09;</li><li><strong>网络是自己铺的</strong>&#xff08;全光网络&#43;5G-A&#xff09;</li><li><strong>终端连接是自己管的</strong>&#xff08;亿级实名用户&#43;营业厅渠道&#xff09;</li></ol> 
+<p>从Token生产到Token传输再到Token消费&#xff0c;全链路都在运营商手里。这意味着运营商的单位Token成本&#xff0c;理论上可以比纯互联网公司更低。</p> 
+<hr /> 
+<h3><a id="Token_261"></a>五、Token工厂&#xff1a;从概念到工业化的产能跃升</h3> 
+<p>与峰谷定价同步推进的&#xff0c;是&#34;Token工厂&#34;概念在WAIC 2026上的集中爆发。</p> 
+<h4><a id="51__265"></a>5.1 产能数据一览</h4> 
+<table><thead><tr><th>企业/平台</th><th>日均Token服务量</th><th>同比变化</th><th>备注</th></tr></thead><tbody><tr><td>商汤大装置</td><td><strong>2.42万亿</strong></td><td>预计2026全年25倍增长</td><td>异构混合推理&#xff0c;国产芯片MFU提升85%-152%</td></tr><tr><td>PPIO</td><td><strong>1.2万亿</strong></td><td>较去年同期增长超8倍</td><td>中国独立AI云服务商排名第一</td></tr><tr><td>亦庄词元工厂</td><td>日产能<strong>1.4万亿</strong></td><td>—</td><td>单厂产能已超部分独立云商</td></tr><tr><td>五象云谷</td><td>每小时<strong>2000亿</strong></td><td>—</td><td>折合日均约4.8万亿</td></tr><tr><td>趋境科技</td><td>日均<strong>万亿级</strong></td><td>—</td><td>—</td></tr><tr><td>中国电信TeleAgent</td><td>日均消耗<strong>2000亿</strong></td><td>—</td><td>30万&#43;注册用户</td></tr><tr><td>字节豆包</td><td>日均调用<strong>180万亿</strong></td><td>两年增长超1500倍</td><td>含视频模型Seedance 2.0</td></tr></tbody></table> 
+<p>全国日均Token调用量已达<strong>180万亿</strong>&#xff0c;较2024年初的1000亿增长超千倍。</p> 
+<h4><a id="52_Token_279"></a>5.2 Token工厂的&#34;工业化&#34;信号</h4> 
+<p>商汤科技联合创始人杨帆将Token工厂比作鞋厂&#xff1a;</p> 
+<blockquote> 
+ <p>“Token工厂最终还需要回答一个问题&#xff0c;你到底是一个代工厂&#xff0c;还是逐渐变成一个自主品牌&#xff1f;这个行业需要先用代工厂的形式打磨自己的能力&#xff0c;未来就会看到很多新的空间。”</p> 
+</blockquote> 
+<p>PPIO联合创始人姚欣提出了核心公式&#xff1a;</p> 
+<blockquote> 
+ <p><strong>Agent生产力 &#61; Token智能密度 x Agent Loop时长</strong></p> 
+</blockquote> 
+<p>PPIO发布的智能模型网关&#xff0c;实测可将智能水平提升20%&#xff0c;成本降低50%-60%。在DRACO基准测试中&#xff0c;融合多个模型的网关&#xff0c;性能接近Claude Fable5&#xff0c;成本仅为其七分之一。</p> 
+<p>燧原科技在WAIC联合13家单位发布了《Token经济促进智算产业生态结构升级》研究报告。摩尔线程创始人张建中系统介绍了三大&#34;AI工厂&#34;&#xff08;模型训练工厂、词元生产工厂、智能体生产工厂&#xff09;的落地部署。</p> 
+<p><strong>Token工厂正在从&#34;概念&#34;走向&#34;工业化&#34;&#xff0c;从&#34;手工坊&#34;走向&#34;标准化产线&#34;。</strong> 当产能规模以&#34;数量级&#34;为单位跃升&#xff0c;Token作为智能经济&#34;水电煤&#34;的地位&#xff0c;正在从&#34;技术共识&#34;走向&#34;工业化确认&#34;。</p> 
+<h4><a id="53__295"></a>5.3 旧接口退役&#xff1a;最后一班列车</h4> 
+<p>与上述所有变化同步的&#xff0c;是一个容易被忽略但极其重要的时间节点&#xff1a;</p> 
+<p><strong>2026年7月24日15:59 UTC之后&#xff0c;<code>deepseek-chat</code>和<code>deepseek-reasoner</code>两个旧模型名永久停用。</strong></p> 
+<ul><li><code>deepseek-chat</code> → 迁移到 <code>deepseek-v4-flash</code>&#xff08;关闭thinking模式&#xff09;</li><li><code>deepseek-reasoner</code> → 迁移到 <code>deepseek-v4-flash</code>&#xff08;开启thinking模式&#xff09;</li></ul> 
+<p>注意&#xff1a;<code>deepseek-reasoner</code><strong>不是</strong>指向V4-Pro&#xff0c;而是指向V4-Flash的思考模式。如果企业简单地把模型名替换成V4-Pro&#xff0c;可能导致成本大幅上升而质量提升有限。</p> 
+<p>V4正式版全系标配百万Token上下文窗口&#xff0c;同时兼容OpenAI ChatCompletions和Anthropic API两套协议。这意味着Claude Code用户只需修改<code>ANTHROPIC_BASE_URL</code>指向DeepSeek API&#xff0c;就能用V4跑Claude Code的所有功能。</p> 
+<p><strong>对于还在使用旧接口的企业&#xff0c;迁移窗口正在收窄。</strong> 7月24日之后&#xff0c;没有任何宽限期或回退机制。</p> 
+<hr /> 
+<h3><a id="_312"></a>六、企业应对策略&#xff1a;峰谷电价下的生存指南</h3> 
+<p>对于月API消耗超过万元的企业来说&#xff0c;峰谷定价不是一个可以&#34;看热闹&#34;的事件。以下是基于产业调研和实操经验的系统性应对策略。</p> 
+<h4><a id="61__316"></a>6.1 策略一&#xff1a;任务分级&#xff0c;错峰调度</h4> 
+<p>并非所有AI调用都需要实时响应。将任务分为两类&#xff1a;</p> 
+<p><strong>实时任务</strong>&#xff08;用户直接等待结果&#xff09;&#xff1a;</p> 
+<ul><li>聊天对话、即时问答、代码Copilot</li><li>保持在高峰时段正常调用&#xff0c;但优先启用缓存优化</li></ul> 
+<p><strong>批处理任务</strong>&#xff08;结果不需要立即返回&#xff09;&#xff1a;</p> 
+<ul><li>日报生成、数据摘要、邮件撰写、内容审核、离线索引构建</li><li>调度到平时段&#xff08;18:00后或12:00-14:00午休窗口&#xff09;批量执行</li></ul> 
+<p>仅靠这一条&#xff0c;批处理任务的Token成本<strong>直接减半</strong>。</p> 
+<p>任务分级标准参考&#xff1a;</p> 
+<ul><li>P0&#xff08;实时&#xff09;&#xff1a;用户等待&lt;3秒 → 高峰时段&#xff0c;缓存优先</li><li>P1&#xff08;准实时&#xff09;&#xff1a;用户等待&lt;30秒 → 高峰/平峰均可</li><li>P2&#xff08;批处理&#xff09;&#xff1a;无实时要求 → 强制平峰/夜间调度</li><li>P3&#xff08;离线&#xff09;&#xff1a;T&#43;1可接受 → 夜间/周末批量执行</li></ul> 
+<h4><a id="62_Prompt_Cache_336"></a>6.2 策略二&#xff1a;最大化Prompt Cache命中率</h4> 
+<p>缓存命中价格&#xff08;0.025元&#xff09;与未命中价格&#xff08;3元&#xff09;相差<strong>120倍</strong>。这是峰谷定价时代最大的成本杠杆。</p> 
+<p><strong>实操要点</strong>&#xff1a;</p> 
+<ol><li><strong>固定System Prompt</strong>&#xff1a;始终放在消息列表最前面&#xff0c;DeepSeek自动缓存重复前缀</li><li><strong>知识库前缀稳定化</strong>&#xff1a;RAG检索的上下文模板保持一致&#xff0c;避免每次请求的前缀不同</li><li><strong>多轮对话复用</strong>&#xff1a;利用1M上下文窗口&#xff0c;在一次请求中包含完整对话历史</li><li><strong>结构化输出模板</strong>&#xff1a;固定JSON schema的前缀部分&#xff0c;让模板文本命中缓存</li></ol> 
+<p><strong>量化收益</strong>&#xff1a;</p> 
+<ul><li>缓存命中率从0%提升到80%&#xff1a;输入成本降低约96倍</li><li>叠加错峰调度&#xff1a;总成本可降低192倍</li></ul> 
+<h4><a id="63_ProFlash_350"></a>6.3 策略三&#xff1a;Pro与Flash按任务复杂度分流</h4> 
+<table><thead><tr><th>任务类型</th><th>推荐模型</th><th>平时输出成本</th><th>高峰输出成本</th></tr></thead><tbody><tr><td>复杂推理、代码架构</td><td>V4-Pro</td><td>6元/百万</td><td>12元/百万</td></tr><tr><td>日常对话、简单问答</td><td>V4-Flash</td><td>2元/百万</td><td>4元/百万</td></tr><tr><td>分类、提取、格式化</td><td>Flash/本地小模型</td><td>&lt;1元/百万</td><td>&lt;2元/百万</td></tr></tbody></table> 
+<p>Flash的输出成本是Pro的<strong>1/3</strong>。对于能降级的任务&#xff0c;这是直接的成本节省。更进一步的&#xff0c;高频低难度的调用可以考虑下沉到本地部署的轻量模型&#xff0c;完全绕过API计费。</p> 
+<h4><a id="64__360"></a>6.4 策略四&#xff1a;多云调度与中转服务</h4> 
+<p>峰谷定价的核心挑战在于&#xff1a;<strong>你的业务高峰&#xff0c;恰好是API的高峰。</strong> 面向终端用户的实时应用&#xff0c;调用时段几乎无法挪动。</p> 
+<p>此时&#xff0c;多云调度和中转服务的价值就体现出来了&#xff1a;</p> 
+<ul><li><strong>跨供应商路由</strong>&#xff1a;当DeepSeek处于高峰时段时&#xff0c;自动切换到同档次的其他模型&#xff08;如通义千问、GLM等&#xff09;&#xff0c;避开高峰溢价</li><li><strong>跨地域调度</strong>&#xff1a;利用不同时区的算力资源&#xff0c;将请求路由到非高峰时段的节点</li><li><strong>缓存共享层</strong>&#xff1a;在中转层建立统一的Prompt缓存&#xff0c;跨模型复用缓存命中</li></ul> 
+<p>这是&#34;峰谷电价&#34;时代的必然产物&#xff1a;<strong>当每个供应商都有自己的&#34;电价表&#34;&#xff0c;聪明的用户需要的是一张&#34;跨供应商的最优调度图&#34;。</strong></p> 
+<h4><a id="65__372"></a>6.5 策略五&#xff1a;预算管理与成本监控</h4> 
+<p>峰谷定价时代&#xff0c;Token成本从&#34;固定单价x用量&#34;变成了&#34;时段加权x用量&#43;缓存命中率x输入占比&#34;的复合函数。预算管理需要升级&#xff1a;</p> 
+<ol><li><strong>设置分时段预算告警</strong>&#xff1a;高峰时段和平时段分别设置阈值</li><li><strong>实时监控缓存命中率</strong>&#xff1a;将其作为核心成本指标&#xff0c;而不仅是性能指标</li><li><strong>建立Token成本看板</strong>&#xff1a;按时段、模型、任务类型三维分解成本</li><li><strong>月度成本复盘</strong>&#xff1a;对比&#34;理论最优成本&#34;与实际成本的差距&#xff0c;找到优化空间</li></ol> 
+<h4><a id="66_Token_Plan_382"></a>6.6 策略六&#xff1a;拥抱Token Plan套餐模式</h4> 
+<p>在峰谷定价时代&#xff0c;&#34;按量计费&#34;的不确定性是企业最大的痛点。阿里云和腾讯云推出的Token Plan套餐&#xff0c;提供了一条确定性成本的出路。</p> 
+<p><strong>套餐模式的核心优势</strong>&#xff1a;</p> 
+<ul><li><strong>成本可预测</strong>&#xff1a;月费固定&#xff0c;预算可控&#xff0c;不再是&#34;用了才知道&#34;</li><li><strong>跨模型统一抵扣</strong>&#xff1a;一个套餐覆盖多个模型&#xff0c;无需分别采购</li><li><strong>对冲峰谷波动</strong>&#xff1a;套餐价格不受峰谷时段影响&#xff08;或影响极小&#xff09;</li><li><strong>叠加折扣</strong>&#xff1a;如阿里云Token Plan的夜间折上折、日间1折等</li></ul> 
+<p><strong>适用场景</strong>&#xff1a;</p> 
+<ul><li>月消耗稳定的中型团队&#xff08;3-10人开发团队&#xff09;</li><li>以AI编程为主要用途的开发者&#xff08;Claude Code、Cursor等场景&#xff09;</li><li>预算敏感但用量可预测的企业</li></ul> 
+<p><strong>注意事项</strong>&#xff1a;套餐未用完的额度不结转。选择套餐前&#xff0c;务必基于过去3个月的实际消耗数据&#xff0c;选择合适的档位。宁可&#34;略超&#34;选高一档&#xff0c;也不要因为怕浪费而选低档导致月中断供。</p> 
+<hr /> 
+<h3><a id="Agent_401"></a>六点五、为什么峰谷定价不可逆&#xff1f;——Agent时代的算力困局</h3> 
+<p>要理解峰谷定价为什么&#34;不可逆&#34;&#xff0c;需要看到更深一层的产业变化&#xff1a;<strong>Agent时代的Token消耗&#xff0c;已经不是&#34;对话时代&#34;的量级了。</strong></p> 
+<p>中电信人工智能科技公司董事长何忠江在WAIC上透露了一个关键数据&#xff1a;<strong>智能体用户每天大约会消耗1000万Token&#xff0c;是传统对话软件的1000倍左右。</strong></p> 
+<p>这意味着什么&#xff1f;</p> 
+<p>过去&#xff0c;一个大模型用户每天对话20次&#xff0c;每次消耗500-1000个Token&#xff0c;一天总消耗约1-2万Token。现在&#xff0c;一个Agent用户让智能体去完成一个编程任务——它需要自主规划、写代码、调试、报错、重试、再调试——一个复杂任务下来&#xff0c;可能消耗50万甚至100万Token。</p> 
+<p>全国日均Token调用量从2024年初的1000亿&#xff0c;暴涨到2026年中的180万亿&#xff0c;两年增长超千倍。这不是线性增长&#xff0c;是指数级爆炸。</p> 
+<p><strong>而供给端呢&#xff1f;</strong> GPU集群的扩建周期是12-18个月&#xff0c;电力基础设施的建设周期更长。当需求以&#34;月&#34;为单位翻倍&#xff0c;供给以&#34;年&#34;为单位扩容&#xff0c;供需缺口只能在高峰时段通过价格信号来调节。</p> 
+<p>这就是峰谷定价的底层逻辑&#xff1a;<strong>它不是厂商的&#34;贪婪&#34;&#xff0c;而是物理世界的供需法则在数字世界的投射。</strong> 只要Agent时代的Token消耗速度继续指数级增长&#xff0c;峰谷价差就不会消失&#xff0c;只会越来越精细化。</p> 
+<p>Uber的AI预算在4月底就全部花光&#xff0c;一名高管在单次两小时编码任务中产生了1200美元费用。亚马逊悄悄下线了内部的&#34;Token消耗排行榜&#34;&#xff0c;明确要求员工&#34;不要为了冲排名刻意消耗Token&#34;。Meta为约6000名员工设置了Token使用上限。</p> 
+<p>当全球最大的科技公司都开始给员工的Token使用设限时&#xff0c;&#34;任何时刻同一个价格&#34;的承诺&#xff0c;自然也就不可能维持了。</p> 
+<hr /> 
+<h3><a id="Token_423"></a>七、行业展望&#xff1a;Token计价的下一页</h3> 
+<h4><a id="71__425"></a>7.1 峰谷价差的未来</h4> 
+<p>峰谷价差的宽窄&#xff0c;本质反映的是算力供需的松紧。几个值得关注的变量&#xff1a;</p> 
+<p><strong>可能收窄价差的因素</strong>&#xff1a;</p> 
+<ul><li>下半年国产算力新品陆续放量&#xff08;燧原科技IPO已过会&#xff0c;瀚博半导体、清微智能等推进上市&#xff09;</li><li>英伟达推出AI算力普惠计划&#xff0c;扶持新兴云服务商</li><li>Meta筹划对外出售AI算力&#xff0c;全球算力供给增加</li><li>推理引擎效率持续提升&#xff08;商汤异构混合推理使国产芯片MFU提升85%-152%&#xff09;</li></ul> 
+<p><strong>可能扩大价差的因素</strong>&#xff1a;</p> 
+<ul><li>智能体应用爆发式增长&#xff08;Agent单次任务Token消耗是传统对话的10-100倍&#xff09;</li><li>北美CSP 2026年Q1资本开支合计1306亿美元&#xff0c;同比增长约70%</li><li>企业全面拥抱AI&#xff0c;Token消耗从&#34;鼓励用&#34;变成&#34;刚需用&#34;</li></ul> 
+<h4><a id="72__440"></a>7.2 从峰谷定价到更精细的定价体系</h4> 
+<p>电网走到今天&#xff0c;有分时电价、阶梯电价&#xff0c;还有面向工商业的需量电价。Token的计价方式&#xff0c;大概率才刚翻开第一页。</p> 
+<p>可以预见的演进方向&#xff1a;</p> 
+<ol><li><strong>更细的时段划分</strong>&#xff1a;从&#34;两档&#34;&#xff08;高峰/平时&#xff09;到&#34;四档&#34;甚至&#34;六档&#34;</li><li><strong>按任务类型差异化</strong>&#xff1a;推理密集型任务 vs 生成密集型任务不同定价</li><li><strong>承诺量&#43;分时组合</strong>&#xff1a;年度承诺量客户享受更低的峰谷价差</li><li><strong>Token Plan订阅化</strong>&#xff1a;用确定性月费对冲分时定价的不确定性</li><li><strong>&#34;Token保险&#34;产品</strong>&#xff1a;锁定未来N个月的Token价格上限&#xff0c;对冲涨价风险</li></ol> 
+<h4><a id="73_Token_451"></a>7.3 终局思考&#xff1a;Token的&#34;智能密度&#34;</h4> 
+<p>中国信通院院长余晓晖提出的&#34;Token智能密度&#34;概念&#xff0c;可能指向更深层的产业变革&#xff1a;</p> 
+<blockquote> 
+ <p>Token的终局不是&#34;最便宜的Token&#34;&#xff0c;而是&#34;每元Token创造最多任务价值&#34;。</p> 
+</blockquote> 
+<p>当Token像电力一样成为基础设施&#xff0c;竞争的核心不再是&#34;谁的电便宜&#34;&#xff0c;而是&#34;谁的电器效率高&#34;。这意味着&#xff1a;</p> 
+<ul><li>模型厂商的竞争力将从&#34;参数大&#34;转向&#34;每Token智能产出高&#34;</li><li>云厂商的竞争力将从&#34;算力多&#34;转向&#34;Token调度优&#34;</li><li>企业的竞争力将从&#34;用得起AI&#34;转向&#34;用好AI的每一分钱&#34;</li></ul> 
+<hr /> 
+<h4><a id="74_Token_465"></a>7.4 企业级Token服务的&#34;信通院标准&#34;</h4> 
+<p>值得关注的是&#xff0c;信通院在WAIC期间发布了首批**“企业级Token服务性能攀登基线”**&#xff0c;对Token服务商设定了明确的性能门槛&#xff1a;</p> 
+<ul><li><strong>TPS&#xff08;每秒Token数&#xff09;≥ 55</strong></li><li><strong>TTFT&#xff08;首Token延迟&#xff09;≤ 0.9秒</strong></li><li><strong>调用成功率 ≥ 99.9%</strong></li></ul> 
+<p>这意味着&#xff0c;Token服务正在从&#34;能用就行&#34;走向&#34;有标准可衡量&#34;。峰谷定价不仅是价格的变化&#xff0c;更伴随着服务质量的分层——高峰时段愿意多付钱的用户&#xff0c;理应获得更高的服务保障。</p> 
+<p>对于中转服务商来说&#xff0c;这套标准的意义在于&#xff1a;<strong>不能只比价格&#xff0c;还要比稳定性。</strong> 在峰谷调度的过程中&#xff0c;如何保证跨模型切换时的延迟不飙、质量不降、成功率不跌&#xff0c;是真正的技术壁垒。</p> 
+<h3><a id="Token_477"></a>八、尾声&#xff1a;Token水电煤时代&#xff0c;谁在帮你&#34;省钱省电&#34;&#xff1f;</h3> 
+<p>峰谷定价的本质&#xff0c;是Token从&#34;商品&#34;走向&#34;公用事业&#34;的标志性事件。当API报价单上的数字从常数变成时间函数&#xff0c;当Token成本像电费一样成为企业IT账本里需要专人琢磨的科目——整个行业的游戏规则已经变了。</p> 
+<p><strong>但变化也带来了真实的痛点&#xff1a;</strong></p> 
+<ul><li>高峰时段调用官方API&#xff0c;成本直接翻倍。对于面向C端的实时应用来说&#xff0c;用户活跃时间恰恰就是高峰时段&#xff0c;<strong>你根本躲不开</strong>。</li><li>多供应商、多模型、多时段的定价策略各不相同&#xff0c;企业需要投入大量精力去&#34;算账&#34;&#xff0c;而不是&#34;做产品&#34;。</li><li>旧接口7月24日退役&#xff08;<code>deepseek-chat</code>、<code>deepseek-reasoner</code>永久停用&#xff09;&#xff0c;迁移测试的窗口正在收窄。</li></ul> 
+<p><strong>这就是为什么&#34;中转调度&#34;在峰谷电价时代变得前所未有的重要。</strong></p> 
+<p>想象一下这个场景&#xff1a;你是一家AI编程助手的开发者&#xff0c;每天有上万用户在工作日上午10点集中使用你的产品。DeepSeek V4-Pro正处于高峰时段&#xff0c;输出价格12元/百万Token。与此同时&#xff0c;通义千问的某个同档次模型可能正处于&#34;日间1折&#34;优惠窗口&#xff0c;Kimi的某个版本可能刚刚完成一轮降价。</p> 
+<p><strong>如果你还在手动对比每家供应商的&#34;电价表&#34;来决定用哪个模型&#xff0c;那你已经落后了。</strong></p> 
+<p>在峰谷定价之前&#xff0c;中转服务的核心价值是&#34;一个API Key调所有模型&#34;的便利性。但在峰谷定价之后&#xff0c;它的价值发生了质变——<strong>从&#34;便利工具&#34;变成了&#34;成本优化工具&#34;&#xff0c;从&#34;省事&#34;变成了&#34;省钱&#34;。</strong></p> 
+<p><strong>点点词元&#xff08;Token中转站&#xff09;</strong> 在峰谷电价时代提供了一套完整的&#34;Token智能电网&#34;方案&#xff1a;</p> 
+<p><strong>1. 跨供应商智能调度&#xff1a;自动帮你选&#34;最便宜的时段&#34;</strong></p> 
+<p>当某一供应商处于高峰时段溢价区间&#xff0c;点点词元的智能路由引擎会自动将请求分发到同等质量、当前处于&#34;平峰价&#34;的替代模型。你不需要手动对比DeepSeek、通义千问、GLM、Kimi、MiniMax的实时价格——点点词元的调度系统在毫秒级完成这个决策。</p> 
+<p><strong>核心收益&#xff1a;让你的每一分钱都花在&#34;低谷电价&#34;上&#xff0c;高峰时段的溢价被跨供应商调度自动消化。</strong></p> 
+<p><strong>2. 统一缓存层&#xff1a;跨模型的Prompt缓存复用</strong></p> 
+<p>点点词元在中转层建立了统一的Prompt缓存机制&#xff0c;无论底层路由到哪个模型&#xff0c;相同的System Prompt和知识库前缀都能命中缓存。将输入成本从3元/百万Token压到接近0.025元的水平——120倍的价差&#xff0c;在中转层被自动捕获。</p> 
+<p><strong>3. 双协议兼容&#xff1a;零成本迁移</strong></p> 
+<p>同时兼容OpenAI SDK和Anthropic SDK&#xff0c;无需改代码即可切换底层模型。对于7月24日前需要从<code>deepseek-chat</code>/<code>deepseek-reasoner</code>迁移的企业&#xff0c;点点词元提供了无缝的过渡方案——旧接口地址不变&#xff0c;后端自动路由到V4新接口&#xff0c;thinking模式自动适配。</p> 
+<p><strong>4. 价格优势&#xff1a;直充比官方便宜20%-50%</strong></p> 
+<p>在峰谷定价时代&#xff0c;这个折扣叠加跨供应商智能调度&#xff0c;成本优势进一步放大。当官方高峰时段V4-Pro输出价格12元/百万Token时&#xff0c;通过点点词元的中转调度&#43;缓存优化&#43;直充折扣&#xff0c;实际成本可以压到远低于这个数字。</p> 
+<p><strong>5. 统一计量与成本看板</strong></p> 
+<p>一套API Key、一个Token账户、一张账单。花了多少、用了多少、哪个时段花了多少、哪个模型消耗最大——全部可视化。再也不用在DeepSeek、腾讯云、阿里云、运营商的后台之间来回切换对账。</p> 
+<hr /> 
+<p><strong>Token的计价方式&#xff0c;大概率才刚翻开第一页。</strong> 但在这一页上&#xff0c;已经写得清清楚楚&#xff1a;<strong>不是API变贵了&#xff0c;而是你需要更聪明地调用它。</strong></p> 
+<p>在电力市场&#xff0c;精明的工厂会安装自己的&#34;智能电表&#34;来优化用电成本。在Token市场&#xff0c;点点词元就是你的&#34;Token智能电表&#34;——<strong>你只管用电&#xff0c;我帮你选最便宜的时段。</strong></p> 
+<blockquote> 
+ <p>&#x1f449; <strong>点点词元标准推广入口</strong>&#xff1a;<a href="https://activity.ldzktoken.com/activity/index.html" rel="nofollow">https://activity.ldzktoken.com/activity/index.html</a></p> 
+ <p>兼容OpenAI SDK &#43; Anthropic SDK双协议 | 直充比官方便宜20%-50% | 跨供应商智能调度 | 统一缓存层</p> 
+ <p><strong>在Token进入&#34;分时计费&#34;的时代&#xff0c;让点点词元帮你把&#34;峰谷电价&#34;变成成本优势。</strong></p> 
+</blockquote> 
+<hr /> 
+<p><em>本文数据截至2026年7月20日&#xff0c;基于DeepSeek官方公告、WAIC 2026公开资料、中国信通院披露数据、各云厂商官方定价页面整理。文中涉及的价格、政策可能随厂商调整而变化&#xff0c;请以官方最新公告为准。</em></p>
+                </div>
+                <link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/markdown_views-e1cc28b339.css" rel="stylesheet">
+                <link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/style-d1e89cace4.css" rel="stylesheet">
+        </div>
+    </article>
+
+
+
+
+
+  <script>
+    $(function() {
+      setTimeout(function () {
+        var mathcodeList = document.querySelectorAll('.htmledit_views img.mathcode');
+        if (mathcodeList.length > 0) {
+          for (let i = 0; i < mathcodeList.length; i++) {
+            if (mathcodeList[i].complete) {
+              if (mathcodeList[i].naturalWidth === 0 || mathcodeList[i].naturalHeight === 0) {
+                var alt = mathcodeList[i].alt;
+                alt = '\\(' + alt + '\\)';
+                var curSpan = $('<span class="img-codecogs"></span>');
+                curSpan.text(alt);
+                $(mathcodeList[i]).before(curSpan);
+                $(mathcodeList[i]).remove();
+              }
+            } else {
+              mathcodeList[i].onerror = function() {
+                var alt = mathcodeList[i].alt;
+                alt = '\\(' + alt + '\\)';
+                var curSpan = $('<span class="img-codecogs"></span>');
+                curSpan.text(alt);
+                $(mathcodeList[i]).before(curSpan);
+                $(mathcodeList[i]).remove();
+              };
+            }
+          }
+          MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+        }
+      }, 500)
+    });
+  </script>
+<div class="article-footer-categories-wrap">
+  <div class="article-footer-category-segment">
+    <div class="article-footer-category-group">
+      <span class="article-footer-label">标签</span>
+      <div class="article-footer-pill-list">
+          <a rel="nofollow" data-report-query="spm=1001.2101.3001.4223" data-report-click='{"mod":"popu_626","spm":"1001.2101.3001.4223","strategy":"语言模型","ab":"new","extra":"{\"searchword\":\"语言模型\"}"}' data-report-view='{"mod":"popu_626","spm":"1001.2101.3001.4223","strategy":"语言模型","ab":"new","extra":"{\"searchword\":\"语言模型\"}"}' class="tag-link-new" href="https://so.csdn.net/so/search/s.do?q=%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B&t=all&o=vip&s=&l=&f=&viparticle=&from_tracking_code=tag_word&from_code=app_blog_art" target="_blank" rel="noopener">#语言模型</a>
+          <a rel="nofollow" data-report-query="spm=1001.2101.3001.4223" data-report-click='{"mod":"popu_626","spm":"1001.2101.3001.4223","strategy":"transformer","ab":"new","extra":"{\"searchword\":\"transformer\"}"}' data-report-view='{"mod":"popu_626","spm":"1001.2101.3001.4223","strategy":"transformer","ab":"new","extra":"{\"searchword\":\"transformer\"}"}' class="tag-link-new" href="https://so.csdn.net/so/search/s.do?q=transformer&t=all&o=vip&s=&l=&f=&viparticle=&from_tracking_code=tag_word&from_code=app_blog_art" target="_blank" rel="noopener">#transformer</a>
+          <a rel="nofollow" data-report-query="spm=1001.2101.3001.4223" data-report-click='{"mod":"popu_626","spm":"1001.2101.3001.4223","strategy":"chatgpt","ab":"new","extra":"{\"searchword\":\"chatgpt\"}"}' data-report-view='{"mod":"popu_626","spm":"1001.2101.3001.4223","strategy":"chatgpt","ab":"new","extra":"{\"searchword\":\"chatgpt\"}"}' class="tag-link-new" href="https://so.csdn.net/so/search/s.do?q=chatgpt&t=all&o=vip&s=&l=&f=&viparticle=&from_tracking_code=tag_word&from_code=app_blog_art" target="_blank" rel="noopener">#chatgpt</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+<div class="directory-boxshadow-dialog" style="display:none;">
+  <div class="directory-boxshadow-dialog-box">
+  </div>
+   <div class="vip-limited-time-offer-box-new" id="vip-limited-time-offer-box-new">
+      <img class="limited-img limited-img-new" src="https://csdnimg.cn/release/blogv2/dist/pc/img/vip-limited-close-newWhite.png">
+      <div class="vip-limited-time-top">
+        确定要放弃本次机会？
+      </div>
+      <span class="vip-limited-time-text">福利倒计时</span>
+      <div class="limited-time-box-new">
+        <span class="time-hour"></span>
+        <i>:</i>
+        <span class="time-minite"></span>
+        <i>:</i>
+        <span class="time-second"></span>
+      </div>
+      <div class="limited-time-vip-box">
+        <p>
+          <img class="coupon-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/vip-limited-close-roup.png">
+          <span class="def">立减 ¥</span>
+          <span class="active limited-num"></span>
+        </p>
+        <span class="">普通VIP年卡可用</span>
+      </div>
+      <a class="limited-time-btn-new" href="https://mall.csdn.net/vip" data-report-click='{"spm":"1001.2101.3001.9621"}' data-report-query='spm=1001.2101.3001.9621'>立即使用</a>
+  </div>
+</div>
+    <div class="more-toolbox-new more-toolbar" id="toolBarBox">
+      <div class="left-toolbox">
+        <div class="toolbox-left">
+            <div class="profile-box">
+              <a class="profile-href" target="_blank" href="https://blog.csdn.net/LDZKKJ"><img class="profile-img" src="https://profile-avatar.csdnimg.cn/default.jpg!1">
+                <span class="profile-name">
+                  LDZKKJ
+                </span>
+              </a>
+            </div>
+            <div class="profile-attend">
+                <a class="tool-attend tool-bt-button tool-bt-attend" href="javascript:;" data-report-view='{"mod":"1592215036_002","spm":"1001.2101.3001.4232","extend1":"关注"}'>关注</a>
+              <a class="tool-item-follow active-animation" style="display:none;">关注</a>
+            </div>
+        </div>
+        <div class="toolbox-middle">
+          <ul class="toolbox-list">
+            <li class="tool-item tool-item-size tool-active is-like" id="is-like" data-type="bottom">
+              <a class="tool-item-href">
+                <img style="display:none;" id="is-like-imgactive-animation-like" class="animation-dom active-animation" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarThumbUpactive.png" alt="">
+                <img class="isactive" style="display:none" id="is-like-imgactive" src="https://csdnimg.cn/release/blogv2/dist/pc/img/toolbar/like-active.png" alt="">
+                <img class="isdefault" style="display:block" id="is-like-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/toolbar/like.png" alt="">
+                <span id="spanCount" class="count ">
+                      0
+                </span>
+              </a>
+              <div class="tool-hover-tip"><span class="text space">点赞</span></div>
+            </li>
+            <li class="tool-item tool-item-size tool-active is-unlike" id="is-unlike">
+              <a class="tool-item-href">
+                <img class="isactive" style="margin-right:0px;display:none" id="is-unlike-imgactive" src="https://csdnimg.cn/release/blogv2/dist/pc/img/toolbar/unlike-active.png" alt="">
+                <img class="isdefault" style="margin-right:0px;display:block" id="is-unlike-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/toolbar/unlike.png" alt="">
+                <span id="unlikeCount" class="count "></span>
+              </a>
+              <div class="tool-hover-tip"><span class="text space">踩</span></div>
+            </li>
+            <li class="tool-item tool-item-size tool-active is-collection ">
+              <a class="tool-item-href" href="javascript:;" data-report-click='{"mod":"popu_824","spm":"1001.2101.3001.4130","ab":"new"}'>
+                <img style="display:none" id="is-collection-img-collection" class="animation-dom active-animation" src="https://csdnimg.cn/release/blogv2/dist/pc/img/toolbar/collect-active.png" alt="">
+                <img class="isdefault" id="is-collection-img" style="display:block" src="https://csdnimg.cn/release/blogv2/dist/pc/img/toolbar/collect.png" alt="">
+                <img class="isactive" id="is-collection-imgactive" style="display:none" src="https://csdnimg.cn/release/blogv2/dist/pc/img/newCollectActive.png" alt="">
+                <span class="count get-collection " data-num="0" id="get-collection">
+                    0
+                </span>
+              </a>
+              <div class="tool-hover-tip collect">
+                <div class="collect-operate-box">
+                  <span class="collect-text" id="is-collection">
+                    收藏
+                  </span>
+                </div>
+              </div>
+              <div class="tool-active-list">
+                <div class="text">
+                  觉得还不错?
+                  <span class="collect-text" id="tool-active-list-collection">
+                    一键收藏
+                  </span>
+                 <img id="tool-active-list-close" src="https://csdnimg.cn/release/blogv2/dist/pc/img/collectionCloseWhite.png" alt="">
+                </div>
+              </div>
+            </li>
+            <li class="tool-item tool-item-size tool-active tool-item-comment">
+              <div class="guide-rr-first">
+                <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/guideRedReward01.png" alt="">
+                <button class="btn-guide-known">知道了</button>
+              </div>
+                <a class="tool-item-href" href="#commentBox" data-report-click='{"spm":"1001.2101.3001.7009"}'>
+                <img class="isdefault" src="https://csdnimg.cn/release/blogv2/dist/pc/img/toolbar/comment.png" alt="">
+                <span class="count">
+                      0
+                </span>
+              </a>
+              <div class="tool-hover-tip"><span class="text space">评论</span></div>
+            </li>
+            <li class="tool-item tool-item-size tool-active tool-QRcode" data-type="article" id="tool-share">
+              <a class="tool-item-href" href="javascript:;" data-report-view='{"spm":"3001.4129","extra":{"type":"blogdetail"}}'>
+                <img class="isdefault" src="https://csdnimg.cn/release/blogv2/dist/pc/img/toolbar/share.png" alt="">
+                <span class="count">分享</span>
+              </a>
+                <div class="QRcode" id="tool-QRcode">
+                <div class="share-bg-box">
+                  <div class="share-content">
+                    <a id="copyPosterUrl" data-type="link" class="btn-share">复制链接</a>
+                  </div>
+                  <div class="share-content">
+                    <a class="btn-share" data-type="qq">分享到 QQ</a>
+                  </div>
+                  <div class="share-content">
+                    <a class="btn-share" data-type="weibo">分享到新浪微博</a>
+                  </div>
+                  <div class="share-code">
+                    <div class="share-code-box" id='shareCode'></div>
+                    <div class="share-code-text">
+                      <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/share/icon-wechat.png" alt="">扫一扫
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          <li class="tool-item tool-item-size tool-active is-more" id="is-more">
+            <a class="tool-item-href">
+              <img class="isdefault" style="margin-right:0px;display:block" src="https://csdnimg.cn/release/blogv2/dist/pc/img/toolbar/more.png" alt="">
+              <span class="count"></span>
+            </a>
+            <div class="more-opt-box">
+              <div class="mini-box">
+                <a class="tool-item-href" id="toolReportBtnHide">
+                  <img class="isdefault" src="https://csdnimg.cn/release/blogv2/dist/pc/img/toolbar/report.png" alt="">
+                  <span class="count">举报</span>
+                </a>
+              </div>
+              <div class="normal-box">
+                <a class="tool-item-href" id="toolReportBtnHideNormal">
+                  <img class="isdefault" src="https://csdnimg.cn/release/blogv2/dist/pc/img/toolbar/report.png" alt="">
+                  <span class="count">举报</span>
+                </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="toolbox-right">
+            <div class="tool-directory">
+                <a class="bt-columnlist-show"
+                  data-id="13175292"
+                  data-free="true"
+                  data-description=""
+                  data-subscribe="false"
+                  data-title="AI / 大模型"
+                  data-img="https://i-blog.csdnimg.cn/columns/default/20201014180756757.png?x-oss-process=image/resize,m_fixed,h_224,w_224"
+                  data-url="https://blog.csdn.net/ldzkkj/category_13175292.html"
+                  data-sum="32"
+                  data-people="0"
+                  data-price="0"
+                  data-hotRank="0"
+                  data-status="true"
+                  data-oldprice="0"
+                  data-join="false"
+                  data-studyvip="false"
+                  data-studysubscribe="false"
+                  data-report-view='{"spm":"1001.2101.3001.6334","extend1":"专栏目录"}'
+                  data-report-click='{"spm":"1001.2101.3001.6334","extend1":"专栏目录"}'>专栏目录</a>
+          </div>
+</div>
+</div>
+</div>
+<script type=text/javascript crossorigin src="https://csdnimg.cn/release/phoenix/production/qrcode-7c90a92189.min.js"></script>
+<script type="text/javascript" crossorigin src="https://g.csdnimg.cn/common/csdn-login-box/csdn-login-box.js"></script>
+<script type="text/javascript" crossorigin src="https://g.csdnimg.cn/collection-box/2.1.2/collection-box.js"></script>
+              <div id="dmp_ad_58" style="width:100%;overflow-x:hidden">
+                <div id="kp_box_58" data-pid="58"><iframe  src="https://kunpeng-sc.csdnimg.cn/?timestamp=1645783940/#/preview1/3889897?positionId=58&adBlockFlag=0&adId=1103566&queryWord=Token峰谷电价来了——大模型定价进入“分时计费”时代&spm=1001.2101.3001.5002&articleId=163071701" frameborder="0" width= "100%"  height= "75px" scrolling="no" ></iframe><img class="pre-img-lasy"  data-src="https://kunyu.csdn.net/1.png?p=58&adBlockFlag=0&adId=1103566&a=1103566&c=3889897&k=Token峰谷电价来了——大模型定价进入“分时计费”时代&spm=1001.2101.3001.5002&articleId=163071701&d=1&t=3&u=a1fa608b11bc4f0aace98c6cd61bc199" style="display: block;width: 0px;height: 0px;"><script src="https://kunpeng-render.csdnimg.cn/publisher/latest/closeAdFrame.js"></script></div>
+              </div>
+            <script src="https://csdnimg.cn/release/blogv2/dist/components/js/pc_wap_commontools-55fb7fc975.min.js" type="text/javascript" async></script>
+              <div class="second-recommend-box recommend-box ">
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_49199313/article/details/157502413"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.1","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~PaidSort-1-157502413-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"1","strategy":"2~default~ElasticSearch~PaidSort","dest":"https://blog.csdn.net/weixin_49199313/article/details/157502413"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_49199313/article/details/157502413" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.1","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~PaidSort-1-157502413-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"1","strategy":"2~default~ElasticSearch~PaidSort","dest":"https://blog.csdn.net/weixin_49199313/article/details/157502413"}'  data-report-query='spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7EPaidSort-1-157502413-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7EPaidSort-1-157502413-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+					<div class="left ellipsis-online ellipsis-online-1">【审计专栏】【企业管理】【市场体系】第六篇 市场营销与产品<em>定价</em>01</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/weixin_49199313" target="_blank"><span class="blog-title">weixin_49199313的博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">01-29</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					973
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_49199313/article/details/157502413" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.1","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~PaidSort-1-157502413-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"1","strategy":"2~default~ElasticSearch~PaidSort","dest":"https://blog.csdn.net/weixin_49199313/article/details/157502413"}'  data-report-query='spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7EPaidSort-1-157502413-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7EPaidSort-1-157502413-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+				<div class="desc ellipsis-online ellipsis-online-1">以下是对市场营销理论体系的分级分类全景图，以为核心脉络，涵盖从工业<em>时代</em>的经典框架到数字智能<em>时代</em>的整合系统。今天的营销实践，：运用分析宏观与竞争环境。：通过确定目标市场与核心价值主张，用确立在心智中的独特位置。：制定建设目标，规划与核心体验。：基于定位设计信息矩阵。：运用框架设计具体的产品、服务、价格、渠道和传播方案。：构建技术栈，支撑。：通过创造价值，在上互动。：运用思维，围绕进行快速实验和优化。：利用系统，实施策略，提升顾客忠诚度。：监控等核心指标。</div>
+			</a>
+		</div>
+	</div>
+</div>
+              </div>
+<a id="commentBox" name="commentBox"></a>
+  <div id="pcCommentBox" class="comment-box comment-box-new2 unlogin-comment-box-new" style="display:none">
+      <div class="unlogin-comment-model">
+          <span class="unlogin-comment-tit">参与评论</span>
+        <span class="unlogin-comment-text">您还未登录，请先</span>
+        <span class="unlogin-comment-bt">登录</span>
+        <span class="unlogin-comment-text">后发表或查看评论</span>
+      </div>
+  </div>
+              <div class="recommend-box insert-baidu-box recommend-box-style ">
+                <div class="recommend-item-box no-index" style="display:none"></div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://devpress.csdn.net/v1/article/detail/162621742"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.2","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~activity-2-162621742-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"2","strategy":"2~default~ElasticSearch~activity","dest":"https://devpress.csdn.net/v1/article/detail/162621742"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://devpress.csdn.net/v1/article/detail/162621742" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.2","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~activity-2-162621742-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"2","strategy":"2~default~ElasticSearch~activity","dest":"https://devpress.csdn.net/v1/article/detail/162621742"}'  data-report-query='spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7Eactivity-2-162621742-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7Eactivity-2-162621742-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+					<div class="left ellipsis-online ellipsis-online-1">DeepSeek推<em>峰谷</em><em>定价</em>，AI服务也要<em>分时</em>段收费了？</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/qq350861146" target="_blank"><span class="blog-title"></span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">07-06</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					218
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://devpress.csdn.net/v1/article/detail/162621742" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.2","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~activity-2-162621742-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"2","strategy":"2~default~ElasticSearch~activity","dest":"https://devpress.csdn.net/v1/article/detail/162621742"}'  data-report-query='spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7Eactivity-2-162621742-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7Eactivity-2-162621742-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+				<div class="desc ellipsis-online ellipsis-online-1">&lt;p&gt;大家好，我是「AI原来如此」的小编。今天要跟大家聊一个挺有意思的消息：DeepSeek刚刚宣布了V4正式版的发布时间，还带来了一个你可能没想到的<em>定价</em>策略。&lt;/p&gt; &lt;p&gt;&lt;h2&gt;发生了什么？&lt;/h2&gt;&lt;/p&gt; &lt;p&gt;6月29日，DeepSeek给API用户发了封邮件，透露了几个重要信息：&lt;/p</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/summerliyang/article/details/163055856"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.3","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~Rate-3-163055856-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"3","strategy":"2~default~ElasticSearch~Rate","dest":"https://blog.csdn.net/summerliyang/article/details/163055856"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/summerliyang/article/details/163055856" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.3","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~Rate-3-163055856-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"3","strategy":"2~default~ElasticSearch~Rate","dest":"https://blog.csdn.net/summerliyang/article/details/163055856"}'  data-report-query='spm=1001.2101.3001.6650.3&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-3-163055856-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-3-163055856-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+					<div class="left ellipsis-online ellipsis-online-1"><em>大模型</em><em>定价</em>与 <em>Token</em> 经济学：178 倍价差<em>时代</em>的生存法则 &mdash; 深度分析</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/summerliyang" target="_blank"><span class="blog-title">summerliyang的博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">07-20</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					194
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/summerliyang/article/details/163055856" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.3","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~Rate-3-163055856-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"3","strategy":"2~default~ElasticSearch~Rate","dest":"https://blog.csdn.net/summerliyang/article/details/163055856"}'  data-report-query='spm=1001.2101.3001.6650.3&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-3-163055856-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-3-163055856-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+				<div class="desc ellipsis-online ellipsis-online-1">这是一篇深度研究，不是新闻简报。基于 130+ 个来源的交叉验证。</div>
+			</a>
+		</div>
+	</div>
+</div>
+		<dl id="recommend-item-box-tow" class="recommend-item-box type_blog clearfix">
+			
+		</dl>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/qq_52293640/article/details/161871407"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.4","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~Rate-4-161871407-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"4","strategy":"2~default~ElasticSearch~Rate","dest":"https://blog.csdn.net/qq_52293640/article/details/161871407"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/qq_52293640/article/details/161871407" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.4","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~Rate-4-161871407-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"4","strategy":"2~default~ElasticSearch~Rate","dest":"https://blog.csdn.net/qq_52293640/article/details/161871407"}'  data-report-query='spm=1001.2101.3001.6650.4&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-4-161871407-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-4-161871407-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+					<div class="left ellipsis-online ellipsis-online-1">AI<em>时代</em>的真本事：用更少的<em>Token</em>做更好的事</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/qq_52293640" target="_blank"><span class="blog-title">qq_52293640的博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">06-10</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					387
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/qq_52293640/article/details/161871407" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.4","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~Rate-4-161871407-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"4","strategy":"2~default~ElasticSearch~Rate","dest":"https://blog.csdn.net/qq_52293640/article/details/161871407"}'  data-report-query='spm=1001.2101.3001.6650.4&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-4-161871407-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-4-161871407-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+				<div class="desc ellipsis-online ellipsis-online-1">AI<em>时代</em>最值钱的能力，不是<em>&quot;</em>会用AI<em>&quot;</em>，而是<em>&quot;</em>用最少的<em>Token</em>，做最好的事<em>&quot;</em>。因为<em>Token</em>就是算力，算力就是成本，成本就是钱。当AI像水电一样按量<em>计费</em>的时候，你用<em>Token</em>的效率，就是你的竞争力。字数是给人类看的，<em>Token</em>是给机器算的。未来的高手，是能让两者差距越来越小的人。数据来源国家数据局<em>Token</em>定义：2026年3月全国科学技术名词审定委员会公告。</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/DQQzero/article/details/163068285"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.5","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~Rate-5-163068285-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"5","strategy":"2~default~ElasticSearch~Rate","dest":"https://blog.csdn.net/DQQzero/article/details/163068285"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/DQQzero/article/details/163068285" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.5","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~Rate-5-163068285-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"5","strategy":"2~default~ElasticSearch~Rate","dest":"https://blog.csdn.net/DQQzero/article/details/163068285"}'  data-report-query='spm=1001.2101.3001.6650.5&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-5-163068285-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-5-163068285-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+					<div class="left ellipsis-online ellipsis-online-1">从Kimi K3暂停订阅到DeepSeek V4<em>峰谷</em><em>计费</em>：国产<em>大模型</em>告别粗放烧钱<em>时代</em></div>
+					<div class="tag">最新发布</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/DQQzero" target="_blank"><span class="blog-title">DQQzero的博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">07-21</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					135
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/DQQzero/article/details/163068285" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.5","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~Rate-5-163068285-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"5","strategy":"2~default~ElasticSearch~Rate","dest":"https://blog.csdn.net/DQQzero/article/details/163068285"}'  data-report-query='spm=1001.2101.3001.6650.5&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-5-163068285-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-5-163068285-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+				<div class="desc ellipsis-online ellipsis-online-1">世界杯决赛那个夜晚，当全世界在为西班牙和阿根廷欢呼时，Anthropic的Levent Alp&ouml;ge让Claude Fable 5在后台继续计算&mdash;&mdash;第二天早上，他发了一条推文，推翻了87年的雅可比猜想。而在中国，月之暗面的工程师们也在那个夜晚监控着服务器负载的曲线，看它一天天逼近集群的承载极限。当你的产品好到所有人都想用，但你的服务器扛不住时，你该怎么办？Kimi的回答是<em>&quot;</em>先关门，保住存量<em>&quot;</em>。DeepSeek的回答是<em>&quot;</em>用价格，引导错峰<em>&quot;</em>。</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/yyshj/article/details/163066066"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.6","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~Rate-6-163066066-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"6","strategy":"2~default~ElasticSearch~Rate","dest":"https://blog.csdn.net/yyshj/article/details/163066066"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/yyshj/article/details/163066066" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.6","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~Rate-6-163066066-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"6","strategy":"2~default~ElasticSearch~Rate","dest":"https://blog.csdn.net/yyshj/article/details/163066066"}'  data-report-query='spm=1001.2101.3001.6650.6&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-6-163066066-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-6-163066066-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+					<div class="left ellipsis-online ellipsis-online-1">从双雄到三强：Kimi K3暂停注册、DeepSeek V4满血回归，AI正在改写全球游戏规则</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/yyshj" target="_blank"><span class="blog-title">yyshj的专栏</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">07-21</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					17
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/yyshj/article/details/163066066" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.6","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~Rate-6-163066066-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"6","strategy":"2~default~ElasticSearch~Rate","dest":"https://blog.csdn.net/yyshj/article/details/163066066"}'  data-report-query='spm=1001.2101.3001.6650.6&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-6-163066066-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-6-163066066-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+				<div class="desc ellipsis-online ellipsis-online-1">从双雄到三强：Kimi K3暂停注册、DeepSeek V4满血回归，中国AI正在改写全球游戏规则如果AI行业有<em>&quot;</em>地震周<em>&quot;</em>这种东西，那刚刚过去的这一周绝对是9.0级。Kimi K3开源发布后72小时内，全球注册量飙升到服务器直接<em>&quot;</em>扛不住<em>&quot;</em>。Moonshot AI不得不在7月20日宣布暂停新用户注册，发公告说使用量<em>&quot;</em>逼近现有算力容量极限<em>&quot;</em>，新注册名额将分批开放。这在AI行业是从未有过的事&mdash;&mdash;一个开源模型，因为太受欢迎而被迫关门。</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://devpress.csdn.net/v1/article/detail/92031205"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.7","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~activity-7-92031205-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"7","strategy":"2~default~ElasticSearch~activity","dest":"https://devpress.csdn.net/v1/article/detail/92031205"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://devpress.csdn.net/v1/article/detail/92031205" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.7","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~activity-7-92031205-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"7","strategy":"2~default~ElasticSearch~activity","dest":"https://devpress.csdn.net/v1/article/detail/92031205"}'  data-report-query='spm=1001.2101.3001.6650.7&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7Eactivity-7-92031205-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7Eactivity-7-92031205-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+					<div class="left ellipsis-online ellipsis-online-1">DeepSeek V4迁移昇腾950PR：从CUDA到CANN的工程实践</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/weixin_34087307" target="_blank"><span class="blog-title">weixin_34087307的博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">06-18</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					419
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://devpress.csdn.net/v1/article/detail/92031205" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.7","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~activity-7-92031205-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"7","strategy":"2~default~ElasticSearch~activity","dest":"https://devpress.csdn.net/v1/article/detail/92031205"}'  data-report-query='spm=1001.2101.3001.6650.7&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7Eactivity-7-92031205-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7Eactivity-7-92031205-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+				<div class="desc ellipsis-online ellipsis-online-1"><em>大模型</em>推理正从通用GPU加速转向专用AI芯片优化，其核心在于软硬协同的深度适配。理解CUDA与CANN的本质差异&mdash;&mdash;前者强调线程级精细控制，后者依托AscendCL运行时实现计算图抽象&mdash;&mdash;是迁移成功的前提。技术价值体现在性能、功耗与稳定性三重突破：昇腾950PR凭借Da Vinci 3.0架构和2.4TB/s HBM带宽，在128K长上下文场景下实现312ms P99延迟与62%功耗降幅；而DynamicKV Cache、算子熔合、场景化Profile等工程手段，则将硬件潜力转化为真实业务收益。该实践已规模</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://devpress.csdn.net/v1/article/detail/161718732"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.8","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~activity-8-161718732-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"8","strategy":"2~default~ElasticSearch~activity","dest":"https://devpress.csdn.net/v1/article/detail/161718732"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://devpress.csdn.net/v1/article/detail/161718732" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.8","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~activity-8-161718732-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"8","strategy":"2~default~ElasticSearch~activity","dest":"https://devpress.csdn.net/v1/article/detail/161718732"}'  data-report-query='spm=1001.2101.3001.6650.8&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7Eactivity-8-161718732-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7Eactivity-8-161718732-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+					<div class="left ellipsis-online ellipsis-online-1">69个词看懂整个AI产业链</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/weibo1230123" target="_blank"><span class="blog-title">魏波</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">06-05</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					464
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://devpress.csdn.net/v1/article/detail/161718732" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.8","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~activity-8-161718732-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"8","strategy":"2~default~ElasticSearch~activity","dest":"https://devpress.csdn.net/v1/article/detail/161718732"}'  data-report-query='spm=1001.2101.3001.6650.8&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7Eactivity-8-161718732-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7Eactivity-8-161718732-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+				<div class="desc ellipsis-online ellipsis-online-1">未来的AI一定会让世界天翻地覆，现在我们只看到了它的1%。AI 技术体系就像一块五层蛋糕，从触手可及的应用层，到提供动力的能源层，层层递进，缺一不可。</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_30527423/article/details/99616796"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.9","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~Rate-9-99616796-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"9","strategy":"2~default~ElasticSearch~Rate","dest":"https://blog.csdn.net/weixin_30527423/article/details/99616796"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_30527423/article/details/99616796" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.9","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~Rate-9-99616796-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"9","strategy":"2~default~ElasticSearch~Rate","dest":"https://blog.csdn.net/weixin_30527423/article/details/99616796"}'  data-report-query='spm=1001.2101.3001.6650.9&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-9-99616796-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-9-99616796-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+					<div class="left ellipsis-online ellipsis-online-1">AI收费背后的三大成本黑洞与用户防御策略</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/weixin_30527423" target="_blank"><span class="blog-title">weixin_30527423的博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">06-21</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					702
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_30527423/article/details/99616796" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.9","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~Rate-9-99616796-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"9","strategy":"2~default~ElasticSearch~Rate","dest":"https://blog.csdn.net/weixin_30527423/article/details/99616796"}'  data-report-query='spm=1001.2101.3001.6650.9&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-9-99616796-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-9-99616796-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+				<div class="desc ellipsis-online ellipsis-online-1">AI助手并非&lsquo;免费基础设施&rsquo;，其本质是依赖算力调度、数据治理和人力校准的复杂服务系统。当用户将自然语言交互等同于水电式服务时，便忽略了模型推理背后的GPU显存带宽瓶颈、上下文漂移修正开销及人工标注一致性校验等硬性成本。这些技术细节共同决定了服务不可无限免费&mdash;&mdash;尤其在高并发、长文档解析、多模态OCR等场景下，成本呈非线性增长。真正的技术价值不在于&lsquo;更聪明的模型&rsquo;，而在于SLA保障下的确定性输出，如KV缓存稳定性、温度值锁定与专用推理通道。本文聚焦豆包类产品的工程现实，揭示从免费到分级付费的技术必然性，并提供无</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://devpress.csdn.net/v1/article/detail/98606133"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.10","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~activity-10-98606133-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"10","strategy":"2~default~ElasticSearch~activity","dest":"https://devpress.csdn.net/v1/article/detail/98606133"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://devpress.csdn.net/v1/article/detail/98606133" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.10","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~activity-10-98606133-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"10","strategy":"2~default~ElasticSearch~activity","dest":"https://devpress.csdn.net/v1/article/detail/98606133"}'  data-report-query='spm=1001.2101.3001.6650.10&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7Eactivity-10-98606133-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7Eactivity-10-98606133-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+					<div class="left ellipsis-online ellipsis-online-1">DeepSeek-V4推理成本五层拆解：从显存带宽到Prompt优化</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/weixin_30291791" target="_blank"><span class="blog-title">weixin_30291791的博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">06-17</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					423
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://devpress.csdn.net/v1/article/detail/98606133" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.10","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~activity-10-98606133-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"10","strategy":"2~default~ElasticSearch~activity","dest":"https://devpress.csdn.net/v1/article/detail/98606133"}'  data-report-query='spm=1001.2101.3001.6650.10&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7Eactivity-10-98606133-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7Eactivity-10-98606133-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+				<div class="desc ellipsis-online ellipsis-online-1">大<em>语言模型</em>推理成本并非简单标价，而是由硬件算力、系统中间件、调度框架、模型工程与业务设计共同决定的技术经济综合体。其中，GPU显存带宽直接制约推理吞吐上限，vLLM的PagedAttention机制显著提升显存利用率，而Prompt设计缺陷可导致近四成成本浪费。理解这些底层原理，才能在真实生产环境中实现单位请求成本的精准测算与持续优化&mdash;&mdash;本文聚焦DeepSeek-V4落地实践，揭示AI基础设施从采购决策到日常运维的全链路成本逻辑。</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_49199313/article/details/149801179"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.11","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~Rate-11-149801179-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"11","strategy":"2~default~ElasticSearch~Rate","dest":"https://blog.csdn.net/weixin_49199313/article/details/149801179"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_49199313/article/details/149801179" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.11","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~Rate-11-149801179-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"11","strategy":"2~default~ElasticSearch~Rate","dest":"https://blog.csdn.net/weixin_49199313/article/details/149801179"}'  data-report-query='spm=1001.2101.3001.6650.11&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-11-149801179-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-11-149801179-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+					<div class="left ellipsis-online ellipsis-online-1">智算中心金融大纲</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/weixin_49199313" target="_blank"><span class="blog-title">weixin_49199313的博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">07-31</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					1802
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_49199313/article/details/149801179" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.11","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~Rate-11-149801179-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"11","strategy":"2~default~ElasticSearch~Rate","dest":"https://blog.csdn.net/weixin_49199313/article/details/149801179"}'  data-report-query='spm=1001.2101.3001.6650.11&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-11-149801179-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-11-149801179-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+				<div class="desc ellipsis-online ellipsis-online-1">​维度​ABSREITs​所得税递延​✘ 增值立即纳税✔ 股权转让增值可递延​增值税重复​✔ 租金/利息双重征收✘ 项目公司单层征收（但不可抵扣）​投资者税负​优先级高（增值税+所得税）企业投资者分红免税​政策适配性​依赖财税〔2006〕5号（未覆盖智算中心）2022年新规支持基础设施​行业趋势​：2025年智算中心REITs扩募加速（如成渝枢纽），建议结合地方绿电补贴（如青岛24条产业链税收优惠）与ESG挂钩条款，综合降低税负15%+。</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_49199313/article/details/161631986"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.12","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~Rate-12-161631986-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"12","strategy":"2~default~ElasticSearch~Rate","dest":"https://blog.csdn.net/weixin_49199313/article/details/161631986"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_49199313/article/details/161631986" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.12","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~Rate-12-161631986-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"12","strategy":"2~default~ElasticSearch~Rate","dest":"https://blog.csdn.net/weixin_49199313/article/details/161631986"}'  data-report-query='spm=1001.2101.3001.6650.12&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-12-161631986-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-12-161631986-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+					<div class="left ellipsis-online ellipsis-online-1">【市场体系】【财务领域】互联网公司的商业模式和收入来源及人性依据</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/weixin_49199313" target="_blank"><span class="blog-title">weixin_49199313的博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">06-02</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					411
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_49199313/article/details/161631986" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.12","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~ElasticSearch~Rate-12-161631986-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"12","strategy":"2~default~ElasticSearch~Rate","dest":"https://blog.csdn.net/weixin_49199313/article/details/161631986"}'  data-report-query='spm=1001.2101.3001.6650.12&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-12-161631986-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EElasticSearch%7ERate-12-161631986-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+				<div class="desc ellipsis-online ellipsis-online-1">《财政部 国家税务总局关于进一步鼓励软件产业和集成电路产业发展企业所得税政策的通知》（财税〔2012〕27号）；《关于促进集成电路产业和软件产业高质量发展企业所得税政策的公告》（财政部 税务总局 发展改革委 工业和信息化部公告2020年第45号）。《关于促进集成电路产业和软件产业高质量发展企业所得税政策的公告》（财政部 税务总局 发展改革委 工业和信息化部公告2020年第45号）。：《数据安全法》、《个人信息保护法》、《关于构建数据基础制度更好发挥数据要素作用的意见》（&ldquo;数据二十条&rdquo;）。</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://devpress.csdn.net/v1/article/detail/163018861"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.13","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BLOGTAG~activity-13-163018861-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"13","strategy":"2~default~BLOGTAG~activity","dest":"https://devpress.csdn.net/v1/article/detail/163018861"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://devpress.csdn.net/v1/article/detail/163018861" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.13","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BLOGTAG~activity-13-163018861-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"13","strategy":"2~default~BLOGTAG~activity","dest":"https://devpress.csdn.net/v1/article/detail/163018861"}'  data-report-query='spm=1001.2101.3001.6650.13&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-13-163018861-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-13-163018861-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+					<div class="left ellipsis-online ellipsis-online-1">如何配置codex cli和codex app（官方已经合并，现在名字为<em>chatgpt</em>）</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/weixin_51083890" target="_blank"><span class="blog-title">weixin_51083890的博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">07-19</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					228
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://devpress.csdn.net/v1/article/detail/163018861" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.13","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BLOGTAG~activity-13-163018861-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"13","strategy":"2~default~BLOGTAG~activity","dest":"https://devpress.csdn.net/v1/article/detail/163018861"}'  data-report-query='spm=1001.2101.3001.6650.13&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-13-163018861-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-13-163018861-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+				<div class="desc ellipsis-online ellipsis-online-1">OK，正如标题所说，这篇是如何配置macos的codex cli和codex app，我们直入主题。
+下载nodejs
+访问https://nodejs.org/en/download，选择自己电脑对应的版本，我的是M芯片所以是ARM64
+intel的就需要切到X64了，下载完了直接安装就行，然后再去terminal里面去测试下node -v ，
+如果还是没有出现版本号，那就是虽然安装了，但是环境变量里面还没有注册，去网页版的豆包或者deepseek去问下怎么加到环境变量里面去。
+
+codex app
+1.</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://devpress.csdn.net/v1/article/detail/163018002"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.14","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BLOGTAG~activity-14-163018002-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"14","strategy":"2~default~BLOGTAG~activity","dest":"https://devpress.csdn.net/v1/article/detail/163018002"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://devpress.csdn.net/v1/article/detail/163018002" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.14","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BLOGTAG~activity-14-163018002-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"14","strategy":"2~default~BLOGTAG~activity","dest":"https://devpress.csdn.net/v1/article/detail/163018002"}'  data-report-query='spm=1001.2101.3001.6650.14&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-14-163018002-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-14-163018002-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+					<div class="left ellipsis-online ellipsis-online-1"><em>ChatGPT</em> Plus 和 Pro 怎么选？从使用场景分析不同用户需求</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/cwx199906" target="_blank"><span class="blog-title">cwx199906的博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">07-19</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					542
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://devpress.csdn.net/v1/article/detail/163018002" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.14","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BLOGTAG~activity-14-163018002-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"14","strategy":"2~default~BLOGTAG~activity","dest":"https://devpress.csdn.net/v1/article/detail/163018002"}'  data-report-query='spm=1001.2101.3001.6650.14&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-14-163018002-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-14-163018002-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+				<div class="desc ellipsis-online ellipsis-online-1"><em>ChatGPT</em> Plus 和 Pro 的选择，本质上是使用需求的区别。普通用户更应该关注：是否经常使用；是否能够解决实际问题；是否提高工作效率。高频用户则需要考虑：工作流程依赖程度；复杂任务数量；连续使用需求。选择 AI 工具时，不要单纯追求最高版本。真正适合自己的方案，应该是能够融入日常工作，并持续提升效率的方案。未来 AI 不会只是一个聊天工具，而会逐渐成为个人和团队工作流程中的重要组成部分。</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://devpress.csdn.net/v1/article/detail/162941796"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.15","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BLOGTAG~activity-15-162941796-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"15","strategy":"2~default~BLOGTAG~activity","dest":"https://devpress.csdn.net/v1/article/detail/162941796"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://devpress.csdn.net/v1/article/detail/162941796" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.15","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BLOGTAG~activity-15-162941796-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"15","strategy":"2~default~BLOGTAG~activity","dest":"https://devpress.csdn.net/v1/article/detail/162941796"}'  data-report-query='spm=1001.2101.3001.6650.15&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-15-162941796-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-15-162941796-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+					<div class="left ellipsis-online ellipsis-online-1">如何使用codex（<em>chatgpt</em>）,跳过登录openai账号</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/2401_87245171" target="_blank"><span class="blog-title">2401_87245171的博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">07-16</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					400
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://devpress.csdn.net/v1/article/detail/162941796" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.15","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BLOGTAG~activity-15-162941796-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"15","strategy":"2~default~BLOGTAG~activity","dest":"https://devpress.csdn.net/v1/article/detail/162941796"}'  data-report-query='spm=1001.2101.3001.6650.15&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-15-162941796-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-15-162941796-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+				<div class="desc ellipsis-online ellipsis-online-1">我用夸克网盘给你分享了「codex++」，点击链接或复制整段内容，打开「夸克APP」即可获取。链接：https://pan.quark.cn/s/2262ab69c3fe。链接：https://pan.quark.cn/s/e7fa3e05b288。我用夸克网盘分享了「codex」，点击链接即可保存。①是用来启动的，双击之后，会自动打开codex（<em>ChatGPT</em>）不用启动codex（<em>ChatGPT</em>），如果启动了就把他关闭。我这里也在保存了一份，方面下载（如果网络不好的话）之后，在下载一个codex++。</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/qq_22964783/article/details/162961685"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.16","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BLOGTAG~default-16-162961685-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"16","strategy":"2~default~BLOGTAG~default","dest":"https://blog.csdn.net/qq_22964783/article/details/162961685"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/qq_22964783/article/details/162961685" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.16","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BLOGTAG~default-16-162961685-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"16","strategy":"2~default~BLOGTAG~default","dest":"https://blog.csdn.net/qq_22964783/article/details/162961685"}'  data-report-query='spm=1001.2101.3001.6650.16&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Edefault-16-162961685-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Edefault-16-162961685-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+					<div class="left ellipsis-online ellipsis-online-1">Codex+Skill 实现性能测试</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/qq_22964783" target="_blank"><span class="blog-title">十二测试录</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">07-17</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					119
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/qq_22964783/article/details/162961685" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.16","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BLOGTAG~default-16-162961685-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"16","strategy":"2~default~BLOGTAG~default","dest":"https://blog.csdn.net/qq_22964783/article/details/162961685"}'  data-report-query='spm=1001.2101.3001.6650.16&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Edefault-16-162961685-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Edefault-16-162961685-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+				<div class="desc ellipsis-online ellipsis-online-1">做一次完整的性能测试，到底要花多少时间？很多人的第一反应是：主要时间应该花在执行压测上。但真正做过完整项目就会发现，JMeter跑起来可能只需要几十分钟，最耗时间的往往是压测前后的准备、确认、检查、分析和报告这些工作。比如这次我用支付系统，对支付接口 POST /transactions 做了一次完整性能测试。目标很简单：并发 20，P95 不超过 800ms，错误率不超过 0.1%。所以这次我把性能测试流程拆成了 8 个可以串联使用的 Skill，从需求澄清到最终报告输出。</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://devpress.csdn.net/v1/article/detail/162947199"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.17","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BLOGTAG~activity-17-162947199-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"17","strategy":"2~default~BLOGTAG~activity","dest":"https://devpress.csdn.net/v1/article/detail/162947199"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://devpress.csdn.net/v1/article/detail/162947199" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.17","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BLOGTAG~activity-17-162947199-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"17","strategy":"2~default~BLOGTAG~activity","dest":"https://devpress.csdn.net/v1/article/detail/162947199"}'  data-report-query='spm=1001.2101.3001.6650.17&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-17-162947199-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-17-162947199-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+					<div class="left ellipsis-online ellipsis-online-1">AI 应用简报 07.13-07.16：编程工具趋同，<em>ChatGPT</em> 份额跌破 50%</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/summerliyang" target="_blank"><span class="blog-title">summerliyang的博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">07-17</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					219
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://devpress.csdn.net/v1/article/detail/162947199" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.17","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BLOGTAG~activity-17-162947199-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"17","strategy":"2~default~BLOGTAG~activity","dest":"https://devpress.csdn.net/v1/article/detail/162947199"}'  data-report-query='spm=1001.2101.3001.6650.17&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-17-162947199-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-17-162947199-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+				<div class="desc ellipsis-online ellipsis-online-1">AI 编程工具全面趋同，<em>ChatGPT</em> 市场份额首破 50%，多 Agent 框架七月井喷，中国金融 AI 监管定调&mdash;&mdash;2026 年 7 月中旬的 AI 应用层，正在从<em>&quot;</em>拼模型<em>&quot;</em>转入<em>&quot;</em>拼治理<em>&quot;</em>。</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://devpress.csdn.net/v1/article/detail/163001900"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.18","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BLOGTAG~activity-18-163001900-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"18","strategy":"2~default~BLOGTAG~activity","dest":"https://devpress.csdn.net/v1/article/detail/163001900"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://devpress.csdn.net/v1/article/detail/163001900" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.18","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BLOGTAG~activity-18-163001900-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"18","strategy":"2~default~BLOGTAG~activity","dest":"https://devpress.csdn.net/v1/article/detail/163001900"}'  data-report-query='spm=1001.2101.3001.6650.18&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-18-163001900-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-18-163001900-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+					<div class="left ellipsis-online ellipsis-online-1">7月更新 <em>ChatGPT</em>、Codex、Pro、Plus 背后的工程难题：AI Consistency 将成为 LLM-Native 系统的下一道门槛（5.6）</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/dr_eric123" target="_blank"><span class="blog-title">dr_eric123的博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">07-18</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					350
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://devpress.csdn.net/v1/article/detail/163001900" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.18","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BLOGTAG~activity-18-163001900-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"18","strategy":"2~default~BLOGTAG~activity","dest":"https://devpress.csdn.net/v1/article/detail/163001900"}'  data-report-query='spm=1001.2101.3001.6650.18&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-18-163001900-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-18-163001900-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+				<div class="desc ellipsis-online ellipsis-online-1">Plus 更常见于日常任务。写文章整理资料生成大纲解释代码总结会议分析方案这些任务单次风险不高，但频率高。高频任务最容易出现标准漂移。比如同一个系列文章：第一篇是深度技术架构。第二篇是普通科普。第三篇变成经验分享。第四篇又重复第一篇。这说明日常工作流缺少稳定的质量标准。taskSeries: <em>&quot;</em><em>ChatGPT</em> Codex CSDN 深度文章<em>&quot;</em>,<em>&quot;</em><em>ChatGPT</em><em>&quot;</em>,<em>&quot;</em>Codex<em>&quot;</em>,<em>&quot;</em>Pro<em>&quot;</em>,<em>&quot;</em>Plus<em>&quot;</em>,<em>&quot;</em>程序结构<em>&quot;</em>,<em>&quot;</em>明确技术判断<em>&quot;</em>],</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://devpress.csdn.net/v1/article/detail/162877865"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.19","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BLOGTAG~activity-19-162877865-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"19","strategy":"2~default~BLOGTAG~activity","dest":"https://devpress.csdn.net/v1/article/detail/162877865"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://devpress.csdn.net/v1/article/detail/162877865" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.19","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BLOGTAG~activity-19-162877865-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"19","strategy":"2~default~BLOGTAG~activity","dest":"https://devpress.csdn.net/v1/article/detail/162877865"}'  data-report-query='spm=1001.2101.3001.6650.19&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-19-162877865-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-19-162877865-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+					<div class="left ellipsis-online ellipsis-online-1">OpenAI推出<em>ChatGPT</em> Work：AI开始从&ldquo;回答问题&rdquo;走向&ldquo;完成工作&rdquo;&mdash;&mdash;赛柏特AI快讯</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/CypressTel" target="_blank"><span class="blog-title">CypressTel的博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">07-17</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					203
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://devpress.csdn.net/v1/article/detail/162877865" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.19","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BLOGTAG~activity-19-162877865-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"19","strategy":"2~default~BLOGTAG~activity","dest":"https://devpress.csdn.net/v1/article/detail/162877865"}'  data-report-query='spm=1001.2101.3001.6650.19&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-19-162877865-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-19-162877865-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+				<div class="desc ellipsis-online ellipsis-online-1"><em>ChatGPT</em> Work的发布释放出一个清晰信号：生成式AI正在从提供信息的辅助工具，进一步转向能够理解目标、调用资源并持续交付成果的工作智能体。随着AI越来越深入企业业务流程，连接算力、数据、应用与用户的基础设施，也将成为企业AI落地的重要支撑。作为全球AI算网基础设施服务商，赛柏特将持续关注企业AI应用对网络连接、算力协同和安全访问提出的新要求，为企业智能化应用落地提供稳定、高效的基础设施支持。</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://devpress.csdn.net/v1/article/detail/162894738"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.20","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BLOGTAG~activity-20-162894738-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"20","strategy":"2~default~BLOGTAG~activity","dest":"https://devpress.csdn.net/v1/article/detail/162894738"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://devpress.csdn.net/v1/article/detail/162894738" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.20","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BLOGTAG~activity-20-162894738-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"20","strategy":"2~default~BLOGTAG~activity","dest":"https://devpress.csdn.net/v1/article/detail/162894738"}'  data-report-query='spm=1001.2101.3001.6650.20&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-20-162894738-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-20-162894738-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+					<div class="left ellipsis-online ellipsis-online-1">如何评价 OpenAI 正式推出的 GPT-5.6 系列模型？</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/Pydatas" target="_blank"><span class="blog-title">分享Python、数据分析、人工智能前沿知识</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">07-15</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					269
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://devpress.csdn.net/v1/article/detail/162894738" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.20","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BLOGTAG~activity-20-162894738-blog-163071701.235^v43^pc_blog_bottom_relevance_base4\",\"dist_request_id\":\"1784604916355_01564\"}","dist_request_id":"1784604916355_01564","ab_strategy":"landing_bge_commercial_es","index":"20","strategy":"2~default~BLOGTAG~activity","dest":"https://devpress.csdn.net/v1/article/detail/162894738"}'  data-report-query='spm=1001.2101.3001.6650.20&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-20-162894738-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBLOGTAG%7Eactivity-20-162894738-blog-163071701.235%5Ev43%5Epc_blog_bottom_relevance_base4'>
+				<div class="desc ellipsis-online ellipsis-online-1">最让我惊讶的还不是GPT5.6和<em>ChatGPT</em> Work，而是GPT- Live，具备了人类的语气，会有噢、啊、嗯，以及短暂的沉默、咳嗽穿插在对话中，好像是和一个真人在聊天。还有个适合打工人的场景，<em>ChatGPT</em> Work能自动读取电脑上的各种系统数据、excel表格、slack记录，自动进行模型分析，然后生成ppt报告和BI看板，分享给同事。另外GPT- Live还可以进行同声传译，口语纠偏、自主调用agent、查询网页，这里相当于你可以和具备无限知识、信息、技能的人在聊天，非常的可怕。</div>
+			</a>
+		</div>
+	</div>
+</div>
+              </div>
+<div class="blog-footer-bottom" style="margin-top:10px;"></div>
+<script src="https://g.csdnimg.cn/common/csdn-footer/csdn-footer.js" data-isfootertrack="false" type="text/javascript"></script>
+<script type="text/javascript">
+    window.csdn.csdnFooter.options = {
+        el: '.blog-footer-bottom',
+        type: 2
+    }
+</script>          </main>
+<aside class="blog_container_aside ">
+<div id="asideProfile" class="aside-box active">
+    <div class="profile-intro d-flex">
+        <div class="avatar-box d-flex justify-content-center flex-column">
+            <a href="https://blog.csdn.net/LDZKKJ" target="_blank" data-report-click='{"mod":"popu_379","spm":"3001.4121","dest":"https://blog.csdn.net/LDZKKJ","ab":"new"}'>
+                <img src="https://profile-avatar.csdnimg.cn/default.jpg!1" class="avatar_pic">
+            </a>
+        </div>
+        <div class="user-info d-flex flex-column profile-intro-name-box">
+            <div class="profile-intro-name-boxTop">
+                <a href="https://blog.csdn.net/LDZKKJ" target="_blank" class="" id="uid" title="LDZKKJ" data-report-click='{"mod":"popu_379","spm":"3001.4122","dest":"https://blog.csdn.net/LDZKKJ","ab":"new"}'>
+                    <span class="name" username="LDZKKJ">LDZKKJ</span>
+                </a>
+            </div>
+            <div class="profile-intro-name-boxFooter-new">
+              <p class="profile-intro-name-leve">
+                <span>
+                  博客等级
+                </span>
+                  <img class="level" src="https://csdnimg.cn/identity/blog3.png">
+              </p>
+                <span class="profile-intro-name-years" title="已加入 CSDN 48天">码龄48天</span>
+               
+            </div>
+        </div>
+    </div>
+    <div class="profile-intro-rank-information">
+      <dl>
+        <a href="https://blog.csdn.net/LDZKKJ" data-report-click='{"mod":"1598321000_001","spm":"3001.4310"}' data-report-query="t=1">  
+            <dd><span >38</span></dd>
+            <dt>原创</dt>
+        </a>
+      </dl>
+       <dl title="429">
+        <dd>429</dd>
+        <dt>点赞</dt>
+      </dl>
+       <dl title="230">
+        <dd>230</dd>
+        <dt>收藏</dt>
+      </dl>
+      <dl id="fanBox" title="4">
+        <dd><span id="fan">4</span></dd>
+        <dt>粉丝</dt>
+      </dl>
+    </div>
+    <div class="profile-intro-name-boxOpration">
+        <div class="opt-letter-watch-box"> 
+            <a class="personal-watch bt-button" id="btnAttent" >关注</a>  
+        </div>
+        <div class="opt-letter-watch-box">
+        <a rel="nofollow" class="bt-button personal-letter" href="https://im.csdn.net/chat/LDZKKJ" target="_blank" rel="noopener">私信</a>
+        </div>
+    </div>
+</div>
+      <div class="swiper-slide-box-remuneration">
+        <a data-report-click='{"spm":"3001.9728","extra":{"index":"0"}}' data-report-view='{"spm":"3001.9728","extra":{"index":"0"}}' href="https://infinisynapse.cn/contest/vibe-coding?utm_source=20260707_vip_blogleftbanner" target="_blank">
+          <img src="https://i-operation.csdnimg.cn/images/4442cf24fdc9474fbde0a9c7cebb4ed6.png" alt="">
+        </a>
+      </div>
+<div class="box-shadow mb8" data-pid="blog" >
+    <div class="aside-content text-center" id="cpro_u2734133">
+        <div id="kp_box_56" data-pid="56"><div class="wwads-cn wwads-vertical" data-id="149" style="max-width:300px;margin-top:0;margin-bottom:10px;background-color: #fff;"></div> 
+<style>.wwads-img img {width: 150px; margin-top:10px}</style>
+<script type="text/javascript" charset="UTF-8" src="https://cdn.wwads.cn/js/makemoney.js" async></script><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=56&adId=1100446&adBlockFlag=0&a=1100446&c=0&k=Token峰谷电价来了——大模型定价进入“分时计费”时代&spm=1001.2101.3001.5000&articleId=163071701&d=1&t=3&u=1de2a0106d3b4cc980df84986aa11522" style="display: block;width: 0px;height: 0px;"></div>
+    </div>
+</div>
+
+
+
+<div id="asideHotArticle" class="aside-box">
+	<h3 class="aside-title">热门文章</h3>
+	<div class="aside-content">
+		<ul class="hotArticle-list">
+			<li>
+				<a href="https://blog.csdn.net/LDZKKJ/article/details/161980492" target="_blank"  data-report-click='{"mod":"popu_541","spm":"3001.4139","dest":"https://blog.csdn.net/LDZKKJ/article/details/161980492","ab":"new"}'>
+				国产大模型横评 2026 年中：Qwen3.5 / DeepSeek V4 / Doubao-Seed-2.0-pro / Kimi 谁是真王者？
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					<span class="read">1172</span>
+                </a>
+			</li>
+			<li>
+				<a href="https://blog.csdn.net/LDZKKJ/article/details/161981214" target="_blank"  data-report-click='{"mod":"popu_541","spm":"3001.4139","dest":"https://blog.csdn.net/LDZKKJ/article/details/161981214","ab":"new"}'>
+				大模型 API 价格全景图 2026.6：12 款主流模型成本实测与选型决策树
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					<span class="read">997</span>
+                </a>
+			</li>
+			<li>
+				<a href="https://blog.csdn.net/LDZKKJ/article/details/162212270" target="_blank"  data-report-click='{"mod":"popu_541","spm":"3001.4139","dest":"https://blog.csdn.net/LDZKKJ/article/details/162212270","ab":"new"}'>
+				OpenRouter 周榜实证：用真实流量数据做国产大模型选型决策（2026.6 第 3 周）
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					<span class="read">804</span>
+                </a>
+			</li>
+			<li>
+				<a href="https://blog.csdn.net/LDZKKJ/article/details/162798819" target="_blank"  data-report-click='{"mod":"popu_541","spm":"3001.4139","dest":"https://blog.csdn.net/LDZKKJ/article/details/162798819","ab":"new"}'>
+				学件（Learnware）× 北冥坞（Beimingwu）：模型复用范式的技术内核与商业化落点
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					<span class="read">754</span>
+                </a>
+			</li>
+			<li>
+				<a href="https://blog.csdn.net/LDZKKJ/article/details/162643036" target="_blank"  data-report-click='{"mod":"popu_541","spm":"3001.4139","dest":"https://blog.csdn.net/LDZKKJ/article/details/162643036","ab":"new"}'>
+				AI 存储技术方向硬核解析：HBM/CXL/QLC/存算一体六大主线
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					<span class="read">736</span>
+                </a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div id="asideCategory" class="aside-box aside-box-column ">
+    <h3 class="aside-title">分类专栏</h3>
+    <div class="aside-content" id="aside-content">
+        <ul>
+            <li>
+                <a class="clearfix special-column-name"  href="https://blog.csdn.net/ldzkkj/category_13175292.html" data-report-click='{"mod":"popu_537","spm":"3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/ldzkkj/category_13175292.html","ab":"new"}'>
+                    <div class="special-column-bar "></div>
+                    <img src="https://i-blog.csdnimg.cn/columns/default/20201014180756757.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://i-blog.csdnimg.cn/columns/default/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        AI / 大模型
+                    </span>
+                </a>
+                <span class="special-column-num">32篇</span>
+            </li>
+        </ul>
+    </div>
+</div>
+  <div class="article-previous" id="article-previous">
+      <dl data-report-click='{"spm":"3001.10752","extend1":"上一篇"}' data-report-view='{"spm":"3001.10752","extend1":"上一篇"}'>
+          <dt>
+              上一篇：
+          </dt>
+          <dd>
+            <a href="https://blog.csdn.net/LDZKKJ/article/details/163070295" data-report-query="spm=3001.10752">
+              Kimi K3 2.8万亿参数登顶全球代码榜——MoE第四极来了
+            </a>
+          </dd>
+      </dl>
+  </div>
+<div id="asideNewComments" class="aside-box">
+    <h3 class="aside-title">最新评论</h3>
+    <div class="aside-content">
+        <ul class="newcomment-list">
+            <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/LDZKKJ/article/details/161980492#comments_39868330" data-report-click='{"mod":"popu_542","spm":"3001.4231","dest":"https://blog.csdn.net/LDZKKJ/article/details/161980492#comments_39868330","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"3001.4231","dest":"https://blog.csdn.net/LDZKKJ/article/details/161980492#comments_39868330","ab":"new"}'>国产大模型横评 2026 年中：Qwen3.5 / DeepSeek V4 / Doubao-Seed-2.0-pro / Kimi 谁是真王者？</a>
+                <p class="comment ellipsis">
+                    <a href="https://blog.csdn.net/organic_seed_ai" class="user-name" target="_blank">organic_seed_ai: </a>
+                    <span class="code-comments">glm5.1怎么会是多模态模型?</span>
+                </p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="asideHotArticle" class="aside-box">
+	<h3 class="aside-title">大家在看</h3>
+	<div class="aside-content">
+		<ul class="hotArticle-list">
+			<li>
+				<a href="https://blog.csdn.net/Goshu/article/details/163068073" target="_blank"  data-report-click='{"spm":"3001.10093","dest":"https://blog.csdn.net/Goshu/article/details/163068073","strategy":"202_1052723-4347289_RCMD","ab":"new"}' data-report-view='{"spm":"3001.10093","dest":"https://blog.csdn.net/Goshu/article/details/163068073","strategy":"202_1052723-4347289_RCMD","ab":"new"}'>
+				Na⁺/K⁺-ATP酶活性检测：揭示细胞膜离子稳态与能量代谢的精密调控
+        </a>
+			</li>
+			<li>
+				<a href="https://blog.csdn.net/2611_95571540/article/details/163072091" target="_blank"  data-report-click='{"spm":"3001.10093","dest":"https://blog.csdn.net/2611_95571540/article/details/163072091","strategy":"202_1052723-4347363_RCMD","ab":"new"}' data-report-view='{"spm":"3001.10093","dest":"https://blog.csdn.net/2611_95571540/article/details/163072091","strategy":"202_1052723-4347363_RCMD","ab":"new"}'>
+				2026 年如何抓取 Yelp 数据：实用指南
+        </a>
+			</li>
+			<li>
+				<a href="https://blog.csdn.net/RPT_TECH/article/details/163048418" target="_blank"  data-report-click='{"spm":"3001.10093","dest":"https://blog.csdn.net/RPT_TECH/article/details/163048418","strategy":"202_1052723-4347313_RCMD","ab":"new"}' data-report-view='{"spm":"3001.10093","dest":"https://blog.csdn.net/RPT_TECH/article/details/163048418","strategy":"202_1052723-4347313_RCMD","ab":"new"}'>
+				采购CATIA必看的5个核心问题，搞懂再下单，不花冤枉钱
+        </a>
+			</li>
+			<li>
+				<a href="https://blog.csdn.net/Hxzyxkf2016/article/details/163070207" target="_blank"  data-report-click='{"spm":"3001.10093","dest":"https://blog.csdn.net/Hxzyxkf2016/article/details/163070207","strategy":"202_1052723-4347185_RCMD","ab":"new"}' data-report-view='{"spm":"3001.10093","dest":"https://blog.csdn.net/Hxzyxkf2016/article/details/163070207","strategy":"202_1052723-4347185_RCMD","ab":"new"}'>
+				花仙子科技详解：小游戏合规开发完整要点
+        </a>
+			</li>
+			<li>
+				<a href="https://blog.csdn.net/m0_61749394/article/details/163049977" target="_blank"  data-report-click='{"spm":"3001.10093","dest":"https://blog.csdn.net/m0_61749394/article/details/163049977","strategy":"202_1052723-4347403_RCMD","ab":"new"}' data-report-view='{"spm":"3001.10093","dest":"https://blog.csdn.net/m0_61749394/article/details/163049977","strategy":"202_1052723-4347403_RCMD","ab":"new"}'>
+				PyCharm 新手避坑指南：一文解决“项目列表消失”与“模块导入报错”两大玄学问题
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					<span class="read">413</span>
+        </a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div id="asideArchive" class="aside-box" style="display:block!important; width:300px;">
+    <h3 class="aside-title">最新文章</h3>
+    <div class="aside-content">
+        <ul class="inf_list clearfix">
+            <li class="clearfix">
+            <a href="https://blog.csdn.net/LDZKKJ/article/details/163070295" target="_blank" data-report-click='{"mod":"popu_382","spm":"3001.4136","dest":"https://blog.csdn.net/LDZKKJ/article/details/163070295","ab":"left"}' data-report-view='{"mod":"popu_382","spm":"3001.4136","dest":"https://blog.csdn.net/LDZKKJ/article/details/163070295","ab":"left"}'>Kimi K3 2.8万亿参数登顶全球代码榜——MoE第四极来了</a>
+            </li>
+            <li class="clearfix">
+            <a href="https://blog.csdn.net/LDZKKJ/article/details/162945677" target="_blank" data-report-click='{"mod":"popu_382","spm":"3001.4136","dest":"https://blog.csdn.net/LDZKKJ/article/details/162945677","ab":"left"}' data-report-view='{"mod":"popu_382","spm":"3001.4136","dest":"https://blog.csdn.net/LDZKKJ/article/details/162945677","ab":"left"}'>国产开源 MoE 三强横评：Qwen3 235B / Kimi K2 / DeepSeek V3.1 深度技术解读</a>
+            </li>
+            <li class="clearfix">
+            <a href="https://blog.csdn.net/LDZKKJ/article/details/162945454" target="_blank" data-report-click='{"mod":"popu_382","spm":"3001.4136","dest":"https://blog.csdn.net/LDZKKJ/article/details/162945454","ab":"left"}' data-report-view='{"mod":"popu_382","spm":"3001.4136","dest":"https://blog.csdn.net/LDZKKJ/article/details/162945454","ab":"left"}'>北冥坞企业接入 8 项评估：从技术验证到规模化落地的量化决策框架</a>
+            </li>
+        </ul>
+        <div class="archive-bar"></div>
+        <div class="archive-box">
+                <div class="archive-list-item"><a href="https://blog.csdn.net/LDZKKJ?type=blog&amp;year=2026&amp;month=07" target="_blank" data-report-click='{"mod":"popu_538","spm":"3001.4138","ab":"new","dest":"https://blog.csdn.net/LDZKKJ?type=blog&amp;year=2026&amp;month=07"}'><span class="year">2026年</span><span class="num">36篇</span></a></div>
+        </div>
+    </div>
+</div>
+    <div id="footerRightAds" class="isShowFooterAds">
+      <div class="aside-box">
+        <div id="kp_box_57" data-pid="57"><iframe  src="https://kunpeng-sc.csdnimg.cn/?timestamp=1645783940/#/preview/4145937?positionId=57&adBlockFlag=0&adId=1100203&queryWord=Token峰谷电价来了——大模型定价进入“分时计费”时代&spm=1001.2101.3001.5001&articleId=163071701" frameborder="0" width= "300px"  height= "600px" scrolling="no" ></iframe><img class="pre-img-lasy"  data-src="https://kunyu.csdn.net/1.png?p=57&adBlockFlag=0&adId=1100203&a=1100203&c=4145937&k=Token峰谷电价来了——大模型定价进入“分时计费”时代&spm=1001.2101.3001.5001&articleId=163071701&d=1&t=3&u=282a28ee564d4a90b74b6752b91f7419" style="display: block;width: 0px;height: 0px;"><script src="https://kunpeng-render.csdnimg.cn/publisher/latest/closeAdFrame.js"></script></div>
+      </div>
+    </div>
+    <!-- 详情页显示目录 -->
+<div class="aside-box cknows-side-card js-aside-cknows">
+  <div class="cknows-side-header">
+    <div class="cknows-side-header-row">
+      <div class="cknows-side-logo-wrap">
+        <img class="cknows-side-logo" src="https://csdnimg.cn/release/blogv2/dist/pc/img/c-blog-slidelogo-White.png" alt="C知道">
+      </div>
+      <p class="cknows-side-brand">· AI 阅读助手</p>
+    </div>
+  </div>
+  <div class="swiper cknows-side-swiper">
+    <div class="swiper-wrapper cknows-swiper-wrapper"></div>
+    <div class="cknows-side-pagination swiper-pagination"></div>
+  </div>
+</div>
+<!--文章目录-->
+<div id="asidedirectory" class="aside-box">
+    <div class='groupfile groupfile-active' id="directory">
+        <h3 class="aside-title">目录</h3>
+        <div class="align-items-stretch group_item" id="align-items-stretch">
+            <div class="pos-box">
+            <div class="scroll-box">
+                <div class="toc-box"></div>
+            </div>
+            </div>
+        </div>
+          <p class="flexible-btn-new" id="flexible-btn-groupfile" data-report-click='{"spm":"3001.10780","strategy":"展开全部"}' data-minheight="117px" data-maxheight="446px" data-fbox="#align-items-stretch"><span class="text">展开全部</span> <img class="look-more" src="https://csdnimg.cn/release/blogv2/dist/pc/img/arrowup-line-bot-White.png" alt=""></p>
+          <p class="flexible-btn-new-close close" data-report-click='{"spm":"3001.10780","strategy":"收起"}'  data-minheight="117px" data-maxheight="446px" data-fbox="#align-items-stretch"><span class="text">收起</span> <img class="look-more" src="https://csdnimg.cn/release/blogv2/dist/pc/img/arrowup-line-top-White.png" alt=""></p>
+    </div>
+</div>
+<div class="gitcode-qc-left-box aside-box" data-report-click='{"spm":"3001.11256", "extra":"{\"position\":\"left\"}"}'></div>
+</aside>
+<script>
+	$("a.flexible-btn").click(function(){
+		$(this).parents('div.aside-box').removeClass('flexible-box');
+		$(this).parents("p.text-center").remove();
+	})
+</script>
+<script type="text/javascript"  src="https://g.csdnimg.cn/user-tooltip/2.7/user-tooltip.js"></script>
+<script type="text/javascript"  src="https://g.csdnimg.cn/user-medal/2.0.0/user-medal.js"></script>
+        </div>
+<div class="recommend-right align-items-stretch clearfix article-component-material-third-column" id="rightAside" data-type="recommend">
+    <aside class="recommend-right_aside">
+            <div class="rightside-fixed-hide">
+              <div class="programmer1Box">
+                  <div id="kp_box_530" data-pid="530"><iframe  src="https://kunpeng-sc.csdnimg.cn/?timestamp=1645783940/#/preview/4266090?positionId=530&adBlockFlag=0&adId=1102912&queryWord=Token峰谷电价来了——大模型定价进入“分时计费”时代&spm=1001.2101.3001.4647&articleId=163071701" frameborder="0" width= "300px"  height= "600px" scrolling="no" ></iframe><img class="pre-img-lasy"  data-src="https://kunyu.csdn.net/1.png?p=530&adBlockFlag=0&adId=1102912&a=1102912&c=4266090&k=Token峰谷电价来了——大模型定价进入“分时计费”时代&spm=1001.2101.3001.4647&articleId=163071701&d=1&t=3&u=0267d569ec4d42488c7b23c0e4952346" style="display: block;width: 0px;height: 0px;"><script src="https://kunpeng-render.csdnimg.cn/publisher/latest/closeAdFrame.js"></script></div>
+              </div>
+      </div>
+        <div id="recommend-right" >
+<div class="aside-box cknows-side-card js-aside-cknows">
+  <div class="cknows-side-header">
+    <div class="cknows-side-header-row">
+      <div class="cknows-side-logo-wrap">
+        <img class="cknows-side-logo" src="https://csdnimg.cn/release/blogv2/dist/pc/img/c-blog-slidelogo-White.png" alt="C知道">
+      </div>
+      <p class="cknows-side-brand">· AI 阅读助手</p>
+    </div>
+  </div>
+  <div class="swiper cknows-side-swiper">
+    <div class="swiper-wrapper cknows-swiper-wrapper"></div>
+    <div class="cknows-side-pagination swiper-pagination"></div>
+  </div>
+</div>
+          <div class='flex-column aside-box groupfile groupfile-active ' id="groupfile">
+              <div class="groupfile-div">
+              <h3 class="aside-title">目录</h3>
+              <div class="align-items-stretch group_item" id="align-items-stretch-right">
+                  <div class="pos-box">
+                      <div class="scroll-box">
+                          <div class="toc-box"></div>
+                      </div>
+                  </div>
+              </div>
+                <p class="flexible-btn-new" id="flexible-btn-groupfile" data-report-click='{"spm":"3001.10782","strategy":"展开全部"}' data-traigger="true" data-minheight="117px" data-maxheight="446px" data-fbox="#align-items-stretch-right"><span class="text">展开全部</span> <img class="look-more" src="https://csdnimg.cn/release/blogv2/dist/pc/img/arrowup-line-bot-White.png" alt=""></p>
+                <p class="flexible-btn-new-close close" data-report-click='{"spm":"3001.10782","strategy":"收起"}' data-traigger="true"  data-minheight="117px" data-maxheight="446px" data-fbox="#align-items-stretch-right"><span class="text">收起</span> <img class="look-more" src="https://csdnimg.cn/release/blogv2/dist/pc/img/arrowup-line-top-White.png" alt=""></p>
+              </div>
+          </div>
+          <div class="gitcode-qc-right-box aside-box" data-report-click='{"spm":"3001.11256", "extra":"{\"position\":\"right\"}"}'></div>
+              <div id="recommendAdBox">
+                  <div id="kp_box_479" data-pid="479"><div class="wwads-cn wwads-vertical" data-id="149" style="max-width:300px;margin-top:10px;background-color: #fff;"></div> 
+<style>.wwads-img img {width: 150px; margin-top:10px}</style><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=479&adId=1100447&adBlockFlag=0&a=1100447&c=0&k=Token峰谷电价来了——大模型定价进入“分时计费”时代&spm=1001.2101.3001.4834&articleId=163071701&d=1&t=3&u=8ccef4299b974bb980a4cf6eb3bf29ca" style="display: block;width: 0px;height: 0px;"></div>
+              </div>
+  <div class="article-previous" id="article">
+      <dl data-report-click='{"spm":"3001.10752","extend1":"上一篇"}' data-report-view='{"spm":"3001.10752","extend1":"上一篇"}'>
+          <dt>
+              上一篇：
+          </dt>
+          <dd>
+            <a href="https://blog.csdn.net/LDZKKJ/article/details/163070295" data-report-query="spm=3001.10752">
+              Kimi K3 2.8万亿参数登顶全球代码榜——MoE第四极来了
+            </a>
+          </dd>
+      </dl>
+  </div>
+          <div class='aside-box kind_person d-flex flex-column flexible-box-new' >
+                  <h3 class="aside-title">分类专栏</h3>
+                  <div class="align-items-stretch kindof_item" id="kind_person_column">
+                      <div class="aside-content" id="aside-content-column">
+                          <ul>
+                              <li>
+                                  <a class="clearfix special-column-name"  href="https://blog.csdn.net/ldzkkj/category_13175292.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/ldzkkj/category_13175292.html","ab":"new"}'>
+                                      <div class="special-column-bar "></div>
+                                      <img src="https://i-blog.csdnimg.cn/columns/default/20201014180756757.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://i-blog.csdnimg.cn/columns/default/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                                      <span class="">
+                                          AI / 大模型
+                                      </span>
+                                  </a>
+                                  <span class="special-column-num">32篇</span>
+                              </li>
+                          </ul>
+                      </div>
+                        <p class="text-center">
+                          <a class="flexible-btn-new" data-report-click='{"spm":"3001.10783","strategy":"展开全部"}' data-traigger="true" data-maxheight="0" data-minheight="208px" data-fbox="#aside-content-column" data-flag="flag"><span class="text">展开全部</span> <img class="look-more" src="https://csdnimg.cn/release/blogv2/dist/pc/img/arrowup-line-bot-White.png" alt=""></a>
+                          <a class="flexible-btn-new-close" data-report-click='{"spm":"3001.10783","strategy":"收起"}'data-traigger="true"  data-minheight="208px" data-fbox="#aside-content-column" data-scroll="true" data-flag="flag"><span class="text">收起</span> <img class="look-more" src="https://csdnimg.cn/release/blogv2/dist/pc/img/arrowup-line-top-White.png" alt=""></a>
+                        </p>
+                  </div>
+          </div>
+        </div>
+    </aside>
+</div>
+<div class="recommend-right1  align-items-stretch clearfix" id="rightAsideConcision" data-type="recommend">
+    <aside class="recommend-right_aside">
+        <div id="recommend-right-concision" >
+            <div class='flex-column aside-box groupfile' id="groupfileConcision">
+                <div class="groupfile-div1">
+                <h3 class="aside-title">目录</h3>
+                <div class="align-items-stretch group_item">
+                    <div class="pos-box">
+                        <div class="scroll-box">
+                            <div class="toc-box"></div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+</div>
+
+      </div>
+      <div class="mask-dark"></div>
+        <script type="text/javascript">
+        var timert = setInterval(function() {
+          sideToolbar = $(".csdn-side-toolbar");
+          if (sideToolbar.length > 0) {
+            sideToolbar.css('cssText', 'bottom:64px !important;')
+            clearInterval(timert);
+          }
+        }, 200);
+        </script>
+      <div class="skin-boxshadow"></div>
+      <div class="directory-boxshadow"></div>
+<div class="comment-side-box-shadow comment-side-tit-close" id="commentSideBoxshadow">
+<div class="comment-side-content">
+	<div class="comment-side-tit">
+		<span class="comment-side-tit-count">评论</span>	
+	<img class="comment-side-tit-close" src="https://csdnimg.cn/release/blogv2/dist/pc/img/closeBt.png"></div>
+  <div id="pcCommentSideBox" class="comment-box comment-box-new2 unlogin-comment-box-new" style="display:none">
+	
+	</div>
+	<div id="pcFlodCommentSideBox" class="pc-flodcomment-sidebox">
+		<div class="comment-fold-tit"><span id="lookUnFlodComment" class="back"><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentArrowLeftWhite.png" alt=""></span>被折叠的&nbsp;<span class="count"></span>&nbsp;条评论
+		 <a href="https://blogdev.blog.csdn.net/article/details/122245662" class="tip" target="_blank">为什么被折叠?</a>
+		 <a href="https://bbs.csdn.net/forums/FreeZone" class="park" target="_blank">
+		 <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/iconPark.png">到【灌水乐园】发言</a>                                
+		</div>
+		<div class="comment-fold-content"></div>
+		<div id="lookBadComment" class="look-bad-comment side-look-comment">
+			<a class="look-more-comment">查看更多评论<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentArrowDownWhite.png" alt=""></a>
+		</div>
+	</div>
+</div>
+<div class="comment-rewarddialog-box">
+  <div class="form-box">
+    <div class="title-box">
+      添加红包
+      <a class="btn-form-close"></a>
+    </div>
+    <form id="commentRewardForm">
+      <div class="ipt-box">
+        <label for="txtName">祝福语</label>
+        <div class="ipt-btn-box">
+          <input type="text" name="name" id="txtName" autocomplete="off" maxlength="50">
+          <a class="btn-ipt btn-random"></a>
+        </div>
+        <p class="notice">请填写红包祝福语或标题</p>
+      </div>
+      <div class="ipt-box">
+        <label for="txtSendAmount">红包数量</label>
+        <div class="ipt-txt-box">
+          <input type="text" name="sendAmount" maxlength="4" id="txtSendAmount" placeholder="请填写红包数量(最小10个)" autocomplete="off">
+          <span class="after-txt">个</span>
+        </div>
+        <p class="notice">红包个数最小为10个</p>
+      </div>
+      <div class="ipt-box">
+        <label for="txtMoney">红包总金额</label>
+        <div class="ipt-txt-box error">
+          <input type="text" name="money" maxlength="5" id="txtMoney" placeholder="请填写总金额(最低5元)" autocomplete="off">
+          <span class="after-txt">元</span>
+        </div>
+        <p class="notice">红包金额最低5元</p>
+      </div>
+      <div class="balance-info-box">
+        <label>余额支付</label>
+        <div class="balance-info">
+          当前余额<span class="balance">3.43</span>元
+          <a href="https://i.csdn.net/#/wallet/balance/recharge" class="link-charge" target="_blank">前往充值 ></a>
+        </div>
+      </div>
+      <div class="opt-box">
+        <div class="pay-info">
+          需支付：<span class="price">10.00</span>元
+        </div>
+        <button type="button" class="ml-auto btn-cancel">取消</button>
+        <button type="button" class="ml8 btn-submit" disabled="true">确定</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="rr-guide-box">
+  <div class="rr-first-box">
+    <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/guideRedReward02.png" alt="">
+    <button class="btn-guide-known next">下一步</button>
+  </div>
+  <div class="rr-second-box">
+    <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/guideRedReward03.png" alt="">
+    <button class="btn-guide-known known">知道了</button>
+  </div>
+</div>
+</div>
+
+<div class="redEnvolope" id="redEnvolope">
+  <div class="env-box">
+    <div class="env-container">
+      <div class="pre-open" id="preOpen">
+        <div class="top">
+          <header>
+            <img class="clearTpaErr" :src="redpacketAuthor.avatar" alt="" />
+            <div class="author">成就一亿技术人!</div>
+          </header>
+          <div class="bot-icon"></div>
+        </div>
+        <footer>
+          <div class="red-openbtn open-start"></div>
+          <div class="tip">
+            领取后你会自动成为博主和红包主的粉丝
+            <a class="rule" target="_blank">规则</a>
+          </div>
+        </footer>
+      </div>
+      <div class="opened" id="opened">
+        <div class="bot-icon">
+          <header>
+            <a class="creatorUrl" href="" target="_blank">
+              <img class="clearTpaErr" src="https://profile-avatar.csdnimg.cn/default.jpg!2" alt="" />
+            </a>
+            <div class="author">
+              <div class="tt">hope_wisdom</div> 发出的红包
+            </div>
+          </header>
+        </div>
+        <div class="receive-box">
+          <header></header>
+          <div class="receive-list">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="close-btn"></div>
+  </div>
+</div>
+      
+      <div class="pay-code">
+      <div class="pay-money">实付<span class="pay-money-span" data-nowprice='' data-oldprice=''>元</span></div>
+      <div class="content-blance"><a class="blance-bt" href="javascript:;">使用余额支付</a></div>
+      <div class="content-code">
+        <div id="payCode" data-id="">
+          <div class="renovate">
+            <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/pay-time-out.png">
+            <span>点击重新获取</span>
+          </div>
+        </div>
+        <div class="pay-style"><span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/weixin.png"></span><span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/zhifubao.png"></span><span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/jingdong.png"></span><span class="text">扫码支付</span></div>
+      </div>
+      <div class="bt-close">
+        <svg t="1567152543821" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10924" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12">
+          <defs>
+            <style type="text/css"></style>
+          </defs>
+          <path d="M512 438.378667L806.506667 143.893333a52.032 52.032 0 1 1 73.6 73.621334L585.621333 512l294.485334 294.485333a52.074667 52.074667 0 0 1-73.6 73.642667L512 585.621333 217.514667 880.128a52.053333 52.053333 0 1 1-73.621334-73.642667L438.378667 512 143.893333 217.514667a52.053333 52.053333 0 1 1 73.621334-73.621334L512 438.378667z" fill="" p-id="10925"></path>
+        </svg>
+      </div>
+      <div class="pay-balance">
+        <input type="radio" class="pay-code-radio" data-type="details">
+        <span class="span">钱包余额</span>
+          <span class="balance" style="color:#FC5531;font-size:14px;">0</span>
+          <div class="pay-code-tile">
+            <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/pay-help.png" alt="">
+            <div class="pay-code-content">
+              <div class="span">
+                <p class="title">抵扣说明：</p>
+                <p> 1.余额是钱包充值的虚拟货币，按照1:1的比例进行支付金额的抵扣。<br> 2.余额无法直接购买下载，可以购买VIP、付费专栏及课程。</p>
+              </div>
+            </div>
+          </div>
+      </div>
+      <a class="pay-balance-con" href="https://i.csdn.net/#/wallet/balance/recharge" target="_blank"><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/recharge.png" alt=""><span>余额充值</span></a>
+    </div>
+    <div style="display:none;">
+      <img src="" onerror='setTimeout(function(){if(!/(csdn.net|iteye.com|baiducontent.com|googleusercontent.com|360webcache.com|sogoucdn.com|bingj.com|baidu.com)$/.test(window.location.hostname)){window.location.href="\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x63\x73\x64\x6e\x2e\x6e\x65\x74"}},3000);'>
+    </div>
+    <div class="keyword-dec-box" id="keywordDecBox"></div>
+  </body>
+  <script src="https://csdnimg.cn/release/blogv2/dist/components/js/axios-83fa28cedf.min.js" type="text/javascript"></script>
+  <script src="https://csdnimg.cn/release/blogv2/dist/components/js/pc_wap_highlight-8defd55d6e.min.js" type="text/javascript"></script>
+  <script src="https://csdnimg.cn/release/blogv2/dist/components/js/pc_wap_common-3c7b273c43.min.js" type="text/javascript"></script>
+  <script src="https://csdnimg.cn/release/blogv2/dist/components/js/edit_copy_code-43c2d050a0.min.js" type="text/javascript"></script>
+  <script src="https://g.csdnimg.cn/lib/cboxEditor/1.1.6/embed-editor.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://g.csdnimg.cn/lib/cboxEditor/1.1.6/embed-editor.min.css">
+  <link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.6.12/ckeditor/plugins/codesnippet/lib/highlight/styles/atom-one-dark.css">
+  <script src="https://g.csdnimg.cn/user-accusation/1.0.6/user-accusation.js" type="text/javascript"></script>
+  <script>
+    // 全局声明
+    if (window.csdn === undefined) {
+      window.csdn = {};
+    }
+    var sideToolbarOpt = {}
+    $(function() {
+      $(document).on('click', "#toolReportBtnHideNormal,#toolReportBtnHide", function() {
+        window.csdn.loginBox.key({
+          biz: 'blog',
+          subBiz: 'other_service',
+          cb: function() {
+            window.csdn.feedback({
+              "type": 'blog',
+              "rtype": 'article',
+              "rid": articleId,
+              "reportedName": username,
+              "submitOptions": {
+                "title": articleTitle,
+                "contentUrl": articleDetailUrl
+              },
+              "callback": function() {
+                showToast({
+                  text: "感谢您的举报，我们会尽快审核！",
+                  bottom: '10%',
+                  zindex: 9000,
+                  speed: 500,
+                  time: 1500
+                })
+              }
+            })
+          }
+        })
+      });
+    })
+      window.csdn.sideToolbar = {
+        options: {
+          ...sideToolbarOpt,
+          theme: 'white',
+        }
+      }
+  </script>
+    <script src="https://g.csdnimg.cn/baidu-search/1.0.12/baidu-search.js" type="text/javascript"></script>
+  <script src="https://csdnimg.cn/release/download/old_static/js/qrcode.js"></script>
+  <script src="https://g.csdnimg.cn/lib/qrcode/1.0.0/qrcode.min.js"></script>
+  <script src="https://g.csdnimg.cn/user-ordercart/3.0.1/user-ordercart.js" type="text/javascript"></script>
+  <script src="https://g.csdnimg.cn/user-ordertip/5.0.3/user-ordertip.js" type="text/javascript"></script>
+  <script src="https://g.csdnimg.cn/order-payment/4.0.5/order-payment.js" type="text/javascript"></script>
+  <script src="https://csdnimg.cn/release/blogv2/dist/pc/js/common-48ed13f265.min.js" type="text/javascript"></script>
+  <script src="https://csdnimg.cn/release/blogv2/dist/pc/js/detail-140515fa2a.min.js" type="text/javascript"></script>
+  <script src="https://csdnimg.cn/release/blogv2/dist/pc/js/column-efcae2ca36.min.js" type="text/javascript"></script>
+    <script src="https://g.csdnimg.cn/side-toolbar/3.6/side-toolbar.js" type="text/javascript"></script>
+  <script src="https://g.csdnimg.cn/copyright/1.0.4/copyright.js" type="text/javascript"></script>
+  <script>
+    $(".MathJax").remove();
+    if ($('div.markdown_views pre.prettyprint code.hljs').length > 0) {
+      $('div.markdown_views')[0].className = 'markdown_views';
+    }
+  </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processClass: "mathjax",
+        ignoreClass: "title-article|no-mathjax",
+        preview: "none"
+      },
+      
+      // 优先使用 HTML-CSS 而非 NativeMML
+      "HTML-CSS": {
+        preferredFont: "STIX",        // 使用 STIX 字体
+        availableFonts: ["STIX", "TeX"],
+        webFont: "STIX-Web",
+        scale: 100,                   // 放大 20%
+        minScaleAdjust: 100,
+        linebreaks: { 
+          automatic: true, 
+          width: "90% container" 
+        },
+        matchFontHeight: true,
+        styles: {
+          ".MathJax": {
+            "font-weight": "500 !important"  // 加粗
+          }
+        }
+      },
+      
+      // 禁用 NativeMML（浏览器原生渲染质量不好）
+      NativeMML: {
+        scale: 100
+      },
+      
+      // 设置优先级：HTML-CSS > SVG > NativeMML
+      menuSettings: {
+        renderer: "HTML-CSS"
+      },
+      
+      messageStyle: "none"
+    });
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+  </script>
+  <script src="https://g.csdnimg.cn/static/mathjax-2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript" crossorigin src="https://g.csdnimg.cn/common/csdn-login-box/csdn-login-box.js"></script></html>
